@@ -58,6 +58,15 @@ for notifications than that provided by the reference Android Open Source
 implementation; however, such alternative notification systems MUST support
 existing notification resources, as above.
 
+<div class="note">
+
+Android Automotive implementations MAY manage the visibility and timing of
+notifications to mitigate driver distraction, but MUST display
+notifications that use [CarExtender](http://developer.android.com/reference/android/app/Notification.CarExtender.html)
+when requested by applications.
+
+</div>
+
 Android includes support for various notifications, such as:
 
 *   **Rich notifications**. Interactive Views for ongoing notifications.
