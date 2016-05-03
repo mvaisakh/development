@@ -187,9 +187,10 @@ platform feature flag android.software.live_wallpaper.
 
 <div class="note">
 
-As the Recent function navigation key is OPTIONAL, the requirements to implement
-the overview screen is OPTIONAL for Android Watch devices and RECOMMENDED for
-Android Television devices.
+As the Recent function navigation key is OPTIONAL, the requirement to implement
+the overview screen is OPTIONAL for Android Watch and Android Automotive implementations,
+and RECOMMENDED for Android Television devices. There SHOULD still be a
+method to switch between activities on Android Automotive implementations.
 
 </div>
 
