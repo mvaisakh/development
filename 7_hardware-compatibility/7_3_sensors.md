@@ -352,3 +352,31 @@ fingerprint data securely migrated to meet the above requirements or removed.
 *   SHOULD use the Android Fingerprint icon provided in the Android Open Source
 Project.
 
+### 7.3.11\. Android Automotive-only sensors
+
+Automotive-specific sensors are defined in the android.car.CarSensorManager API.
+
+#### 7.3.11.1\. Current Gear
+
+Android Automotive implementations SHOULD provide current gear as SENSOR_TYPE_GEAR.
+
+#### 7.3.11.2\. Day Night Mode
+
+Android Automotive implementations MUST support day/night mode defined as
+SENSOR_TYPE_NIGHT. The value of this flag MUST be consistent with dashboard
+day/night mode and SHOULD be based on ambient light sensor input. The
+underlying ambient light sensor MAY be the same as
+[Photometer](#7_3_7_photometer).
+
+#### 7.3.11.3\. Driving Status
+
+Android Automotive implementations MUST support driving status defined as
+SENSOR_TYPE_DRIVING_STATUS, with a default value of DRIVE_STATUS_UNRESTRICTED
+when the vehicle is fully stopped and parked. It is the responsibility of OEM
+to configure SENSOR_TYPE_DRIVING_STATUS in compliance with all laws and
+regulations that apply to markets where the product is shipping.
+
+#### 7.3.11.4\. Wheel Speed
+
+Android Automotive implementations MUST provide vehicle speed defined as
+SENSOR_TYPE_CAR_SPEED.
