@@ -1,5 +1,9 @@
 ## 3.3\. Native API Compatibility
 
+Native code compatibility is challenging. For this reason, device implementers
+are **STRONGLY RECOMMENDED** to use the implementations of the libraries listed
+below from the upstream Android Open Source Project.
+
 ### 3.3.1\. Application Binary Interfaces
 
 Managed Dalvik bytecode can call into native code provided in the application
@@ -40,6 +44,7 @@ The following native code APIs MUST be available to apps that include native cod
 *   libGLESv1_CM.so (OpenGL ES 1.x)
 *   libGLESv2.so (OpenGL ES 2.0)
 *   libGLESv3.so (OpenGL ES 3.x)
+*   libvukan.so (Vulkan)
 *   libEGL.so (native OpenGL surface management)
 *   libjnigraphics.so
 *   libOpenSLES.so (OpenSL ES 1.0.1 audio support)
@@ -55,19 +60,46 @@ predefined ABI, it MUST NOT report support for any ABIs at all.
 Note that device implementations MUST include libGLESv3.so and it MUST symlink
 (symbolic link) to libGLESv2.so. in turn, MUST export all the OpenGL ES 3.1 and
 [Android Extension Pack](http://developer.android.com/guide/topics/graphics/opengl.html#aep)
-function symbols as defined in the NDK release android-21. Although all the
+function symbols as defined in the NDK release android-24. Although all the
 symbols must be present, only the corresponding functions for OpenGL ES versions
 and extensions actually supported by the device must be fully implemented.
 
-Device implementations, if including a native library with the name
-libvulkan.so, MUST export function symbols and provide an implementation of the
-Vulkan 1.0 API and the VK_KHR_surface, VK_KHR_swapchain, and
-VK_KHR_android_surface extensions as defined by the Khronos Group and passing
-the Khronos conformance tests.
+#### 3.3.1.1\. Graphic Libraries
 
-Native code compatibility is challenging. For this reason, device implementers
-are **STRONGLY RECOMMENDED** to use the implementations of the libraries listed
-above from the upstream Android Open Source Project.
+[Vulkan](https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html)
+is a low-overhead, cross-platform API for high-performance 3D graphics. Device
+implementations, even if not including support of the Vulkan APIs, MUST satisfy
+the following requirements:
+
+*   It MUST always provide a native library named `libvulkan.so` which exports
+    function symbols for the core Vulkan 1.0 API as well as the `VK_KHR_surface`,
+    `VK_KHR_android_surface`, and `VK_KHR_swapchain` extensions.
+
+Device implementations, if including support of the Vulkan APIs:
+
+*   MUST report, one or more `VkPhysicalDevices` through the
+    `vkEnumeratePhysicalDevices` call.
+*   Each enumarated `VkPhysicalDevices` MUST fully implement the Vulkan 1.0 API.
+*   MUST report the correct
+    [`PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL)
+    and [`PackageManager#FEATURE_VULKAN_HARDWARE_VERSION`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION)
+    feature flags.
+*   MUST enumerate layers, contained in native libraries named `libVkLayer*.so`
+    in the application package’s native library directory, through the
+    `vkEnumerateInstanceLayerProperties` and `vkEnumerateDeviceLayerProperties`
+    functions in `libvulkan.so`
+*   MUST NOT enumerate layers provided by libraries outside of the application
+    package, or provide other ways of tracing or intercepting the Vulkan API,
+    unless the application has the `android:debuggable=”true”` attribute.
+
+Device implementations, if not including support of the Vulkan APIs:
+
+*   MUST report 0 `VkPhysicalDevices` through the `vkEnumeratePhysicalDevices`
+    call.
+*   MUST NOT delare any of the Vulkan feature flags
+    [`PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL)
+    and [`PackageManager#FEATURE_VULKAN_HARDWARE_VERSION`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION).
+
 
 ### 3.3.2. 32-bit ARM Native Code Compatibility
 
