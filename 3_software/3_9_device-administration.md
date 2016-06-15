@@ -43,6 +43,16 @@ The managed profile provisioning process (the flow initiated by
 [android.app.action.PROVISION_MANAGED_PROFILE](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE))
 user experience MUST align with the AOSP implementation.
 
+Device implementations MUST provide the following user affordances within the
+Settings user interface to indicate to the user when a particular system function
+has been disabled by the Device Policy Controller (DPC):
+*    A consistent icon or other user affordance (for example the upstream AOSP
+     info icon) to represent when a particular setting is restricted by a
+     Device Admin
+*    A short explanation message, as provided by the Device Admin via the
+     [`setShortSupportMessage`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage(android.content.ComponentName, java.lang.CharSequence))
+*    The DPC application’s icon
+
 ## 3.9.2 Managed Profile Support
 
 Managed profile capable devices are those devices that:
