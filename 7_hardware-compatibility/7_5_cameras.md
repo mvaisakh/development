@@ -8,9 +8,10 @@ located on the same side of the device as the display; that is, a camera
 typically used to image the user, such as for video conferencing and similar
 applications.
 
-If a device implementation includes at least one camera, it SHOULD be possible
-for an application to simultaneously allocate 3 bitmaps equal to the size of
-the images produced by the largest-resolution camera sensor on the device.
+If a device implementation includes at least one camera, it MUST be possible for
+an application to simultaneously allocate 3 RGBA_8888 bitmaps equal to the size
+of the images produced by the largest-resolution camera sensor on the device,
+while camera is open for the purpose of basic preview and still capture.
 
 ### 7.5.1\. Rear-Facing Camera
 

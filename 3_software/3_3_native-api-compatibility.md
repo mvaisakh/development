@@ -46,6 +46,7 @@ The following native code APIs MUST be available to apps that include native cod
 *   libOpenMAXAL.so (OpenMAX AL 1.0.1 support)
 *   libandroid.so (native Android activity support)
 *   libmediandk.so (native media APIs support)
+*   libcamera2ndk.so
 *   Support for OpenGL, as described below
 
 Note that future releases of the Android NDK may introduce support for
