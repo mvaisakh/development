@@ -233,19 +233,30 @@ following sensor types meeting the quality requirements as below:
     *   MUST have a measurement range between at least -8g and +8g.
     *   MUST have a measurement resolution of at least 1024 LSB/G.
     *   MUST have a minimum measurement frequency of 12.5 Hz or lower.
-    *   MUST have a maxmium measurement frequency of 200 Hz or higher.
+    *   MUST have a maxmium measurement frequency of 400 Hz or higher.
     *   MUST have a measurement noise not above 400uG/√Hz.
     *   MUST implement a non-wake-up form of this sensor with a buffering
-capability of at least 3000 sensor events.
+        capability of at least 3000 sensor events.
     *   MUST have a batching power consumption not worse than 3 mW.
+    *   SHOULD have a stationary noise bias stability of \<15 μg √Hz from 24hr static
+        dataset.
+    *   SHOULD have a bias change vs. temperature of ≤ +/- 1mg / °C.
+    *   SHOULD have a best-fit line non-linearity of ≤ 0.5%, and sensitivity change vs. temperature of ≤
+        0.03%/C°.
 *   SENSOR_TYPE_GYROSCOPE
     *   MUST have a measurement range between at least -1000 and +1000 dps.
     *   MUST have a measurement resolution of at least 16 LSB/dps.
     *   MUST have a minimum measurement frequency of 12.5 Hz or lower.
     *   MUST have a maxmium measurement frequency of 200 Hz or higher.
     *   MUST have a measurement noise not above 0.014°/s/√Hz.
+    *   SHOULD have a stationary bias stability of < 0.0002 °/s √Hz from 24-hour static dataset.
+    *   SHOULD have a bias change vs. temperature of ≤ +/- 0.05 °/ s / °C.
+    *   SHOULD have a sensitivity change vs. temperature of ≤ 0.02% / °C.
+    *   SHOULD have a best-fit line non-linearity of ≤ 0.2%.
+    *   SHOULD have a noise density of ≤ 0.07 °/s/√Hz.
+
 *   SENSOR_TYPE_GYROSCOPE_UNCALIBRATED with the same quality requirements as
-SENSOR_TYPE_GYROSCOPE.
+    SENSOR_TYPE_GYROSCOPE.
 *   SENSOR_TYPE_GEOMAGNETIC_FIELD
     *   MUST have a measurement range between at least -900 and +900 uT.
     *   MUST have a measurement resolution of at least 5 LSB/uT.
@@ -253,9 +264,9 @@ SENSOR_TYPE_GYROSCOPE.
     *   MUST have a maxmium measurement frequency of 50 Hz or higher.
     *   MUST have a measurement noise not above 0.5 uT.
 *   SENSOR_TYPE_MAGNETIC_FIELD_UNCALIBRATED with the same quality requirements
-as SENSOR_TYPE_GEOMAGNETIC_FIELD and in addition:
+    as SENSOR_TYPE_GEOMAGNETIC_FIELD and in addition:
     *   MUST implement a non-wake-up form of this sensor with a buffering
-capability of at least 600 sensor events.
+        capability of at least 600 sensor events.
 *   SENSOR_TYPE_PRESSURE
     *   MUST have a measurement range between at least 300 and 1100 hPa.
     *   MUST have a measurement resolution of at least 80 LSB/hPa.
@@ -263,27 +274,27 @@ capability of at least 600 sensor events.
     *   MUST have a maximum measurement frequency of 10 Hz or higher.
     *   MUST have a measurement noise not above 2 Pa/√Hz.
     *   MUST implement a non-wake-up form of this sensor with a buffering
-capability of at least 300 sensor events.
+        capability of at least 300 sensor events.
     *   MUST have a batching power consumption not worse than 2 mW.
 *   SENSOR_TYPE_ROTATION_VECTOR
     *   MUST have a batching power consumption not worse than 4 mW.
 *   SENSOR_TYPE_GAME_ROTATION_VECTOR MUST implement a non-wake-up form of this
-sensor with a buffering capability of at least 300 sensor events.
+    sensor with a buffering capability of at least 300 sensor events.
 *   SENSOR_TYPE_SIGNIFICANT_MOTION
     *   MUST have a power consumption not worse than 0.5 mW when device is
-static and 1.5 mW when device is moving.
+        static and 1.5 mW when device is moving.
 *   SENSOR_TYPE_STEP_DETECTOR
     *   MUST implement a non-wake-up form of this sensor with a buffering
-capability of at least 100 sensor events.
+        capability of at least 100 sensor events.
     *   MUST have a power consumption not worse than 0.5 mW when device is
-static and 1.5 mW when device is moving.
+        static and 1.5 mW when device is moving.
     *   MUST have a batching power consumption not worse than 4 mW.
 *   SENSOR_TYPE_STEP_COUNTER
     *   MUST have a power consumption not worse than 0.5 mW when device is
-static and 1.5 mW when device is moving.
+        static and 1.5 mW when device is moving.
 *   SENSOR_TILT_DETECTOR
     *   MUST have a power consumption not worse than 0.5 mW when device is
-static and 1.5 mW when device is moving.
+        static and 1.5 mW when device is moving.
 
 Also such a device MUST meet the following sensor subsystem requirements:
 
@@ -292,9 +303,9 @@ Accelerometer, Gyroscope sensor and Magnetometer MUST be within 2.5
 milliseconds of each other.
 *   The Gyroscope sensor event timestamps MUST be on the same time base as the
 camera subsystem and within 1 millisconds of error.
-*   The latency of delivery of samples to the HAL SHOULD be below 5
-milliseconds from the instant the data is available on the physical sensor
-hardware.
+*   High Fidelity sensors MUST deliver samples to applications within 5
+milliseconds from the time when the data is available on the physical sensor
+to the application.
 *   The power consumption MUST not be higher than 0.5 mW when device is static
 and 2.0 mW when device is moving when any combination of the following sensors
 are enabled:
