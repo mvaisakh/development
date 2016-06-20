@@ -236,11 +236,12 @@ intent patterns to perform common actions. The core Android applications are:
 *   Music
 *   Settings
 
-Device implementations SHOULD include the core Android applications as
-appropriate but MUST include a component implementing the same intent patterns
-defined by all the “public” Activity or Service components of these core
-Android applications. Note that Activity or Service components are considered
-“public” when the attribute android:exported is absent or has the value true.
+
+Device implementations MUST include the core Android applications as
+appropriate or a component implementing the same intent patterns defined by
+all the Activity or Service components of these core Android applications
+exposed to other applications, implicitly or explicitly, through the
+`android:exported` attribute.
 
 #### 3.2.3.2\. Intent Resolution
 
