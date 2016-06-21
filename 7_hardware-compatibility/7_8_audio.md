@@ -88,10 +88,12 @@ API as follows:
 
 *   If
 [PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND](http://developer.android.com/reference/android/media/AudioManager.html#PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND)
-is "true", then
+is "true", then the following requirements must be met by the
+VOICE_RECOGNITION and UNPROCESSED audio sources:
     *   The microphone's mean power response in the 18.5 kHz to 20 kHz band
 MUST be no more than 15 dB below the response at 2 kHz.
-    *   The signal to noise ratio of the microphone MUST be no lower than 80 dB.
+    * The microphone's unweighted signal to noise ratio over 18.5 kHz to 20 kHz
+for a 19 kHz tone at -26 dBFS MUST be no lower than 50 dB.
 *   If
 [PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND](http://developer.android.com/reference/android/media/AudioManager.html#PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND)
 is "true", then the speaker's mean response in 18.5 kHz - 20 kHz MUST be no
