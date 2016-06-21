@@ -245,10 +245,14 @@ MUST be displayed in the Location menu within Settings.
 
 ### 3.8.13\. Unicode and Font
 
-Android includes support for color emoji characters. When Android device
-implementations include an IME, devices SHOULD provide an input method to the
-user for the Emoji characters defined in [Unicode 6.1](http://www.unicode.org/versions/Unicode6.1.0/). All devices MUST be capable
-of rendering these emoji characters in color glyph.
+Android includes support for the emoji characters defined in
+[Unicode 9.0](http://www.unicode.org/versions/Unicode9.0.0/). All device
+implementations MUST be capable of rendering these emoji characters
+in color glyph and when Android device implementations include an IME,
+it SHOULD provide an input method to the user for these emoji characters. 
+
+Android handheld devices SHOULD support the skin tone and diverse family emojis
+as specificed in the [Unicode Technical Report #51](http://unicode.org/reports/tr51).
 
 Android includes support for Roboto 2 font with different
 weights—sans-serif-thin, sans-serif-light, sans-serif-medium, sans-serif-black,
