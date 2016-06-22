@@ -227,15 +227,15 @@ displayed on the lock screen. Device implementations that support a lock screen,
 unless an Android Automotive or Watch implementation, MUST display the
 Lockscreen Notifications including the Media Notification Template.
 
-### 3.8.11\. Dreams
+### 3.8.11\. Screen savers (previously Dreams)
 
-Android includes support for interactive screensavers called
-[Dreams](http://developer.android.com/reference/android/service/dreams/DreamService.html).
-Dreams allows users to interact with applications when a device connected to a
-power source is idle or docked in a desk dock. Android Watch devices MAY
-implement Dreams, but other types of device implementations SHOULD include
-support for Dreams and provide a settings option for users to configure Dreams
-in response to the android.settings.DREAM_SETTINGS intent.
+Android includes support for [interactivescreensavers](http://developer.android.com/reference/android/service/dreams/DreamService.html),
+previously referred to as Dreams. Screen savers allow users to interact with
+applications when a device connected to a power source is idle or docked in a
+desk dock.  Android Watch devices MAY implement screen savers, but other types
+of device implementations SHOULD include support for screen savers and provide
+a settings option for users toconfigure screen savers in response to the
+`android.settings.DREAM_SETTINGS` intent.
 
 ### 3.8.12\. Location
 
