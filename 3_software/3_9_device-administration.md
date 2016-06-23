@@ -80,7 +80,10 @@ Managed profile capable devices MUST:
         profile.
 *   Ensure the default dialer can look up caller information from the managed
     profile (if one exists) alongside those from the primary profile, if the
-    Device Policy Controller permits it.
+    Device Policy Controller permits it. When contacts from the managed
+    profile are displayed in the preinstalled call log, in-call UI, in progress
+    and missed call notifications, contacts and messaging apps they SHOULD be
+    badged with the same badge used to indicate managed profile applications
 *   MUST ensure that it satisfies all the security requirements applicable for a
     device with multiple users enabled (see
     [section 9.5](#9_5_multi-user_support)), even though the managed profile is not
