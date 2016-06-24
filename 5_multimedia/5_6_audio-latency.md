@@ -30,7 +30,7 @@ continuous output latency plus one buffer period. The buffer period term allows
 processing time for the app and for the app to mitigate phase difference
 between input and output streams.
 *   **OpenSL ES PCM buffer queue API**. The set of PCM-related OpenSL ES APIs
-within Android NDK; see NDK_root/docs/opensles/index.html.
+within [Android NDK](https://developer.android.com/ndk/index.html).
 
 Device implementations that declare android.hardware.audio.output are STRONGLY
 RECOMMENDED to meet or exceed these audio output requirements:
