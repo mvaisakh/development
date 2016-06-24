@@ -64,3 +64,20 @@ Android Television device implementations MUST support
 which allows all inputs to provide activity links from the current activity to
 another activity (i.e. a link from live programming to related content). The TV
 App MUST show TV input app linking when it is provided.
+
+#### 3.12.1.4\. Time shifting
+
+Android Television device implementations MUST support time shifting, which
+allows the user to pause and resume live content. Device implementations MUST
+provide the user a way to pause and resume the currently playing program, if
+time shifting for that program
+[is available](https://developer.android.com/reference/android/media/tv/TvInputManager.html#TIME_SHIFT_STATUS_AVAILABLE). 
+
+#### 3.12.1.5\. TV recording
+
+Android Television device implementations are STRONGLY RECOMMENDED to support
+TV recording. If the TV input supports recording, the EPG MAY provide a way to
+[record a program](https://developer.android.com/reference/android/media/tv/TvInputInfo.html#canRecord())
+if the recording of such a program is not
+[prohibited](https://developer.android.com/reference/android/media/tv/TvContract.Programs.html#COLUMN_RECORDING_PROHIBITED).
+Device implementations SHOULD provide a user interface to play recorded programs.
