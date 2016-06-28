@@ -17,3 +17,12 @@ This Compatibility Definition permits some types of hardware for which Android
 includes APIs to be omitted by device implementations. In such cases, the APIs
 MUST still be present and behave in a reasonable way. See [section
 7](#7_hardware_compatibility) for specific requirements for this scenario.
+
+## 3.1.1\. Android Extensions
+
+Android includes the support of extending the managed APIs while keeping the same API
+level version. Android device implementations MUST preload the AOSP implementation
+of both the shared library `ExtShared` and services `ExtServices` with versions higher
+than or equal to the minimum versions allowed per each API level. 
+For example, Android 7.0 device implementations, running API level 24 MUST include
+at least version 1.
