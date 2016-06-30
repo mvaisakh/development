@@ -179,17 +179,17 @@ platform feature flag android.software.live_wallpaper.
 <div class="note">
 
 As the Recent function navigation key is OPTIONAL, the requirements to implement
-the overview screen is OPTIONAL for Android Television devices and Android Watch
-devices.
+the overview screen is OPTIONAL for Android Watch devices and RECOMMENDED for
+Android Television devices.
 
 </div>
 
-The upstream Android source code includes the 
+The upstream Android source code includes the
 [overview screen](http://developer.android.com/guide/components/recents.html), a
 system-level user interface for task switching and displaying recently accessed
 activities and tasks using a thumbnail image of the application’s graphical
 state at the moment the user last left the application. Device implementations
-including the recents function navigation key as detailed in 
+including the recents function navigation key as detailed in
 [section 7.2.3](#7_2_3_navigation_keys) MAY alter the interface but MUST meet the
 following requirements:
 
