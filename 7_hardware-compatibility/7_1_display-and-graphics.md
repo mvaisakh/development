@@ -140,32 +140,32 @@ Devices MUST NOT change the reported screen size or density when changing orient
 
 Device implementations MUST support both OpenGL ES 1.0 and 2.0, as embodied and
 detailed in the Android SDK documentations. Device implementations SHOULD
-support OpenGL ES 3.0 or 3.1 on devices capable of supporting it. Device
+support OpenGL ES 3.0, 3.1, or 3.2 on devices capable of supporting it. Device
 implementations MUST also support [Android
 RenderScript](http://developer.android.com/guide/topics/renderscript/), as
 detailed in the Android SDK documentation.
 
 Device implementations MUST also correctly identify themselves as supporting
-OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0 or OpenGL 3.1\. That is:
+OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0, OpenGL 3.1, or OpenGL 3.2\. That is:
 
 *   The managed APIs (such as via the GLES10.getString() method) MUST report
 support for OpenGL ES 1.0 and OpenGL ES 2.0.
 *   The native C/C++ OpenGL APIs (APIs available to apps via libGLES_v1CM.so,
 libGLES_v2.so, or libEGL.so) MUST report support for OpenGL ES 1.0 and OpenGL
 ES 2.0.
-*   Device implementations that declare support for OpenGL ES 3.0 or 3.1 MUST
+*   Device implementations that declare support for OpenGL ES 3.0, 3.1, or 3.2 MUST
 support the corresponding managed APIs and include support for native C/C++
-APIs. On device implementations that declare support for OpenGL ES 3.0 or 3.1,
-libGLESv2.so MUST export the corresponding function symbols in addition to the
-OpenGL ES 2.0 function symbols.
+APIs. On device implementations that declare support for OpenGL ES 3.0, 3.1, or
+3.2 libGLESv2.so MUST export the corresponding function symbols in addition to
+the OpenGL ES 2.0 function symbols.
 
-In addition to OpenGL ES 3.1, Android provides an [extension
-pack](https://developer.android.com/reference/android/opengl/GLES31Ext.html)
+Android provides an OpenGL ES [extension pack](https://developer.android.com/reference/android/opengl/GLES31Ext.html)
 with Java interfaces and native support for advanced graphics functionality
 such as tessellation and the ASTC texture compression format. Android device
-implementations MAY support this extension pack, and—only if fully
-implemented—MUST identify the support through the android.hardware.opengles.aep
-feature flag.
+implementations MUST support the extension pack if the device supports OpenGL
+ES 3.2 and MAY support it otherwise. If the extension pack is supported in its
+entirety, the device MUST identify the support through the
+`android.hardware.opengles.aep` feature flag.
 
 Also, device implementations MAY implement any desired OpenGL ES extensions.
 However, device implementations MUST report via the OpenGL ES managed and
