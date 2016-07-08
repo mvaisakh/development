@@ -107,11 +107,13 @@ available to applications when targetSdkVersion is less than 10, either by a
 physical button, a software key, or gestures. This Menu function should be
 presented unless hidden together with other navigation functions.
 
-Android device implementations with the support of the [Assist
-action](http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST)
-MUST make this accessisble with a single action (e.g. tap, double-click, or
-gesture) when other navigation keys are visible, and are STRONGLY RECOMMENDED to
-use the long-press on the Home button or software key as the single action.
+Android device implementations supporting the [Assist action](http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST)
+and/or [`VoiceInteractionService`](https://developer.android.com/reference/android/service/voice/VoiceInteractionService.html)
+MUST be able to launch an assist app with a single interaction (e.g. tap,
+double-click, or gesture) when other navigation keys are visible. It is STRONGLY
+RECOMMENDED to use long press on home as this interaction. The designated
+interaction MUST launch the user-selected assist app, in other words the app
+that implements a VoiceInteractionService, or an activity handling the ACTION_ASSIST intent.
 
 Device implementations MAY use a distinct portion of the screen to display the
 navigation keys, but if so, MUST meet these requirements:
