@@ -340,3 +340,7 @@ device implementation reports android.hardware.telephony.
 [android.settings.NFC_PAYMENT_SETTINGS](http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFC_PAYMENT_SETTINGS)
 intent to show a default app settings menu for Tap and Pay, if the device
 implementation reports android.hardware.nfc.hce.
+*   MUST honor the [`android.telecom.action.CHANGE_DEFAULT_DIALER`]
+(https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER)
+intent to show a dialog to allow the user to change the default Phone application, if the
+device implementation reports `android.hardware.telephony`.
