@@ -305,3 +305,26 @@ Device implementations MUST have the master auto-sync setting on by default so
 that the method
 [getMasterSyncAutomatically()](http://developer.android.com/reference/android/content/ContentResolver.html)
 returns “true”.
+
+### 7.4.7\. Data Saver
+
+Device implementations with a metered connection are STRONGLY RECOMMENDED to provide the
+data saver mode.
+
+If a device implementation provides the data saver mode, it:
+
+*   MUST support all the APIs in the `ConnectivityManager` class as described in the
+[SDK documentation](https://developer.android.com/training/basics/network-ops/data-saver.html)
+
+*   MUST provide a user interface in the settings, allowing users to add
+    applications to or remove applications from the whitelist.
+
+Conversely if a device implementation does not provide the data saver mode, it:
+
+*   MUST return the value `RESTRICT_BACKGROUND_STATUS_DISABLED` for
+    [`ConnectivityManager.getRestrictBackgroundStatus()`](https://developer.android.com/reference/android/net/ConnectivityManager.html#getRestrictBackgroundStatus())
+
+*   MUST not broadcast `ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED`
+
+*   MUST have an activity that handles the `Settings.ACTION_IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS`
+    intent but MAY implement it as a no-op.
