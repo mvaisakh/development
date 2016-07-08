@@ -83,6 +83,16 @@ are posted or updated. Device implementations MUST correctly and promptly send
 notifications in their entirety to all such installed and user-enabled listener
 services, including any and all metadata attached to the Notification object.
 
+Device implementations that support the DND (Do not Disturb) feature MUST meet
+the following requirements:
+
+*   MUST implement an activity where the user can grant or deny the app access
+    to DND policy configurations in response to the intent [ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS](https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS).
+*   MUST display [Automatic DND rules](https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule(android.app.AutomaticZenRule))
+    created by applications alongside the user-created and pre-defined rules.
+*   MUST honor the [`suppressedVisualEffects`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects)
+    values passed along the [`NotificationManager.Policy`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy(int, int, int, int)).
+
 ### 3.8.4\. Search
 
 Android includes APIs that allow developers to
