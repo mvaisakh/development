@@ -100,6 +100,16 @@ table; see relevant hardware sections for more detail.
     <td>SHOULD</td>
  </tr>
  <tr>
+    <td>Cellular radio</td>
+    <td><a href="#7_4_5_minimum-network-capability">
+      7.4.5. Minimum Network Capability</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>SHOULD</td>
+    <td></td>
+ </tr>
+ <tr>
     <td>USB peripheral/host mode</td>
     <td><a href="#7_7_usb">7.7. USB</a></td>
     <td>SHOULD</td>
