@@ -13,12 +13,8 @@ approaches will satisfy this requirement:
 *   “Offline” updates via a reboot and update from a file on removable storage.
 
 However, if the device implementation includes support for an unmetered data
-connection such as 802.11 or Bluetooth PAN (Personal Area Network) profile:
-
-*   Android Automotive implementations SHOULD support OTA downloads with
-offline update via reboot.
-*   All other device implementations MUST support OTA downloads with offline
-update via reboot.
+connection such as 802.11 or Bluetooth PAN (Personal Area Network) profile, it
+MUST support OTA downloads with offline update via reboot.
 
 The update mechanism used MUST support updates without wiping user data. That
 is, the update mechanism MUST preserve application private data and application
@@ -43,4 +39,3 @@ update subsystem for devices that report android.software.device_admin MUST
 implement the behavior described in the
 [SystemUpdatePolicy](http://developer.android.com/reference/android/app/admin/SystemUpdatePolicy.html)
 class.
-
