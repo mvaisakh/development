@@ -11,3 +11,10 @@ provide a consistent experience for Developer Options. Specifically, device
 implementations MUST hide Developer Options by default and MUST provide a
 mechanism to enable Developer Options that is consistent with the upstream
 Android implementation.
+
+<div class="note">
+
+Android Automotive implementations MAY limit access to the Developer Options
+menu by visually hiding or disabling the menu when the vehicle is in motion.
+
+</div>
