@@ -21,16 +21,8 @@ include telephony hardware MUST implement the full APIs as no-ops.
 
 ### 7.4.2\. IEEE 802.11 (Wi-Fi)
 
-<div class="note">
-
-Android Television device implementations MUST include Wi-Fi support.
-
-</div>
-
-Android Television device implementations MUST include support for one or more
-forms of 802.11 (b/g/a/n, etc.) and other types of Android device
-implementation SHOULD include support for one or more forms of 802.11\. If a
-device implementation does include support for 802.11 and exposes the
+All Android device implementations SHOULD include support for one or more forms
+of 802.11\. If a device implementation does include support for 802.11 and exposes the
 functionality to a third-party application, it MUST implement the corresponding
 Android API and:
 
