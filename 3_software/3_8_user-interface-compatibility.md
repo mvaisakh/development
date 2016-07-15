@@ -204,7 +204,7 @@ following requirements:
 
 *   MUST display affiliated recents as a group that moves together.
 *   MUST support at least up to 20 displayed activities.
-*   MUST at least display the title of 4 activities at a time.
+*   SHOULD at least display the title of 4 activities at a time.
 *   SHOULD display highlight color, icon, screen title in recents.
 *   MUST implement the [screen pinning behavior](http://developer.android.com/about/versions/android-5.0.html#ScreenPinning)]
     and provide the user with a settings menu to toggle the feature.
