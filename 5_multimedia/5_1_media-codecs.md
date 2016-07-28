@@ -1,23 +1,42 @@
 ## 5.1\. Media Codecs
 
-Device implementations MUST support the [core media
+Device implementations—
+
+*   MUST support the [core media
 formats](http://developer.android.com/guide/appendix/media-formats.html)
-specified in the Android SDK documentation except where explicitly permitted in
-this document. Specifically, device implementations MUST support the media
-formats, encoders, decoders, file types, and container formats defined in the
-tables below and reported via
+specified in the Android SDK documentation, except where explicitly permitted
+in this document.
+
+*   MUST support the media formats, encoders, decoders, file types, and
+container formats defined in the tables below and reported via
 [MediaCodecList](http://developer.android.com/reference/android/media/MediaCodecList.html).
-Device implementations MUST also be able to decode all profiles reported in its
+
+*   MUST also be able to decode all profiles reported in its
 [CamcorderProfile](http://developer.android.com/reference/android/media/CamcorderProfile.html)
-and MUST be able to decode all formats it can encode. All of these codecs are
-provided as software implementations in the preferred Android implementation
-from the Android Open Source Project.
+
+*   MUST be able to decode all formats it can encode. This includes all
+    bitstreams that its encoders generate.
+
+Codecs SHOULD aim for minimum codec latency, in other words, codecs—
+
+*   SHOULD NOT consume and store input buffers and return input buffers only
+once processed
+*   SHOULD NOT hold onto decoded buffers for longer than as specified by the
+standard (e.g. SPS).
+*   SHOULD NOT hold onto encoded buffers longer than required by the GOP
+structure.
+
+All of the  codecs listed in the table below are provided as software
+implementations in the preferred Android implementation from the Android Open
+Source Project.
 
 Please note that neither Google nor the Open Handset Alliance make any
 representation that these codecs are free from third-party patents. Those
 intending to use this source code in hardware or software products are advised
 that implementations of this code, including in open source software or
 shareware, may require patent licenses from the relevant patent holders.
+
+
 
 ### 5.1.1\. Audio Codecs
 
@@ -142,7 +161,7 @@ Profile (enhanced AAC+)</td>
     <td></td>
     <td>REQUIRED<br> (Android 5.0+)</td>
     <td></td>
-    <td>Matroska (.mkv)</td>
+    <td>Matroska (.mkv), Ogg(.ogg)</td>
  </tr>
 </table>
 
@@ -206,18 +225,34 @@ android.hardware.microphone, including Android Watch device implementations.</p>
     <td>WebP (.webp)</td>
  </tr>
  <tr>
-    <td>RAW</td>
-    <td>-</td>
+    <td>Raw</td>
+    <td></td>
     <td>REQUIRED</td>
     <td>Uses the embedded JPEG if available. Renders DNG images if no preview
-    available.</td>
-    <td> ARW (.arw), CR2 (.cr2), DNG (.dng), NEF (.nef), NRW (.nrw), ORF (.orf),
-    PEF (.pef), RAF (.raf), RW2 (.rw2), SRW (.srw)</td>
+       available.</td>
+    <td>ARW (.arw), CR2 (.cr2), DNG (.dng), NEF (.nef), NRW (.nrw), ORF (.orf),
+        PEF (.pef), RAF (.raf), RW2 (.rw2), SRW (.srw)</td>
  </tr>
 </table>
 
 
 <h3 id="5_1_3_video_codecs">5.1.3. Video Codecs</h3>
+
+
+*   Codecs advertising HDR profile support MUST support HDR static metadata
+parsing and handling.
+
+*   If a media codec advertises intra refresh support, then it MUST support the
+refresh periods in the range of 10 - 60 frames and accurately operate within
+20% of configured refresh period.
+
+*   Video codecs MUST support output and input bytebuffer sizes that
+accommodate the largest feasible compressed and uncompressed frame as dictated
+by the standard and configuration but also not overallocate.
+
+*   Video encoders and decoders MUST support YUV420 flexible color format
+(COLOR_FormatYUV420Flexible).
+
 
 <table>
  <tr>
