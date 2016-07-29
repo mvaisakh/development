@@ -220,8 +220,8 @@ android.hardware.microphone, including Android Watch device implementations.</p>
  </tr>
  <tr>
     <td>H.263</td>
-    <td>REQUIRED<sup>1</sup></td>
-    <td>REQUIRED<sup>2</sup></td>
+    <td>MAY</td>
+    <td>MAY</td>
     <td></td>
     <td><ul>
     <li class="table_list">3GPP (.3gp)</li>
