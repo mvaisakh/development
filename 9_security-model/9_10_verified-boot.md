@@ -12,6 +12,11 @@ authenticity of all the bytes in the next stage before executing the code in
 the next stage.
 *   Use verification algorithms as strong as current recommendations from NIST
 for hashing algorithms (SHA-256) and public key sizes (RSA-2048).
+*   MUST NOT allow boot to complete when system verification fails, unless the
+user consents to attempt booting anyway, in which case the data from any
+non-verified storage blocks MUST not be used.
+*   MUST NOT allow verified partitions on the device to be modified unless the
+user has explicitly unlocked the boot loader.
 
 The upstream Android Open Source Project provides a preferred implementation of
 this feature based on the Linux kernel feature dm-verity.
