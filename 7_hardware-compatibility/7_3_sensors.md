@@ -145,9 +145,46 @@ registered for batch mode at 10 Hz.
 
 ### 7.3.3\. GPS
 
-Device implementations SHOULD include a GPS receiver. If a device
-implementation does include a GPS receiver, it SHOULD include some form
-of“assisted GPS” technique to minimize GPS lock-on time.
+Device implementations SHOULD include a GPS/GNSS receiver. If a device implementation
+does include a GPS/GNSS receiver and reports the capability to applications through the
+`android.hardware.location.gps` feature flag:
+
+*   It is STRONGLY RECOMMENDED that the device continue to deliver normal GPS/GNSS
+    outputs to applications during an emergency phone call and that location output
+    not be blocked during an emergency phone call.
+*   It MUST support location outputs at a rate of at least 1Hz when requested via
+    LocationManager#requestLocationUpdate.
+*   It MUST be able to determine the location in open-sky conditions (strong signals,
+    negligible multipath, HDOP < 2) within 10 seconds (fast time to first fix), when
+    connected to a 0.5 Mbps or faster data speed internet connection. This requirement
+    is typically met by the use of some form of Assisted or Predicted GPS/GNSS technique
+    to minimize GPS/GNSS lock-on time (Assistance data includes Reference Time, Reference
+    Location and Satellite Ephemeris/Clock).
+       * After making such a location calculation, it is STRONGLY RECOMMENDED for the device to
+         be able to determine its location, in open sky, within 10 seconds, when location
+         requests are restarted, up to an hour after the initial location calculation,
+         even when the subsequent request is made without a data connection, and/or after a power
+         cycle.
+*   In open sky conditions after determining the location, while stationary or moving with less
+    than 1 meter per second squared of acceleration:
+       * It MUST be able to determine location within 10 meters, and speed within 0.5 meters
+         per second, at least 95% of the time.
+       * It MUST simultaneously track and report via [GnssStatus.Callback](https://developer.android.com/reference/android/location/GnssStatus.Callback.html#GnssStatus.Callback()')
+         at least 8 satellites from one constellation.
+       * It SHOULD be able to simultaneously track at least 24 satellites, from multiple
+         constellations (e.g. GPS + at least one of Glonass, Beidou, Galileo).
+*   It MUST report the GNSS technology generation through the test API ‘getGnssYearOfHardware’.
+*   It is STRONGLY RECOMMENDED to meet and MUST meet all requirements below if the GNSS technology
+    generation is reported as the year "2016" or newer.
+       * It MUST report GPS measurements, as soon as they are found, even if a location calculated
+         from GPS/GNSS is not yet reported.
+       * It MUST report GPS pseudoranges and pseudorange rates, that, in open-sky conditions
+         after determining the location, while stationary or moving with less than 0.2 meter
+         per second squared of acceleration, are sufficient to calculate position within
+         10 meters, and speed within 0.2 meters per second, at least 95% of the time.
+
+Note that while some of the GPS requirements above are stated as STRONGLY RECOMMENDED, the
+Compatibility Definition for the next major version is expected to change these to a MUST.
 
 ### 7.3.4\. Gyroscope
 
