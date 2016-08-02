@@ -60,15 +60,18 @@ KEYCODE_APP_SWITCH, KEYCODE_BACK, respectively) are essential to the Android
 navigation paradigm and therefore:
 
 *   Android Handheld device implementations MUST provide the Home, Recents, and
-Back functions.
+    Back functions.
 *   Android Television device implementations MUST provide the Home and Back
-functions.
+    functions.
 *   Android Watch device implementations MUST have the Home function available
-to the user, and the Back function except for when it is in UI_MODE_TYPE_WATCH.
+    to the user, and the Back function except for when it is in `UI_MODE_TYPE_WATCH`.
+*   Android Watch device implementations, and no other Android deivce types,
+    MAY consume the long press event on the key event [`KEYCODE_BACK`](http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_BACK)
+    and omit it from being sent to the foreground application.
 *   Android Automotive implementations MUST provide the Home function and MAY
-provide Back and Recent functions.
+    provide Back and Recent functions.
 *   All other types of device implementations MUST provide the Home and Back
-functions.
+    functions.
 
 These functions MAY be implemented via dedicated physical buttons (such as
 mechanical or capacitive touch buttons), or MAY be implemented using dedicated
