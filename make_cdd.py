@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 Utility for building the CDD from component markdown files.
 
