@@ -204,13 +204,21 @@ screen active and the lock-screen unlocked.
 Forum specifications cited above.)
 
 Android includes support for NFC Host Card Emulation (HCE) mode. If a device
-implementation does include an NFC controller chipset capable of HCE and
-Application ID (AID) routing, then it:
+implementation does include an NFC controller chipset capable of HCE (for NfcA 
+and/or NfcB) and it supports Application ID (AID) routing, then it:
 
 *   MUST report the android.hardware.nfc.hce feature constant.
 *   MUST support [NFC HCE
 APIs](http://developer.android.com/guide/topics/connectivity/nfc/hce.html) as
 defined in the Android SDK.
+
+If a device implementation does include an NFC controller chipset capable of HCE
+for NfcF, and it implements the feature for third-party applications, then it:
+
+*   MUST report the android.hardware.nfc.hcef feature constant.
+*   MUST implement the [NfcF Card Emulation APIs]
+(https://developer.android.com/reference/android/nfc/cardemulation/NfcFCardEmulation.html)
+as defined in the Android SDK.
 
 Additionally, device implementations MAY include reader/writer support for the
 following MIFARE technologies.
