@@ -54,6 +54,10 @@ In addition:
 
 *   Android Watch devices MUST have a screen with the physical diagonal size in
 the range from 1.1 to 2.5 inches.
+*   Android Automotive devices MUST have a screen with the physical diagonal
+size greater than or equal to 6 inches.
+* Android Automotive devices MUST have a screen size of at least 750 dp x
+450 dp.
 *   Other types of Android device implementations, with a physically integrated
 screen, MUST have a screen at least 2.5 inches in physical diagonal size.
 
@@ -241,4 +245,3 @@ additional display connection then the device implementation MUST implement the
 [display manager
 API](http://developer.android.com/reference/android/hardware/display/DisplayManager.html)
 as described in the Android SDK documentation.
-
