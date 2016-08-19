@@ -40,3 +40,8 @@ Android Television device implementations MUST include support for system
 Master Volume and digital audio output volume attenuation on supported outputs,
 except for compressed audio passthrough output (where no audio decoding is done
 on the device).
+
+Android Automotive device implementations SHOULD allow adjusting audio volume
+separately per each audio stream using the content type or usage as defined
+by [AudioAttributes]("http://developer.android.com/reference/android/media/AudioAttributes.html")
+and car audio usage as publicly defined in `android.car.CarAudioManager`.
