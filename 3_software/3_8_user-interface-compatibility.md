@@ -104,13 +104,14 @@ to the search box when it is run in global search mode. If no third-party
 applications are installed that make use of this functionality, the default
 behavior SHOULD be to display web search engine results and suggestions.
 
-Android device implementations SHOULD implement an assistant on the device to
+Android device implementations SHOULD, and Android Automotive implementations
+MUST, implement an assistant on the device to
 handle the [Assist action](http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST).
 
 Android also includes the [Assist APIs](https://developer.android.com/reference/android/app/assist/package-summary.html)
 to allow applications to elect how much information of the current context is
 shared with the assistant on the device. Device implementations supporting the
-Assist action MUST indicate clearly to the end user when the the context is
+Assist action MUST indicate clearly to the end user when the context is
 shared by displaying a white light around the edges of the screen. To ensure
 clear visibility to the end user, the indication MUST meet or exceed the
 duration and brightness of the Android Open Source Project implementation.
