@@ -12,14 +12,10 @@ The MIDI-capable hardware transports are:
 
 *   USB host mode (section 7.7 USB)
 *   USB peripheral mode (section 7.7 USB)
+*   MIDI over Bluetooth LE acting in central role (section 7.4.3 Bluetooth)
 
 Conversely, if the device implementation provides generic non-MIDI connectivity
 over a particular MIDI-capable hardware transport listed above, but does not
 support MIDI over that hardware transport, it MUST NOT report support for
 feature android.software.midi.
-
-MIDI over Bluetooth LE acting in central role (section 7.4.3 Bluetooth) is in
-trial use status. A device implementation that reports feature
-android.software.midi, and which provides generic non-MIDI connectivity over
-Bluetooth LE, SHOULD support MIDI over Bluetooth LE.
 
