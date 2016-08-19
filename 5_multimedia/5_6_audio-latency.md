@@ -7,27 +7,29 @@ sound effects.
 For the purposes of this section, use the following definitions:
 
 *   **output latency**. The interval between when an application writes a frame
-of PCM-coded data and when the corresponding sound can be heard by an external
-listener or observed by a transducer.
+of PCM-coded data and when the corresponding sound is presented to environment at an on-device transducer
+or signal leaves the device via a port and can be observed externally.
 *   **cold output latency**. The output latency for the first frame, when the
 audio output system has been idle and powered down prior to the request.
 *   **continuous output latency**. The output latency for subsequent frames,
 after the device is playing audio.
-*   **input latency**. The interval between when an external sound is presented
-to the device and when an application reads the corresponding frame of
+*   **input latency**. The interval between when a sound is presented by environment to device
+at an on-device transducer or signal enters the device via a port
+and when an application reads the corresponding frame of
 PCM-coded data.
+*   **lost input**. The initial portion of an input signal that is unusable or unavailable.
 *   **cold input latency**. The sum of lost input time and the input latency
 for the first frame, when the audio input system has been idle and powered down
 prior to the request.
 *   **continuous input latency**. The input latency for subsequent frames,
 while the device is capturing audio.
-*   **cold output jitter**. The variance among separate measurements of cold
+*   **cold output jitter**. The variability among separate measurements of cold
 output latency values.
-*   **cold input jitter**. The variance among separate measurements of cold
+*   **cold input jitter**. The variability among separate measurements of cold
 input latency values.
 *   **continuous round-trip latency**. The sum of continuous input latency plus
-continuous output latency plus one buffer period. The buffer period term allows
-processing time for the app and for the app to mitigate phase difference
+continuous output latency plus one buffer period. The buffer period allows
+time for the app to process the signal and time for the app to mitigate phase difference
 between input and output streams.
 *   **OpenSL ES PCM buffer queue API**. The set of PCM-related OpenSL ES APIs
 within [Android NDK](https://developer.android.com/ndk/index.html).
