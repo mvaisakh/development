@@ -37,6 +37,8 @@ be worn on the body, perhaps on the wrist, and:
 Android as an operating system for part or all of the system and/or
 infotainment functionality. Android Automotive implementations:
 
+*   MUST have a screen with the physical diagonal length equal to or greater
+    than 6 inches.
 *   MUST declare the feature android.hardware.type.automotive.
 *   MUST support uiMode =
     [UI_MODE_TYPE_CAR](http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR).
@@ -45,4 +47,3 @@ All Android device implementations that do not fit into any of the above device
 types still MUST meet all requirements in this document to be Android
 ANDROID_VERSION compatible, unless the requirement is explicitly described to
 be only applicable to a specific Android device type from above.
-
