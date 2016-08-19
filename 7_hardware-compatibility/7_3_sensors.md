@@ -71,8 +71,9 @@ exceed the sum of the individual sensor’s reported power consumption.
 ### 7.3.1\. Accelerometer
 
 Device implementations SHOULD include a 3-axis accelerometer. Android Handheld
-devices and Android Watch devices are STRONGLY RECOMMENDED to include this
-sensor. If a device implementation does include a 3-axis accelerometer, it:
+devices, Android Automotive implementations, and Android Watch devices are STRONGLY
+RECOMMENDED to include this sensor. If a device implementation does include a
+3-axis accelerometer, it:
 
 *   MUST implement and report [TYPE_ACCELEROMETER
 sensor](http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER).
@@ -82,7 +83,8 @@ Hz for all other device types.
 *   SHOULD report events up to at least 200 Hz.
 *   MUST comply with the [Android sensor coordinate
 system](http://developer.android.com/reference/android/hardware/SensorEvent.html)
-as detailed in the Android APIs.
+as detailed in the Android APIs. Android Automotive implementations MUST comply
+with the Android [car sensor coordinate system](http://source.android.com/devices/sensors/sensor-types.html#auto_axes).
 *   MUST be capable of measuring from freefall up to four times the gravity
 (4g) or more on any axis.
 *   MUST have a resolution of at least 12-bits and SHOULD have a resolution of
@@ -238,6 +240,13 @@ Device implementations MAY but SHOULD NOT include a CPU temperature sensor. If
 present, it MUST be defined as SENSOR_TYPE_TEMPERATURE, it MUST measure the
 temperature of the device CPU, and it MUST NOT measure any other temperature.
 Note the SENSOR_TYPE_TEMPERATURE sensor type was deprecated in Android 4.0.
+
+<div class="note">
+
+For Android Automotive implementations, SENSOR_TYPE_AMBIENT_TEMPERATURE MUST
+measure the temperature inside the vehicle cabin.
+
+</div>
 
 ### 7.3.7\. Photometer
 
