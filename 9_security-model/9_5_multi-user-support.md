@@ -12,6 +12,9 @@ provides support for full user isolation. Device implementations MAY enable
 multiple users, but when enabled MUST meet the following requirements related
 to [multi-user support](http://source.android.com/devices/storage/traditional.html):
 
+*   Android Automotive device implementations with multi-user support enabled
+MUST include a guest account that allows all functions provided by the vehicle
+system without requiring a user to log in.
 *   Device implementations that do not declare the android.hardware.telephony
 feature flag MUST support restricted profiles, a feature that allows device
 owners to manage additional users and their capabilities on the device. With
