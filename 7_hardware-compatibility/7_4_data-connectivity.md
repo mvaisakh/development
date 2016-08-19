@@ -82,8 +82,9 @@ worse than going through the Wi-Fi access point.
 
 <div class="note">
 
-Android Watch and Automotive implementations MUST support Bluetooth. Android
-Television implementations MUST support Bluetooth and Bluetooth LE.
+Android Watch implementations MUST support Bluetooth. Android Television
+implementations MUST support Bluetooth and Bluetooth LE. Android Automotive
+implementations MUST support Bluetooth and SHOULD support Bluetooth LE.
 
 </div>
 
@@ -93,8 +94,16 @@ Energy](http://developer.android.com/reference/android/bluetooth/package-summary
 Energy MUST declare the relevant platform features (android.hardware.bluetooth
 and android.hardware.bluetooth_le respectively) and implement the platform
 APIs. Device implementations SHOULD implement relevant Bluetooth profiles such
-as A2DP, AVCP, OBEX, etc. as appropriate for the device. Android Television
-device implementations MUST support Bluetooth and Bluetooth LE.
+as A2DP, AVCP, OBEX, etc. as appropriate for the device.
+
+Android Automotive implementations SHOULD support Message Access Profile (MAP).
+Android Automotive implementations MUST support the following Bluetooth
+profiles:
+
+* Phone calling over Hands-Free Profile (HFP).
+* Media playback over Audio Distribution Profile (A2DP).
+* Media playback control over Remote Control Profile (AVRCP).
+* Contact sharing using the Phone Book Access Profile (PBAP).
 
 Device implementations including support for Bluetooth Low Energy:
 
@@ -296,4 +305,3 @@ Device implementations MUST have the master auto-sync setting on by default so
 that the method
 [getMasterSyncAutomatically()](http://developer.android.com/reference/android/content/ContentResolver.html)
 returns “true”.
-
