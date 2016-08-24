@@ -26,3 +26,7 @@ android.software.midi.
 implementation is STRONGLY RECOMMENDED to comply with section [Mobile device
 (jack) specifications](https://source.android.com/accessories/headset/specification.html#mobile_device_jack_specifications)
 of the [Wired Audio Headset Specification (v1.1)](https://source.android.com/accessories/headset/specification.html).
+
+Latencies and USB audio requirements MUST be met using the
+[OpenSL ES](https://developer.android.com/ndk/guides/audio/opensl-for-android.html)
+PCM buffer queue API.
