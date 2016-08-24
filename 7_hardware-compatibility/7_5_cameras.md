@@ -66,20 +66,22 @@ application callbacks or committed to media storage.
 
 ### 7.5.3\. External Camera
 
-Device implementations with USB host mode MAY include support for an external
-camera that connects to the USB port. If a device includes support for an
-external camera, it:
+Device implementations MAY include support for an external camera that is not
+necessarily always connected. If a device includes support for an external camera,
+it:
 
-*   MUST declare the platform feature android.hardware.camera.external and
-android.hardware camera.any.
-*   MUST support USB Video Class (UVC 1.0 or higher).
+
+*   MUST declare the platform feature flag `android.hardware.camera.external` and
+    `android.hardware camera.any`.
 *   MAY support multiple cameras.
-
-Video compression (such as MJPEG) support is RECOMMENDED to enable transfer of
-high-quality unencoded streams (i.e. raw or independently compressed picture
-streams). Camera-based video encoding MAY be supported. If so, a simultaneous
-unencoded/ MJPEG stream (QVGA or greater resolution) MUST be accessible to the
-device implementation.
+*   MUST support USB Video Class (UVC 1.0 or higher) if the external camera
+    connects through the USB port.
+*   SHOULD support video compressions such as MJPEG to enable transfer of
+    high-quality unencoded streams (i.e. raw or independently compressed picture
+    streams).
+*   MAY support camera-based video encoding. If supported, a simultaneous
+    unencoded / MJPEG stream (QVGA or greater resolution) MUST be accessible to
+    the device implementation.
 
 ### 7.5.4\. Camera API Behavior
 
