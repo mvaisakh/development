@@ -204,13 +204,14 @@ including the recents function navigation key as detailed in
 [section 7.2.3](#7_2_3_navigation_keys) MAY alter the interface but MUST meet the
 following requirements:
 
-*   MUST display affiliated recents as a group that moves together.
 *   MUST support at least up to 20 displayed activities.
-*   SHOULD at least display the title of 4 activities at a time.
-*   SHOULD display highlight color, icon, screen title in recents.
-*   MUST implement the [screen pinning behavior](http://developer.android.com/about/versions/android-5.0.html#ScreenPinning)]
+*   MUST at least display the title of 4 activities at a time.
+*   MUST implement the [screen pinning behavior](http://developer.android.com/about/versions/android-5.0.html#ScreenPinning)
     and provide the user with a settings menu to toggle the feature.
+*   SHOULD display highlight color, icon, screen title in recents.
 *   SHOULD display a closing affordance ("x") but MAY delay this until user interacts with screens.
+*   SHOULD implement a shortcut to switch easily to the previous activity
+*   MAY display affiliated recents as a group that moves together.
 
 Device implementations are STRONGLY RECOMMENDED to use the upstream Android user
 interface (or a similar thumbnail-based interface) for the overview screen.
