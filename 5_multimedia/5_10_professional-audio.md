@@ -30,3 +30,31 @@ of the [Wired Audio Headset Specification (v1.1)](https://source.android.com/acc
 Latencies and USB audio requirements MUST be met using the
 [OpenSL ES](https://developer.android.com/ndk/guides/audio/opensl-for-android.html)
 PCM buffer queue API.
+
+In addition, a device implementation that reports support for this feature SHOULD:
+
+*   Provide a sustainable level of CPU performance while audio is active.
+*   Minimize audio clock inaccuracy and drift relative to standard time.
+*   Minimize audio clock drift relative to the CPU `CLOCK_MONOTONIC` when both are active.
+*   Minimize audio latency over on-device transducers.
+*   Minimize audio latency over USB digital audio.
+*   Document audio latency measurements over all paths.
+*   Minimize jitter in audio buffer completion callback entry times, as this affects usable percentage of full CPU bandwidth by the callback.
+*   Provide zero audio underruns (output) or overruns (input) under normal use at reported latency.
+*   Provide zero inter-channel latency difference.
+*   Minimize MIDI mean latency over all transports.
+*   Minimize MIDI latency variability under load (jitter) over all transports.
+*   Provide accurate MIDI timestamps over all transports.
+*   Minimize audio signal noise over on-device transducers, including the period immediately after cold start.
+*   Provide zero audio clock difference between the input and output sides of corresponding
+    end-points, when both are active.  Examples of corresponding end-points include
+    the on-device microphone and speaker, or the audio jack input and output.
+*   Handle audio buffer completion callbacks for the input and output sides of corresponding
+    end-points on the same thread when both are active, and enter the output callback immediately
+    after the return from the input callback.  Or if it is not feasible to handle the callbacks
+    on the same thread, then enter the output callback shortly after entering the input callback
+    to permit the application to have a consistent timing of the input and output sides.
+*   Minimize the phase difference between HAL audio buffering for the input and output
+    sides of corresponding end-points.
+*   Minimize touch latency.
+*   Minimize touch latency variability under load (jitter).
