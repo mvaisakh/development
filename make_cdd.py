@@ -33,7 +33,7 @@ def get_section_info(my_path):
   # for rootdir, subdirs, files in os.walk(my_path):
   for dir in get_immediate_subdirs(my_path):
     # for dir  in subdirs:
-    if (not dir.isalpha() and dir != 'older-versions'):
+    if (not dir.isalpha() and dir != 'older-versions' and dir != '.git'):
       child_data = []
       print 'dir = ' + dir
       for file in os.listdir(dir):
