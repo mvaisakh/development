@@ -1,9 +1,9 @@
 ## 9.7\. Kernel Security Features
 
 The Android Sandbox includes features that use the Security-Enhanced Linux
-(SELinux) mandatory access control (MAC) system and other security features in
-the Linux kernel. SELinux or any other security features implemented below the
-Android framework:
+(SELinux) mandatory access control (MAC) system, seccomp sandboxing, and other
+security features in the Linux kernel. SELinux or any other security features
+implemented below the Android framework:
 
 *   MUST maintain compatibility with existing applications.
 *   MUST NOT have a visible user interface when a security violation is
@@ -35,4 +35,11 @@ external/sepolicy folder of the upstream Android Open Source Project and only
 further add to this policy for their own device-specific configuration. Device
 implementations MUST be compatible with the upstream Android Open Source
 Project.
+
+Devices MUST implement a kernel application sandboxing mechanism which allows
+filtering of system calls using a configurable policy from multithreaded
+programs. The upstream Android Open Source Project meets this requirement
+through enabling the seccomp-BPF with threadgroup synchronization (TSYNC) as
+described (here)[http://source.android.com/security/overview/kernel-security.html#seccomp-with-tsync].
+
 
