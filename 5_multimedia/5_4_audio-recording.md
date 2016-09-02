@@ -33,18 +33,21 @@ filter.
 
 ### 5.4.2\. Capture for Voice Recognition
 
+The android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION audio source MUST
+support capture at one of the sampling rates, 44100 and 48000.
+
 In addition to the above recording specifications, when an application has
 started recording an audio stream using the
 android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION audio source:
 
 *   The device SHOULD exhibit approximately flat amplitude versus frequency
-characteristics: specifically, ±3 dB, from 100 Hz to 4000 Hz.
+    characteristics: specifically, ±3 dB, from 100 Hz to 4000 Hz.
 *   Audio input sensitivity SHOULD be set such that a 90 dB sound power level
-(SPL) source at 1000 Hz yields RMS of 2500 for 16-bit samples.
-*   PCM amplitude levels SHOULD linearly track input SPL changes over at least
-a 30 dB range from -18 dB to +12 dB re 90 dB SPL at the microphone.
+    (SPL) source at 1000 Hz yields RMS of 2500 for 16-bit samples.
+*   PCM amplitude levels SHOULD linearly track input SPL changes over at least a
+    30 dB range from -18 dB to +12 dB re 90 dB SPL at the microphone.
 *   Total harmonic distortion SHOULD be less than 1% for 1 kHz at 90 dB SPL
-input level at the microphone.
+    input level at the microphone.
 *   Noise reduction processing, if present, MUST be disabled.
 *   Automatic gain control, if present, MUST be disabled.
 
