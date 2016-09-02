@@ -151,8 +151,12 @@ Profile (enhanced AAC+)</td>
 android.hardware.microphone but optional for Android Watch device
 implementations.</p>
 
-<p class="table_footnote">2 Only downmix of 5.0/5.1 content is required;
-recording or rendering more than 2 channels is optional.</p>
+<p class="table_footnote">2 Recording or playback may be performed in mono
+or stereo, but the decoding of multichannel streams (i.e. more than two
+channels) through the default AAC audio decoder in the android.media.MediaCodec
+API must be performed without downmixing (e.g. a 5.0 AAC stream must be decoded
+to five channels of PCM, a 5.1 AAC stream must be decoded to six channels of
+PCM).</p>
 
 <p class="table_footnote">3 Required for Android Handheld device
 implementations.</p>
