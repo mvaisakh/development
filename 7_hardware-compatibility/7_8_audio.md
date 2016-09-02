@@ -63,15 +63,15 @@ support audio plugs with the OMTP pin-out order.
 *   MUST support the detection of microphone on the plugged in audio accessory,
 if the device implementation supports a microphone, and broadcast the
 android.intent.action.HEADSET_PLUG with the extra value microphone set as 1.
-*   SHOULD support the detection and mapping to the keycodes for the following
+*   MUST support the detection and mapping to the keycodes for the following
 3 ranges of equivalent impedance between the microphone and ground conductors
 on the audio plug:
     *   **70 ohm or less**: KEYCODE_HEADSETHOOK
     *   **210-290 Ohm**: KEYCODE_VOLUME_UP
     *   **360-680 Ohm**: KEYCODE_VOLUME_DOWN
-*   SHOULD support the detection and mapping to the keycode for the following
-range of equivalent impedance between the microphone and ground conductors on
-the audio plug:
+*   STRONGLY RECOMMENDED to detect and map to the keycode for the following
+range of equivalent impedance between the microphone and ground conductors
+on the audio plug:
     *   **110-180 Ohm:** KEYCODE_VOICE_ASSIST
 *   MUST trigger ACTION_HEADSET_PLUG upon a plug insert, but only after all
 contacts on plug are touching their relevant segments on the jack.
