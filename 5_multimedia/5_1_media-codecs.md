@@ -151,12 +151,22 @@ Profile (enhanced AAC+)</td>
 android.hardware.microphone but optional for Android Watch device
 implementations.</p>
 
-<p class="table_footnote">2 Recording or playback may be performed in mono
-or stereo, but the decoding of multichannel streams (i.e. more than two
-channels) through the default AAC audio decoder in the android.media.MediaCodec
-API must be performed without downmixing (e.g. a 5.0 AAC stream must be decoded
-to five channels of PCM, a 5.1 AAC stream must be decoded to six channels of
-PCM).</p>
+<p class="table_footnote">2 Recording or playback MAY be performed in mono
+or stereo, but the decoding of AAC input buffers of multichannel streams
+(i.e. more than two channels) to PCM through the default AAC audio decoder
+in the android.media.MediaCodec API, the following MUST be supported:
+<ul>
+<li>decoding is performed without downmixing (e.g. a 5.0 AAC stream must be
+decoded to five channels of PCM, a 5.1 AAC stream must be decoded to six
+channels of PCM),</li>
+<li>dynamic range metadata, as defined in "Dynamic Range Control (DRC)"
+in ISO/IEC 14496-3, and the android.media.MediaFormat DRC keys to
+configure the dynamic range-related behaviors of the audio decoder. The
+AAC DRC keys were introduced in API 21,and are:
+KEY_AAC_DRC_ATTENUATION_FACTOR, KEY_AAC_DRC_BOOST_FACTOR,
+KEY_AAC_DRC_HEAVY_COMPRESSION, KEY_AAC_DRC_TARGET_REFERENCE_LEVEL and
+KEY_AAC_ENCODED_TARGET_LEVEL</li>
+</ul></p>
 
 <p class="table_footnote">3 Required for Android Handheld device
 implementations.</p>
