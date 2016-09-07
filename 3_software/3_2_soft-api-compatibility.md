@@ -109,7 +109,8 @@ MUST conform.
     or code name identifying the configuration of the hardware features and
     industrial design of the device. The value of this field MUST be encodable
     as 7-bit ASCII and match the regular expression
-    &ldquo;^[a-zA-Z0-9_-]+$&rdquo;.</td>
+    &ldquo;^[a-zA-Z0-9_-]+$&rdquo;. This device name MUST NOT change during the
+    lifetime of the product.</td>
  </tr>
  <tr>
     <td>FINGERPRINT</td>
@@ -168,7 +169,8 @@ MUST conform.
     or code name of the specific product (SKU) that MUST be unique within the
     same brand. MUST be human-readable, but is not necessarily intended for view
     by end users. The value of this field MUST be encodable as 7-bit ASCII and
-    match the regular expression &ldquo;^[a-zA-Z0-9_-]+$&rdquo;.</td>
+    match the regular expression &ldquo;^[a-zA-Z0-9_-]+$&rdquo;. This product
+    name MUST NOT change during the lifetime of the product.</td>
  </tr>
  <tr>
     <td>SERIAL</td>
