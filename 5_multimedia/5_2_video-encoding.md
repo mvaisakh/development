@@ -1,19 +1,44 @@
 ## 5.2\. Video Encoding
 
 <div class="note">
-
 Video codecs are optional for Android Watch device implementations.
-
 </div>
 
-Android device implementations with H.263 encoders MUST support Baseline
-Profile Level 45.
+H.264, VP8, VP9 and HEVC video encoders—
 
-Android device implementations with H.264 codec support MUST support Baseline
-Profile Level 3 and the following SD (Standard Definition) video encoding
-profiles and SHOULD support Main Profile Level 4 and the following HD (High
-Definition) video encoding profiles. Android Television devices are STRONGLY
-RECOMMENDED to encode HD 1080p video at 30 fps.
+*   MUST support dynamically configurable bitrates.
+*   SHOULD support variable frame rates, where video encoder SHOULD determine
+instantaneous frame duration based on the timestamps of input buffers, and
+allocate its bit bucket based on that frame duration.
+
+H.263 and MPEG-4 video encoder SHOULD support dynamically configurable
+bitrates.
+
+All video encoders SHOULD meet the following bitrate targets over two sliding
+windows:
+
+*   It SHOULD be not more than ~15% over the bitrate between intraframe
+(I-frame) intervals.
+*   It SHOULD be not more than ~100% over the bitrate over a sliding window of
+1 second.
+
+### 5.2.1\. H.263
+
+Android device implementations with H.263 encoders MUST support Baseline Profile Level 45.
+
+### 5.2.2\. H-264
+
+Android device implementations with H.264 codec support&emdash;
+
+*   MUST support Baseline Profile Level 3.<br>
+    However, support for ASO (Arbitrary Slice Ordering), FMO (Flexible Macroblock
+    Ordering) and RS (Redundant Slices) is OPTIONAL. Moreover, to maintain
+    compatibility with other Android devices, it is RECOMMENDED that ASO, FMO
+    and RS are not used for Baseline Profile by encoders.
+*   MUST support the  SD (Standard Definition) video encoding profiles in the following table.
+*   SHOULD support Main Profile Level 4.
+*   SHOULD support the  HD (High Definition) video encoding profiles as indicated in the following table.
+*   In addition, Android Television devices are STRONGLY RECOMMENDED to encode HD 1080p video at 30 fps.
 
 <table>
  <tr>
@@ -50,8 +75,10 @@ RECOMMENDED to encode HD 1080p video at 30 fps.
 <p class="table_footnote">1 When supported by hardware, but STRONGLY RECOMMENDED
 for Android Television devices.</p>
 
+### 5.2.3\. VP8
 
-Android device implementations with VP8 codec support MUST support the SD video encoding profiles and SHOULD support the following HD (High Definition) video encoding profiles.
+Android device implementations with VP8 codec support MUST support the SD video 
+encoding profiles and SHOULD support the following HD (High Definition) video encoding profiles.
 
 <table>
  <tr>
