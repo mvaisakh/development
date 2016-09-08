@@ -429,9 +429,9 @@ underlying ambient light sensor MAY be the same as
 
 Android Automotive implementations MUST support driving status defined as
 SENSOR_TYPE_DRIVING_STATUS, with a default value of DRIVE_STATUS_UNRESTRICTED
-when the vehicle is fully stopped and parked. It is the responsibility of OEM
-to configure SENSOR_TYPE_DRIVING_STATUS in compliance with all laws and
-regulations that apply to markets where the product is shipping.
+when the vehicle is fully stopped and parked. It is the responsibility of device
+manufacturers to configure SENSOR_TYPE_DRIVING_STATUS in compliance with all
+laws and regulations that apply to markets where the product is shipping.
 
 #### 7.3.11.4\. Wheel Speed
 
