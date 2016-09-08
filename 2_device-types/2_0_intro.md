@@ -42,6 +42,8 @@ infotainment functionality. Android Automotive implementations:
 *   MUST declare the feature android.hardware.type.automotive.
 *   MUST support uiMode =
     [UI_MODE_TYPE_CAR](http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR).
+*   Android Automotive implementations MUST support all public APIs in the
+`android.car.*` namespace.
 
 All Android device implementations that do not fit into any of the above device
 types still MUST meet all requirements in this document to be Android
