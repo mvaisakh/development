@@ -169,7 +169,7 @@ does include a GPS/GNSS receiver and reports the capability to applications thro
          cycle.
 *   In open sky conditions after determining the location, while stationary or moving with less
     than 1 meter per second squared of acceleration:
-       * It MUST be able to determine location within 10 meters, and speed within 0.5 meters
+       * It MUST be able to determine location within 20 meters, and speed within 0.5 meters
          per second, at least 95% of the time.
        * It MUST simultaneously track and report via [GnssStatus.Callback](https://developer.android.com/reference/android/location/GnssStatus.Callback.html#GnssStatus.Callback()')
          at least 8 satellites from one constellation.
@@ -183,7 +183,7 @@ does include a GPS/GNSS receiver and reports the capability to applications thro
        * It MUST report GPS pseudoranges and pseudorange rates, that, in open-sky conditions
          after determining the location, while stationary or moving with less than 0.2 meter
          per second squared of acceleration, are sufficient to calculate position within
-         10 meters, and speed within 0.2 meters per second, at least 95% of the time.
+         20 meters, and speed within 0.2 meters per second, at least 95% of the time.
 
 Note that while some of the GPS requirements above are stated as STRONGLY RECOMMENDED, the
 Compatibility Definition for the next major version is expected to change these to a MUST.
