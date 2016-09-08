@@ -9,6 +9,9 @@ exposed by the [Android
 SDK](http://developer.android.com/reference/packages.html) or any API decorated
 with the “@SystemApi” marker in the upstream Android source code.
 
+Device implementations MUST support/preserve all classes, methods, and
+associated elements marked by the TestApi annotation (@TestApi).
+
 Device implementations MUST NOT omit any managed APIs, alter API interfaces or
 signatures, deviate from the documented behavior, or include no-ops, except
 where specifically allowed by this Compatibility Definition.
