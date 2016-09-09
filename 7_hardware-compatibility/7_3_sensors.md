@@ -437,3 +437,14 @@ laws and regulations that apply to markets where the product is shipping.
 
 Android Automotive implementations MUST provide vehicle speed defined as
 SENSOR_TYPE_CAR_SPEED.
+
+## 7.3.12\. Pose Sensor
+
+Device implementations MAY support pose sensor with 6 degrees of freedom. Android Handheld
+devices are RECOMMENDED to support this sensor. If a device implementation does support pose
+sensor with 6 degrees of freedom, it:
+
+*   MUST implement and report [`TYPE_POSE_6DOF`](https://developer.android.com/reference/android/hardware/Sensor.html#TYPE_POSE_6DOF)
+    sensor.
+*   MUST be more accurate than the rotation vector alone.
+
