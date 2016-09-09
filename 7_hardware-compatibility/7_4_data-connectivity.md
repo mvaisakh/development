@@ -88,6 +88,9 @@ implementations MUST support Bluetooth and SHOULD support Bluetooth LE.
 
 </div>
 
+Device implementations that support `android.hardware.vr.high_performance` feature MUST
+support Bluetooth 4.2 and Bluetooth LE Data Length Extension.
+
 Android includes support for [Bluetooth and Bluetooth Low
 Energy](http://developer.android.com/reference/android/bluetooth/package-summary.html)
 . Device implementations that include support for Bluetooth and Bluetooth Low
