@@ -58,9 +58,8 @@ Note that future releases of the Android NDK may introduce support for
 additional ABIs. If a device implementation is not compatible with an existing
 predefined ABI, it MUST NOT report support for any ABIs at all.
 
-Note that device implementations MUST include libGLESv3.so and it MUST symlink
-(symbolic link) to libGLESv2.so. in turn, MUST export all the OpenGL ES 3.1 and
-[Android Extension Pack](http://developer.android.com/guide/topics/graphics/opengl.html#aep)
+Note that device implementations MUST include libGLESv3.so and in turn, MUST export
+all the OpenGL ES 3.1 and [Android Extension Pack](http://developer.android.com/guide/topics/graphics/opengl.html#aep)
 function symbols as defined in the NDK release android-24. Although all the
 symbols must be present, only the corresponding functions for OpenGL ES versions
 and extensions actually supported by the device must be fully implemented.
