@@ -57,7 +57,7 @@ the range from 1.1 to 2.5 inches.
 *   Android Automotive devices MUST have a screen with the physical diagonal
 size greater than or equal to 6 inches.
 * Android Automotive devices MUST have a screen size of at least 750 dp x
-450 dp.
+480 dp.
 *   Other types of Android device implementations, with a physically integrated
 screen, MUST have a screen at least 2.5 inches in physical diagonal size.
 
