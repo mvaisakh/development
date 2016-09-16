@@ -169,8 +169,7 @@ peer-to-peer standards and protocols:
         *   SDP 1.0 (defined by the NFC Forum)
         *   [NDEF Push Protocol](http://static.googleusercontent.com/media/source.android.com/en/us/compatibility/ndef-push-protocol.pdf)
         *   SNEP 1.0 (defined by the NFC Forum)
-    *   MUST include support for [Android
-Beam](http://developer.android.com/guide/topics/connectivity/nfc/nfc.html):
+    *   MUST include support for [Android Beam](http://developer.android.com/guide/topics/connectivity/nfc/nfc.html):
 	*   MUST implement the SNEP default server. Valid NDEF messages
 received by the default SNEP server MUST be dispatched to applications using
 the android.nfc.ACTION_NDEF_DISCOVERED intent. Disabling Android Beam in
