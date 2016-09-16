@@ -221,6 +221,8 @@ MUST conform.
  </tr>
 </table>
 
+### 3.2.3\. Intent Compatibility
+
 #### 3.2.3.1\. Core Application Intents
 
 Android intents allow application components to request functionality from
