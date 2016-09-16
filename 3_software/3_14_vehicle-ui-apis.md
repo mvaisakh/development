@@ -1,6 +1,6 @@
-## 3.13\. Vehicle UI APIs
+## 3.14\. Vehicle UI APIs
 
-### 3.13.1\.  Vehicle Media UI
+### 3.14.1\.  Vehicle Media UI
 
 Any device implementation that [declares automotive support](https://developer.android.com/reference/android/content/pm/PackageManager.html?#FEATURE_AUTOMOTIVE?)
 MUST include a UI framework to support third-party apps consuming the
