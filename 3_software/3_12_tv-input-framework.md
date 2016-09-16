@@ -50,10 +50,14 @@ fields. The EPG MUST meet the following requirements:
 
 #### 3.12.1.2\. Navigation
 
-Android Television device input devices (i.e. remote control, remote control
-application, or game controller) MUST allow navigation to all actionable
-sections of the screen via the D-pad. D-pad up and down MUST be used to change
-live TV channels when there is no actionable section on the screen.
+The TV App MUST allow navigation for the following functions via the D-pad,
+Back, and Home keys on the Android Television device’s input device(s)
+(i.e. remote control, remote control application, or game controller):
+
+*   Changing TV channels
+*   Opening EPG
+*   Configuring and tuning to third-party TIF-based inputs
+*   Opening Settings menu
 
 The TV App SHOULD pass key events to HDMI inputs through CEC.
 
