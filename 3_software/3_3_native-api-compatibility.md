@@ -32,31 +32,47 @@ If a device implementation includes support for an Android ABI, it:
 *   SHOULD be built using the source code and header files available in the
     upstream Android Open Source Project
 
+Note that future releases of the Android NDK may introduce support for
+additional ABIs. If a device implementation is not compatible with an existing
+predefined ABI, it MUST NOT report support for any ABIs at all.
+
 The following native code APIs MUST be available to apps that include native code:
 
 *   libc (C library)
 *   libm (math library)
-*   Minimal support for C++
+*   libstdc++ (Minimal support for C++)
 *   JNI interface
 *   liblog (Android logging)
 *   libz (Zlib compression)
 *   libdl (dynamic linker)
-*   libGLESv1_CM.so (OpenGL ES 1.x)
+*   libGLESv1\_CM.so (OpenGL ES 1.x)
 *   libGLESv2.so (OpenGL ES 2.0)
 *   libGLESv3.so (OpenGL ES 3.x)
 *   libvukan.so (Vulkan)
 *   libEGL.so (native OpenGL surface management)
+*   libicui18n.so
+*   libicuuc.so
 *   libjnigraphics.so
 *   libOpenSLES.so (OpenSL ES 1.0.1 audio support)
 *   libOpenMAXAL.so (OpenMAX AL 1.0.1 support)
+*   libRS.so
 *   libandroid.so (native Android activity support)
 *   libmediandk.so (native media APIs support)
 *   libcamera2ndk.so
 *   Support for OpenGL, as described below
 
-Note that future releases of the Android NDK may introduce support for
-additional ABIs. If a device implementation is not compatible with an existing
-predefined ABI, it MUST NOT report support for any ABIs at all.
+The list of libraries in `/system/etc/public.libraries.txt` is the canonical
+source for this and MUST NOT be altered.
+
+Native libraries not listed above or in `/system/etc/public.libraries.txt`
+but implemented and provided in AOSP as system libraries are reserved and
+MUST NOT be exposed to third-party apps targeting API level 24 or higher.
+If a device implementation adds non-AOSP libraries that are intended to be
+exposed directly as API to third-party apps, the additional libraries should
+be in `/vendor/lib` or `/vendor/lib64` and must be listed in
+`/vendor/etc/public.libraries.txt`. The greylist in code in
+`bionic/linker/linker.cpp` MUST NOT be altered (greylisting will be removed
+in a future release).
 
 Note that device implementations MUST include libGLESv3.so and in turn, MUST export
 all the OpenGL ES 3.1 and [Android Extension Pack](http://developer.android.com/guide/topics/graphics/opengl.html#aep)
