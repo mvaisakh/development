@@ -29,9 +29,8 @@ Device implementations include the following requirements:
     response to the android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS
     intent.
 
-Additionally, device implementations SHOULD provide an implementation of an
-accessibility service on the device, and SHOULD provide a mechanism for users to
-enable the accessibility service during device setup. An open source
-implementation of an accessibility service is available from the
-[Eyes Free project](http://code.google.com/p/eyes-free/).
-
+Additionally, device implementations SHOULD provide implementations of accessibility
+services on the device comparable in or exceeding functionality of the [TalkBack](https://github.com/google/talkback)
+accessibility service. It SHOULD provide a mechanism in the out-of-box setup flow
+for users to enable relevant accessibility services, as well as options to adjust
+the font size, display size and magnification gestures.
