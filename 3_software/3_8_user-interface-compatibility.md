@@ -272,3 +272,32 @@ sans-serif-condensed, sans-serif-condensed-light—which MUST all be included fo
 the languages available on the device and full Unicode 7.0 coverage of Latin,
 Greek, and Cyrillic, including the Latin Extended A, B, C, and D ranges, and all
 glyphs in the currency symbols block of Unicode 7.0.
+
+### 3.8.14\. Multi-windows
+
+A device implementation MAY choose not to implement any multi-window modes, but
+if it has the capability to display multiple activities at the same time it
+MUST implement such multi-window mode(s) in accordance with the application
+behaviors and APIs described in the Android SDK
+[multi-window mode support documentation](https://developer.android.com/preview/features/multi-window.html)
+and meet the following requirements:
+
+*   Applications can indicate whether they are capable of operating in
+    multi-window mode in the AndroidManifest.xml file, either explicitly via the
+    [`android:resizeableActivity`](https://developer.android.com/reference/android/R.attr.html#resizeableActivity)
+    attribute or implicitly by having the targetSdkVersion > 24. Apps that
+    explicitly set this attribute to false in their manifest MUST not be
+    launched in multi-window mode. Apps that don't set the attribute in their
+    manifest file (targetSdkVersion < 24) can be launched in multi-window mode,
+    but the system MUST provide warning that the app may not work as expected in
+    multi-window mode.
+*   Device implementations MUST NOT offer split-screen or freeform mode
+    if both the screen height and width is less than 440 dp.
+*   Device implementations with screen size `xlarge` SHOULD support freeform mode.
+*   Android Television device implementations MUST support picture-in-picture (PIP) mode multi-window
+    and place the PIP multi-window in the top right corner when PIP is ON.
+*   Device implementations with PIP mode multi-window support
+    MUST allocate at least 240x135 dp for the PIP window.
+*   If the PIP multi-window mode is supported the [`KeyEvent.KEYCODE_WINDOW`](https://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_WINDOW)
+    key MUST be used to control the PIP window; otherwise, the key MUST be
+    available to the foreground activity.
