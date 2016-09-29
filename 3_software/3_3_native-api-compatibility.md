@@ -38,41 +38,40 @@ predefined ABI, it MUST NOT report support for any ABIs at all.
 
 The following native code APIs MUST be available to apps that include native code:
 
+*   libandroid.so (native Android activity support)
 *   libc (C library)
-*   libm (math library)
-*   libstdc++ (Minimal support for C++)
-*   JNI interface
-*   liblog (Android logging)
-*   libz (Zlib compression)
+*   libcamera2ndk.so
 *   libdl (dynamic linker)
+*   libEGL.so (native OpenGL surface management)
 *   libGLESv1\_CM.so (OpenGL ES 1.x)
 *   libGLESv2.so (OpenGL ES 2.0)
 *   libGLESv3.so (OpenGL ES 3.x)
-*   libvukan.so (Vulkan)
-*   libEGL.so (native OpenGL surface management)
 *   libicui18n.so
 *   libicuuc.so
 *   libjnigraphics.so
-*   libOpenSLES.so (OpenSL ES 1.0.1 audio support)
-*   libOpenMAXAL.so (OpenMAX AL 1.0.1 support)
-*   libRS.so
-*   libandroid.so (native Android activity support)
+*   liblog (Android logging)
 *   libmediandk.so (native media APIs support)
-*   libcamera2ndk.so
+*   libm (math library)
+*   libOpenMAXAL.so (OpenMAX AL 1.0.1 support)
+*   libOpenSLES.so (OpenSL ES 1.0.1 audio support)
+*   libRS.so
+*   libstdc++ (Minimal support for C++)
+*   libvukan.so (Vulkan)
+*   libz (Zlib compression)
+*   JNI interface
 *   Support for OpenGL, as described below
 
-The list of libraries in `/system/etc/public.libraries.txt` is the canonical
-source for this and MUST NOT be altered.
+For the native libraries listed above, the device implementation MUST NOT add
+or remove the public functions.
 
-Native libraries not listed above or in `/system/etc/public.libraries.txt`
-but implemented and provided in AOSP as system libraries are reserved and
-MUST NOT be exposed to third-party apps targeting API level 24 or higher.
-If a device implementation adds non-AOSP libraries that are intended to be
-exposed directly as API to third-party apps, the additional libraries should
-be in `/vendor/lib` or `/vendor/lib64` and must be listed in
-`/vendor/etc/public.libraries.txt`. The greylist in code in
-`bionic/linker/linker.cpp` MUST NOT be altered (greylisting will be removed
-in a future release).
+Native libraries not listed above but implemented and provided in AOSP as system
+libraries are reserved and MUST NOT be exposed to third-party apps targeting API
+level 24 or higher.
+
+Device implementations MAY add non-AOSP libraries and expose them directly as
+an API to third-party apps but the additional libraries SHOULD be in
+`/vendor/lib` or `/vendor/lib64` and MUST be listed in
+`/vendor/etc/public.libraries.txt`.
 
 Note that device implementations MUST include libGLESv3.so and in turn, MUST export
 all the OpenGL ES 3.1 and [Android Extension Pack](http://developer.android.com/guide/topics/graphics/opengl.html#aep)
