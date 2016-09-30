@@ -242,8 +242,7 @@ android.hardware.microphone, including Android Watch device implementations.</p>
     <td>Raw</td>
     <td></td>
     <td>REQUIRED</td>
-    <td>Uses the embedded JPEG if available. Renders DNG images if no preview
-       available.</td>
+    <td></td>
     <td>ARW (.arw), CR2 (.cr2), DNG (.dng), NEF (.nef), NRW (.nrw), ORF (.orf),
         PEF (.pef), RAF (.raf), RW2 (.rw2), SRW (.srw)</td>
  </tr>
