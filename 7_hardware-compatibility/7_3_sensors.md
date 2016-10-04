@@ -322,10 +322,10 @@ following sensor types meeting the quality requirements as below:
     *   MUST implement a non-wake-up form of this sensor with a buffering
         capability of at least 300 sensor events.
     *   MUST have a batching power consumption not worse than 2 mW.
-*   SENSOR_TYPE_ROTATION_VECTOR
+*   SENSOR_TYPE_GAME_ROTATION_VECTOR
+    *   MUST implement a non-wake-up form of this sensor with a buffering
+        capability of at least 300 sensor events.
     *   MUST have a batching power consumption not worse than 4 mW.
-*   SENSOR_TYPE_GAME_ROTATION_VECTOR MUST implement a non-wake-up form of this
-    sensor with a buffering capability of at least 300 sensor events.
 *   SENSOR_TYPE_SIGNIFICANT_MOTION
     *   MUST have a power consumption not worse than 0.5 mW when device is
         static and 1.5 mW when device is moving.
