@@ -65,7 +65,7 @@ navigation paradigm and therefore:
     functions.
 *   Android Watch device implementations MUST have the Home function available
     to the user, and the Back function except for when it is in `UI_MODE_TYPE_WATCH`.
-*   Android Watch device implementations, and no other Android deivce types,
+*   Android Watch device implementations, and no other Android device types,
     MAY consume the long press event on the key event [`KEYCODE_BACK`](http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_BACK)
     and omit it from being sent to the foreground application.
 *   Android Automotive implementations MUST provide the Home function and MAY
