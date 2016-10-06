@@ -269,7 +269,7 @@ in color glyph and when Android device implementations include an IME,
 it SHOULD provide an input method to the user for these emoji characters. 
 
 Android handheld devices SHOULD support the skin tone and diverse family emojis
-as specificed in the [Unicode Technical Report #51](http://unicode.org/reports/tr51).
+as specified in the [Unicode Technical Report #51](http://unicode.org/reports/tr51).
 
 Android includes support for Roboto 2 font with different
 weights—sans-serif-thin, sans-serif-light, sans-serif-medium, sans-serif-black,
