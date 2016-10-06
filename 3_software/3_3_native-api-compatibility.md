@@ -94,7 +94,7 @@ Device implementations, if including support of the Vulkan APIs:
 
 *   MUST report, one or more `VkPhysicalDevices` through the
     `vkEnumeratePhysicalDevices` call.
-*   Each enumarated `VkPhysicalDevices` MUST fully implement the Vulkan 1.0 API.
+*   Each enumerated `VkPhysicalDevices` MUST fully implement the Vulkan 1.0 API.
 *   MUST report the correct
     [`PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL)
     and [`PackageManager#FEATURE_VULKAN_HARDWARE_VERSION`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION)

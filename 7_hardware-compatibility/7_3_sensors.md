@@ -279,7 +279,7 @@ following sensor types meeting the quality requirements as below:
     *   MUST have a measurement range between at least -8g and +8g.
     *   MUST have a measurement resolution of at least 1024 LSB/G.
     *   MUST have a minimum measurement frequency of 12.5 Hz or lower.
-    *   MUST have a maxmium measurement frequency of 400 Hz or higher.
+    *   MUST have a maximum measurement frequency of 400 Hz or higher.
     *   MUST have a measurement noise not above 400uG/√Hz.
     *   MUST implement a non-wake-up form of this sensor with a buffering
         capability of at least 3000 sensor events.
@@ -293,7 +293,7 @@ following sensor types meeting the quality requirements as below:
     *   MUST have a measurement range between at least -1000 and +1000 dps.
     *   MUST have a measurement resolution of at least 16 LSB/dps.
     *   MUST have a minimum measurement frequency of 12.5 Hz or lower.
-    *   MUST have a maxmium measurement frequency of 200 Hz or higher.
+    *   MUST have a maximum measurement frequency of 200 Hz or higher.
     *   MUST have a measurement noise not above 0.014°/s/√Hz.
     *   SHOULD have a stationary bias stability of < 0.0002 °/s √Hz from 24-hour static dataset.
     *   SHOULD have a bias change vs. temperature of ≤ +/- 0.05 °/ s / °C.
@@ -307,7 +307,7 @@ following sensor types meeting the quality requirements as below:
     *   MUST have a measurement range between at least -900 and +900 uT.
     *   MUST have a measurement resolution of at least 5 LSB/uT.
     *   MUST have a minimum measurement frequency of 5 Hz or lower.
-    *   MUST have a maxmium measurement frequency of 50 Hz or higher.
+    *   MUST have a maximum measurement frequency of 50 Hz or higher.
     *   MUST have a measurement noise not above 0.5 uT.
 *   SENSOR_TYPE_MAGNETIC_FIELD_UNCALIBRATED with the same quality requirements
     as SENSOR_TYPE_GEOMAGNETIC_FIELD and in addition:
@@ -348,7 +348,7 @@ Also such a device MUST meet the following sensor subsystem requirements:
 Accelerometer, Gyroscope sensor and Magnetometer MUST be within 2.5
 milliseconds of each other.
 *   The Gyroscope sensor event timestamps MUST be on the same time base as the
-camera subsystem and within 1 millisconds of error.
+camera subsystem and within 1 milliseconds of error.
 *   High Fidelity sensors MUST deliver samples to applications within 5
 milliseconds from the time when the data is available on the physical sensor
 to the application.
