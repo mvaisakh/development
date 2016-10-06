@@ -31,7 +31,7 @@ The upstream Android Open Source Project provides a preferred implementation of
 this feature based on the Linux kernel feature dm-verity.
 
 Starting from Android 6.0, device implementations with Advanced Encryption
-Standard (AES) crypto perfomance above 50MiB/seconds MUST support verified boot
+Standard (AES) crypto performance above 50 MiB/seconds MUST support verified boot
 for device integrity.
 
 If a device implementation is already launched without supporting verified boot
