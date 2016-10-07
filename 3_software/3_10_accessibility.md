@@ -34,3 +34,7 @@ services on the device comparable in or exceeding functionality of the [TalkBack
 accessibility service. It SHOULD provide a mechanism in the out-of-box setup flow
 for users to enable relevant accessibility services, as well as options to adjust
 the font size, display size and magnification gestures.
+
+Also, note that if there is a preloaded accessibility service, it MUST be a Direct Boot aware
+{directBootAware} app if the device has encrypted storage using File Based
+Encryption (FBE).
