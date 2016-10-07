@@ -72,7 +72,7 @@ Android device implementations with H.264 decoders:
     <td>30 fps</td>
     <td>30 fps</td>
     <td>60 fps</td>
-    <td>30 fps / 60 fps<sup>2</sup></td>
+    <td>30 fps (60 fps<sup>2</sup>)</td>
  </tr>
  <tr>
     <th>Video bitrate</th>
@@ -93,20 +93,28 @@ implementations.</p>
 ### 5.3.5\. H.265 (HEVC)
 
 Android device implementations, when supporting H.265 codec as described in
-[section 5.1.3](#5_1_3_video_codecs), MUST support the Main Profile Level 3
-Main tier and the following SD video decoding profiles and SHOULD support the
-HD decoding profiles. Android Television devices MUST support the Main Profile
-Level 4.1 Main tier and the HD 1080p60 decoding profile and SHOULD support Main10
-Level 5 Main Tier profile and the UHD decoding profile.
+[section 5.1.3](#5_1_3_video_codecs):
+
+*   MUST support the Main Profile Level 3 Main tier and the SD video decoding profiles
+    as indicated in the following table.
+*   SHOULD support the HD decoding profiles as indicated in the following table.
+*   MUST support the HD decoding profiles as indicated in the following table
+    if there is a hardware decoder.
+*   In addition, Android Television devices:
+   *   MUST support the HD 720p decoding profile.
+   *   STRONGLY RECOMMENDED to support the HD 1080p decoding profile. If the HD 1080p
+       decoding profile is supported, it MUST support the Main Profile Level 4.1 Main tier.
+   *   SHOULD support the UHD decoding profile. If the UHD decoding profile is supported the 
+    codec MUST support Main10 Level 5 Main Tier profile.
 
 <table>
  <tr>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p<sup>1</sup></th>
-    <th>HD 1080p<sup>1</sup></th>
-    <th>UHD<sup>2</sup></th>
+    <th>HD 720p</th>
+    <th>HD 1080p</th>
+    <th>UHD</th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -121,7 +129,7 @@ Level 5 Main Tier profile and the UHD decoding profile.
     <td>30 fps</td>
     <td>30 fps</td>
     <td>30 fps</td>
-    <td>60 fps<sup>2</sup></td>
+    <td>30 fps (60 fps<sup>1</sup>)</td>
     <td>60 fps</td>
  </tr>
  <tr>
@@ -134,13 +142,8 @@ Level 5 Main Tier profile and the UHD decoding profile.
  </tr>
 </table>
 
-
-<p class="table_footnote">1 Required for Android Television device
-implementations, but for other type of devices only when supported by hardware.
-</p>
-
-<p class="table_footnote">2 STRONGLY RECOMMENDED for existing Android Television
-device implementations when supported by hardware.</p>
+<p class="table_footnote">1 REQUIRED for Android Television device
+implementations with H.265 hardware decoding.</p>
 
 
 ### 5.3.6\. VP8
@@ -170,8 +173,8 @@ Android device implementations, when supporting VP8 codec as described in
     <th>Video frame rate</th>
     <td>30 fps</td>
     <td>30 fps</td>
-    <td>30 fps / 60 fps<sup>2</sup></td>
-    <td>30 / 60 fps<sup>2</sup></td>
+    <td>30 fps (60 fps<sup>2</sup>)</td>
+    <td>30 (60 fps<sup>2</sup>)</td>
  </tr>
  <tr>
     <th>Video bitrate</th>
@@ -195,22 +198,23 @@ Android device implementations, when supporting VP9 codec as described in
 
 *   MUST support the SD video decoding profiles as indicated in the following table.
 *   SHOULD support the HD decoding profiles as indicated in the following table.
-*   MUST be able to decode the video resolution up to the width and height as
-    reported by the `Display.getSupportedModes()`.
-*   In addition, Android Television devices are—
-    *   STRONGLY RECOMMENDED to support the HD 1080p60 decoding profile.
-    *   SHOULD support the UHD decoding profile.
-        *   When the UHD video decoding profile is supported, it MUST support
-            8-bit color depth and SHOULD support VP9 Profile 2 (10-bit).
+*   MUST support the HD decoding profiles as indicated in the following table,
+    if there is a hardware decoder.
+*   In addition, Android Television devices:
+    *   MUST support the HD 720p decoding profile.
+    *   STRONGLY RECOMMENDED to support the HD 1080p decoding profile.
+    *   SHOULD support the UHD decoding profile. If the UHD video decoding
+        profile is supported, it MUST support 8-bit color depth and SHOULD
+        support VP9 Profile 2 (10-bit).
 
 <table>
  <tr>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p<sup>1</sup></th>
-    <th>HD 1080p<sup>2</sup></th>
-    <th>UHD<sup>2</sup></th>
+    <th>HD 720p</th>
+    <th>HD 1080p</th>
+    <th>UHD</th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -225,7 +229,7 @@ Android device implementations, when supporting VP9 codec as described in
     <td>30 fps</td>
     <td>30 fps</td>
     <td>30 fps</td>
-    <td>60 fps</td>
+    <td>30 fps (60 fps<sup>1</sup>)</td>
     <td>60 fps</td>
  </tr>
  <tr>
@@ -238,10 +242,5 @@ Android device implementations, when supporting VP9 codec as described in
  </tr>
 </table>
 
-
-<p class="table_footnote">1 Required for Android Television device
-implementations, but for other type of devices only when supported by hardware.
-</p>
-
-<p class="table_footnote">2 STRONGLY RECOMMENDED for existing Android Television
-device implementations when supported by hardware.</p>
+<p class="table_footnote">1 REQUIRED for Android Television
+device implementations with VP9 hardware decoding.</p>
