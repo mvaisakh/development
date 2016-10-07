@@ -19,6 +19,31 @@ implementation does include GSM or CDMA telephony, it MUST implement full
 support for the API for that technology. Device implementations that do not
 include telephony hardware MUST implement the full APIs as no-ops.
 
+#### 7.4.1.1\. Number Blocking Compatibility
+
+Android Telephony device implementations MUST include number blocking support
+and:
+
+*   MUST fully implement [BlockedNumberContract](http://developer.android.com/reference/android/provider/BlockedNumberContract.html)
+and the corresponding API as described in the SDK documentation.
+*   MUST block all calls and messages from a phone number in
+'BlockedNumberProvider' without any interaction with apps. The only exception
+is when number blocking is temporarily lifted as described in the SDK
+documentation.
+*   MUST NOT write to the [platform call log provider] (http://developer.android.com/reference/android/provider/CallLog.html)
+for a blocked call.
+*   MUST NOT write to the [Telephony provider] (http://developer.android.com/reference/android/provider/Telephony.html)
+for a blocked message.
+*   MUST implement a blocked numbers management UI, which is opened with the
+intent returned by TelecomManager.createManageBlockedNumbersIntent() method.
+*   MUST NOT allow secondary users to view or edit the blocked numbers on the
+device as the Android platform assumes the primary user to have full control
+of the telephony services, a single instance, on the device. All blocking
+related UI MUST be hidden for secondary users and the blocked list MUST still
+be respected.
+*   SHOULD migrate the blocked numbers into the provider when a device updates
+to Android 7.0.
+
 ### 7.4.2\. IEEE 802.11 (Wi-Fi)
 
 All Android device implementations SHOULD include support for one or more forms
