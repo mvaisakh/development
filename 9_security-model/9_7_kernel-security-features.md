@@ -26,12 +26,12 @@ Device implementations:
 *   MUST configure all domains in enforcing mode. No permissive mode domains
 are allowed, including domains specific to a device/vendor.
 *   MUST NOT modify, omit, or replace the neverallow rules present within the
-external/sepolicy folder provided in the upstream Android Open Source Project
+system/sepolicy folder provided in the upstream Android Open Source Project
 (AOSP) and the policy MUST compile with all neverallow rules present, for both
 AOSP SELinux domains as well as device/vendor specific domains.
 
 Device implementations SHOULD retain the default SELinux policy provided in the
-external/sepolicy folder of the upstream Android Open Source Project and only
+system/sepolicy folder of the upstream Android Open Source Project and only
 further add to this policy for their own device-specific configuration. Device
 implementations MUST be compatible with the upstream Android Open Source
 Project.
