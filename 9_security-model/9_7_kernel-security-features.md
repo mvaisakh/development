@@ -29,6 +29,10 @@ are allowed, including domains specific to a device/vendor.
 system/sepolicy folder provided in the upstream Android Open Source Project
 (AOSP) and the policy MUST compile with all neverallow rules present, for both
 AOSP SELinux domains as well as device/vendor specific domains.
+*   MUST split the media framework into multiple processes so that it
+is possible to more narrowly grant access for each process as
+[described](https://source.android.com/devices/media/framework-hardening.html#arch_changes)
+in the Android Open Source Project site.
 
 Device implementations SHOULD retain the default SELinux policy provided in the
 system/sepolicy folder of the upstream Android Open Source Project and only
