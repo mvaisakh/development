@@ -63,8 +63,8 @@ Managed profile capable devices are those devices that:
 
 Managed profile capable devices MUST:
 
-*   Declare the platform feature flag android.software.managed_users.
-*   Support managed profiles via the android.app.admin.DevicePolicyManager APIs.
+*   Declare the platform feature flag `android.software.managed_users`.
+*   Support managed profiles via the `android.app.admin.DevicePolicyManager` APIs.
 *   Allow one and only [one managed profile to be created](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE).
 *   Use an icon badge (similar to the AOSP upstream work badge) to represent the
     managed applications and widgets and other badged UI elements like
@@ -99,4 +99,18 @@ Managed profile capable devices MUST:
     device with multiple users enabled (see[section 9.5](#9_5_multi-user_support)),
     even though the managed profile is not counted as another user in addition
     to the primary user.
+*   Support the ability to specify a separate lock screen meeting the following
+    requirements to grant access to apps running in a managed profile.
+    *   Device implementations MUST honor the
+        [`DevicePolicyManager.ACTION_SET_NEW_PASSWORD`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_SET_NEW_PASSWORD)
+        intent and show an interface to configure a separate lock screen
+        credential for the managed profile.
+    *   The lock screen credentials of the managed profile MUST use the same
+        credential storage and management mechanisms as the parent profile,
+        as documented on the
+        [Android Open Source Project Site](http://source.android.com/security/authentication/index.html)
+    *   The DPC [password policies](https://developer.android.com/guide/topics/admin/device-admin.html#pwd)
+        MUST apply to only the managed profile's lock screen credentials unless
+        called upon the `DevicePolicyManager` instance returned by
+        [`getParentProfileInstance`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance(android.content.ComponentName).
 
