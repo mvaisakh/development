@@ -76,3 +76,7 @@ If a device implementation includes a USB port supporting host mode, it:
     Power Delivery for data and power role swapping.
 *   Devices with any type-A or type-AB ports MUST NOT ship with an adapter converting
     from this port to a type-C receptacle.
+*   MUST recognize any remotely connected MTP (Media Transfer Protocol) devices
+    and make their contents accessible through the `ACTION_GET_CONTENT`,
+    `ACTION_OPEN_DOCUMENT`, and `ACTION_CREATE_DOCUMENT` intents, if the Storage Access
+    Framework (SAF) is supported.
