@@ -67,7 +67,8 @@ existing notification resources, as above.
 
 Android Automotive implementations MAY manage the visibility and timing of
 notifications to mitigate driver distraction, but MUST display
-notifications that use [CarExtender](http://developer.android.com/reference/android/app/Notification.CarExtender.html)
+notifications that use
+<a href="https://developer.android.com/reference/android/app/Notification.CarExtender.html">CarExtender</a>
 when requested by applications.
 
 </div>
