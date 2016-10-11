@@ -2,6 +2,7 @@
 
 Devices MUST provide users with a mechanism to perform a "Factory Data Reset"
 that allows logical and physical deletion of all data except for the following:
+
    * The system image
    * Any operating system files required by the system image
 
