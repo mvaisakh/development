@@ -129,7 +129,7 @@ before saturating.
 below 200 µT, by placing the magnetometer far from dynamic (current-induced)
 and static (magnet-induced) magnetic fields.
 *   MUST have a resolution equal or denser than 0.6 µT and SHOULD have a
-resolution equal or denser than 0.2 µ.
+resolution equal or denser than 0.2 µT.
 *   SHOULD be temperature compensated.
 *   MUST support online calibration and compensation of the hard iron bias, and
 preserve the compensation parameters between device reboots.
@@ -154,8 +154,8 @@ does include a GPS/GNSS receiver and reports the capability to applications thro
 *   It is STRONGLY RECOMMENDED that the device continue to deliver normal GPS/GNSS
     outputs to applications during an emergency phone call and that location output
     not be blocked during an emergency phone call.
-*   It MUST support location outputs at a rate of at least 1Hz when requested via
-    LocationManager#requestLocationUpdate.
+*   It MUST support location outputs at a rate of at least 1 Hz when requested via
+    `LocationManager#requestLocationUpdate`.
 *   It MUST be able to determine the location in open-sky conditions (strong signals,
     negligible multipath, HDOP < 2) within 10 seconds (fast time to first fix), when
     connected to a 0.5 Mbps or faster data speed internet connection. This requirement
@@ -280,7 +280,7 @@ following sensor types meeting the quality requirements as below:
     *   MUST have a measurement resolution of at least 1024 LSB/G.
     *   MUST have a minimum measurement frequency of 12.5 Hz or lower.
     *   MUST have a maximum measurement frequency of 400 Hz or higher.
-    *   MUST have a measurement noise not above 400uG/√Hz.
+    *   MUST have a measurement noise not above 400 uG/√Hz.
     *   MUST implement a non-wake-up form of this sensor with a buffering
         capability of at least 3000 sensor events.
     *   MUST have a batching power consumption not worse than 3 mW.
@@ -411,7 +411,8 @@ Project.
 
 ### 7.3.11\. Android Automotive-only sensors
 
-Automotive-specific sensors are defined in the android.car.CarSensorManager API.
+Automotive-specific sensors are defined in the `android.car.CarSensorManager API`.
+
 
 #### 7.3.11.1\. Current Gear
 
