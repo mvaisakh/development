@@ -4,14 +4,14 @@
 Video codecs are optional for Android Watch device implementations.
 </div>
 
-Device implementations&emdash;
+Device implementations&mdash;
 
 *   MUST support dynamic video resolution and frame rate switching through the
     standard Android APIs within the same stream for all VP8, VP9, H.264, and
     H.265 codecs in real time and up to the maximum resolution supported by each
     codec on the device.
 
-*   Implementations that support the Dolby Vision decoder&emdash;
+*   Implementations that support the Dolby Vision decoder&mdash;
    *   MUST provide a Dolby Vision-capable extractor.
    *   MUST properly display Dolby Vision content on the device screen or on a
        standard video output port (e.g., HDMI).
@@ -46,7 +46,7 @@ Android device implementations with H.264 decoders:
     Main Profile Level 3.1 (including 720p30).
 *   SHOULD be capable of decoding videos with the HD (High Definition) profiles
     as indicated in the following table.
-*   In addition, Android Television devices&emdash;
+*   In addition, Android Television devices&mdash;
     *   MUST support High Profile Level 4.2 and the HD 1080p60 decoding profile.
     *   MUST be capable of decoding videos with both HD profiles as indicated
         in the following table and encoded with either the Baseline Profile, Main
@@ -194,13 +194,14 @@ implementations.</p>
 ### 5.3.7\. VP9
 
 Android device implementations, when supporting VP9 codec as described in
-[section 5.1.3](https://source.android.com/compatibility/android-cdd.html#5_1_3_video_codecs),:
+[section 5.1.3](https://source.android.com/compatibility/android-cdd.html#5_1_3_video_codecs):
 
 *   MUST support the SD video decoding profiles as indicated in the following table.
 *   SHOULD support the HD decoding profiles as indicated in the following table.
 *   MUST support the HD decoding profiles as indicated in the following table,
     if there is a hardware decoder.
 *   In addition, Android Television devices:
+
     *   MUST support the HD 720p decoding profile.
     *   STRONGLY RECOMMENDED to support the HD 1080p decoding profile.
     *   SHOULD support the UHD decoding profile. If the UHD video decoding
