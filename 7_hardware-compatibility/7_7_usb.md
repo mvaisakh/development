@@ -3,7 +3,7 @@
 Device implementations SHOULD support USB peripheral mode and SHOULD support USB
 host mode.
 
-## 7.7.1\. USB peripheral mode
+### 7.7.1\. USB peripheral mode
 
 If a device implementation includes a USB port supporting peripheral mode:
 
@@ -55,7 +55,7 @@ If a device implementation includes a USB port supporting peripheral mode:
     REQUIRE all type-C devices to support full interoperability with standard
     type-C chargers.
 
-## 7.7.2\. USB host mode
+### 7.7.2\. USB host mode
 
 If a device implementation includes a USB port supporting host mode, it:
 
