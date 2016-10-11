@@ -44,6 +44,6 @@ Devices MUST implement a kernel application sandboxing mechanism which allows
 filtering of system calls using a configurable policy from multithreaded
 programs. The upstream Android Open Source Project meets this requirement
 through enabling the seccomp-BPF with threadgroup synchronization (TSYNC) as
-described (here)[http://source.android.com/security/overview/kernel-security.html#seccomp-with-tsync].
+described [in the Kernel Configuration section of source.android.com](http://source.android.com/devices/tech/config/kernel.html#Seccomp-BPF-TSYNC).
 
 
