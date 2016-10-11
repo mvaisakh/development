@@ -1,4 +1,4 @@
-## 9.13\. Automotive Vehicle System Isolation
+## 9.14\. Automotive Vehicle System Isolation
 
 Android Automotive devices are expected to exchange data with critical vehicle
 subsystems, e.g., by using the [vehicle
