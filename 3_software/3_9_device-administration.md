@@ -16,22 +16,26 @@ feature android.software.device_admin.
 
 #### 3.9.1.1 Device owner provisioning
 
-If a device implementation declares the android.software.device_admin feature,
-the out of box setup flow MUST make it possible to enroll a Device Policy
-Controller (DPC) application as the
-[Device Owner app](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)).
+If a device implementation declares the `android.software.device_admin` feature
+then it MUST implement the provisioning of the [Device Owner app](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String))
+of a Device Policy Client (DPC) application as below:
+
+*   When the device implementation has no user data configured yet, it:
+    *    MUST report `true` for [`DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html\#isProvisioningAllowed\(java.lang.String\)).
+    *    MUST enroll the DPC application as the Device Owner app in response to
+         the intent action [`android.app.action.PROVISION_MANAGED_DEVICE`](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE).
+    *    MUST enroll the DPC application as the Device Owner app if the device
+         declare Near-Field Communications (NFC) support via the feature flag
+         `android.hardware.nfc` and receives an NFC message containing a record
+         with MIME type [`MIME_TYPE_PROVISIONING_NFC`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#MIME_TYPE_PROVISIONING_NFC).
+*   When the device implementation has user data, it:
+    *    MUST report `false` for the [`DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html\#isProvisioningAllowed\(java.lang.String\)).
+    *    MUST not enroll any DPC application as the Device Owner App any more.
+
 Device implementations MAY have a preinstalled application performing device
 administration functions but this application MUST NOT be set as the Device
 Owner app without explicit consent or action from the user or the administrator
 of the device.
-
-The device owner provisioning process (the flow initiated by
-[android.app.action.PROVISION_MANAGED_DEVICE](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE))
-user experience MUST align with the AOSP implementation.
-
-If the device implementation reports android.hardware.nfc, it MUST have NFC
-enabled, even during the out-of-box setup flow, in order to allow for
-[NFC provisioning of Device owners](https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc).
 
 #### 3.9.1.2 Managed profile provisioning
 
