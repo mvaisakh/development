@@ -80,3 +80,9 @@ If a device implementation includes a USB port supporting host mode, it:
     and make their contents accessible through the `ACTION_GET_CONTENT`,
     `ACTION_OPEN_DOCUMENT`, and `ACTION_CREATE_DOCUMENT` intents, if the Storage Access
     Framework (SAF) is supported.
+*   MUST, if using a Type-C USB port and including support for peripheral mode,
+    implement Dual Role Port functionality as defined by the USB Type-C
+    specification (section 4.5.1.3.3).
+*   SHOULD, if the Dual Role Port functionality is supported, implement the
+    Try.\* model that is most appropriate for the device form factor. For
+    example a handheld device SHOULD implement the Try.SNK model.
