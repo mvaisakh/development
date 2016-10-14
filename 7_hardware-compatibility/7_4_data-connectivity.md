@@ -76,18 +76,10 @@ support for Wi-Fi Direct, then it:
 
 #### 7.4.2.2\. Wi-Fi Tunneled Direct Link Setup
 
-<div class="note">
-
-Android Television device implementations MUST include support for Wi-Fi
-Tunneled Direct Link Setup (TDLS).
-
-</div>
-
-Android Television device implementations MUST include support for [Wi-Fi
+Device implementations SHOULD include support for [Wi-Fi
 Tunneled Direct Link Setup
 (TDLS)](http://developer.android.com/reference/android/net/wifi/WifiManager.html)
-and other types of Android device implementations SHOULD include support for
-Wi-Fi TDLS as described in the Android SDK Documentation. If a device
+as described in the Android SDK Documentation. If a device
 implementation does include support for TDLS and TDLS is enabled by the
 WiFiManager API, the device:
 
