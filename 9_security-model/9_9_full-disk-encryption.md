@@ -2,12 +2,11 @@
 
 <div class="note">
 
-Optional for Android device implementations without a lock screen.
+Optional for Android device implementations without a secure lock screen.
 
 </div>
 
-If the device implementation supports a secure lock screen reporting "`true`"
-for [KeyguardManager.isDeviceSecure()](http://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure()),
+If the device implementation supports a secure lock screen as described in section 9.11.1,
 then the device MUST support data storage encryption of the application private data (/data partition), as well as the
 application shared storage partition (/sdcard partition) if it is a permanent,
 non-removable part of the device.
@@ -64,8 +63,8 @@ Device implementations supporting FBE:
 The keys protecting CE and DE storage areas:
 
 - MUST be cryptographically bound to a hardware-backed Keystore. CE keys
-  must be bound to a user's lockscreen credentials. If the user has
-  specified no lockscreen credentials then the CE keys MUST be bound to
+  must be bound to a user's lock screen credentials. If the user has
+  specified no lock screen credentials then the CE keys MUST be bound to
   a default passcode.
 - MUST be unique and distinct, in other words no user's CE or DE key
   may match any other user's CE or DE keys.
@@ -79,9 +78,9 @@ this feature based on the Linux kernel ext4 encryption feature.
   (or greater) and a mode designed for storage (for example, AES-XTS,
   AES-CBC-ESSIV). The encryption key MUST NOT be written to storage at any time
   without being encrypted. Other than when in active use, the encryption key
-  SHOULD be AES encrypted with the lockscreen passcode stretched using a slow
+  SHOULD be AES encrypted with the lock screen credentials stretched using a slow
   stretching algorithm (e.g. PBKDF2 or scrypt). If the user has not specified
-  a lockscreen passcode or has disabled use of the passcode for encryption, the
+  a lock screen credentials or has disabled use of the passcode for encryption, the
   system SHOULD use a default passcode to wrap the encryption key. If the
   device provides a hardware-backed keystore, the password stretching algorithm
   MUST be cryptographically bound to that keystore. The encryption key MUST NOT
