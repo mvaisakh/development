@@ -18,14 +18,14 @@ feature android.software.device_admin.
 
 If a device implementation declares the `android.software.device_admin` feature
 then it MUST implement the provisioning of the [Device Owner app](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String))
-of a Device Policy Client (DPC) application as below:
+of a Device Policy Client (DPC) application as indicated below:
 
 *   When the device implementation has no user data configured yet, it:
     *    MUST report `true` for [`DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html\#isProvisioningAllowed\(java.lang.String\)).
     *    MUST enroll the DPC application as the Device Owner app in response to
          the intent action [`android.app.action.PROVISION_MANAGED_DEVICE`](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE).
     *    MUST enroll the DPC application as the Device Owner app if the device
-         declare Near-Field Communications (NFC) support via the feature flag
+         declares Near-Field Communications (NFC) support via the feature flag
          `android.hardware.nfc` and receives an NFC message containing a record
          with MIME type [`MIME_TYPE_PROVISIONING_NFC`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#MIME_TYPE_PROVISIONING_NFC).
 *   When the device implementation has user data, it:
