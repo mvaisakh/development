@@ -67,7 +67,7 @@ table; see relevant hardware sections for more detail.
     <td>Wi-Fi</td>
     <td><a href="#7_4_2_ieee_802.11">7.4.2. IEEE 802.11</a></td>
     <td>SHOULD</td>
-    <td> MUST</td>
+    <td>SHOULD</td>
     <td></td>
     <td>SHOULD</td>
     <td>SHOULD</td>
