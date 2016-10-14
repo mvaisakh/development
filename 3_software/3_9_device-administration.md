@@ -6,8 +6,8 @@ policies or performing remote wipe, through the
 [Android Device Administration API](http://developer.android.com/guide/topics/admin/device-admin.html)].
 Device implementations MUST provide an implementation of the
 [DevicePolicyManager](http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html)
-class. Device implementations that include support for PIN (numeric) or PASSWORD
-(alphanumeric) based lock screens MUST support the full range of
+class. Device implementations that supports a secure lock screen MUST implement
+the full range of
 [device administration](http://developer.android.com/guide/topics/admin/device-admin.html)
 policies defined in the Android SDK documentation and report the platform
 feature android.software.device_admin.
