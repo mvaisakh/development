@@ -77,7 +77,7 @@ Android includes support for various notifications, such as:
 
 *   **Rich notifications**. Interactive Views for ongoing notifications.
 *   **Heads-up notifications**. Interactive Views users can act on or dismiss without leaving the current app.
-*   **Lockscreen notifications**. Notifications shown over a lock screen with granular control on visibility.
+*   **Lock screen notifications**. Notifications shown over a lock screen with granular control on visibility.
 
 Android device implementations, when such notifications are made visible, MUST
 properly execute Rich and Heads-up notifications and include the title/name,
@@ -253,7 +253,7 @@ The Remote Control Client API is deprecated from Android 5.0 in favor of the
 that allows media applications to integrate with playback controls that are
 displayed on the lock screen. Device implementations that support a lock screen,
 unless an Android Automotive or Watch implementation, MUST display the
-Lockscreen Notifications including the Media Notification Template.
+Lock screen Notifications including the Media Notification Template.
 
 ### 3.8.11\. Screen savers (previously Dreams)
 
