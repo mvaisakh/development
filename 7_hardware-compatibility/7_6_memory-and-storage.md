@@ -31,16 +31,16 @@ density definitions.)
     <li class="table_list">mdpi or lower on large screens</li>
     <li class="table_list">ldpi or lower on extra large screens</li>
     </ul></td>
-    <td>424MB</td>
-    <td>704MB</td>
+    <td>512MB</td>
+    <td>816MB</td>
  </tr>
  <tr>
     <td><ul>
     <li class="table_list">xhdpi or higher on small/normal screens</li>
     <li class="table_list">hdpi or higher on large screens</li>
     <li class="table_list">mdpi or higher on extra large screens</li></ul></td>
-    <td>512MB</td>
-    <td>832MB</td>
+    <td>608MB</td>
+    <td>944MB</td>
  </tr>
  <tr>
     <td><ul>
