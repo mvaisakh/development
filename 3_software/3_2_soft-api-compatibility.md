@@ -1,28 +1,26 @@
 
 ## 3.2\. Soft API Compatibility
 
-In addition to the managed APIs from [section
-3.1](#3_1_managed_api_compatibility), Android also includes a significant
-runtime-only “soft” API, in the form of such things as intents, permissions,
-and similar aspects of Android applications that cannot be enforced at
-application compile time.
+In addition to the managed APIs from [section 3.1](#3_1_managed_api_compatibility),
+Android also includes a significant runtime-only “soft” API, in the form of such
+things as intents, permissions, and similar aspects of Android applications that
+cannot be enforced at application compile time.
 
 ### 3.2.1\. Permissions
 
 Device implementers MUST support and enforce all permission constants as
-documented by the [Permission reference
-page](http://developer.android.com/reference/android/Manifest.permission.html).
+documented by the [Permission reference page](http://developer.android.com/reference/android/Manifest.permission.html).
 Note that [section 9](#9_security_model_compatibility) lists additional
 requirements related to the Android security model.
 
 ### 3.2.2\. Build Parameters
 
-The Android APIs include a number of constants on the [android.os.Build
-class](http://developer.android.com/reference/android/os/Build.html) that are
-intended to describe the current device. To provide consistent, meaningful
-values across device implementations, the table below includes additional
-restrictions on the formats of these values to which device implementations
-MUST conform.
+The Android APIs include a number of constants on the
+[android.os.Build class](http://developer.android.com/reference/android/os/Build.html)
+that are intended to describe the current device. To provide consistent,
+meaningful values across device implementations, the table below includes
+additional restrictions on the formats of these values to which device
+implementations MUST conform.
 
 <table>
  <tr>
@@ -117,15 +115,15 @@ MUST conform.
     <td>A string that uniquely identifies this build. It SHOULD be reasonably
     human-readable. It MUST follow this template:
     <p class="small">$(BRAND)/$(PRODUCT)/<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;$(DEVICE):$(VERSION.RELEASE)/$(ID)/$(VERSION.INCREMENTAL):$(TYPE)/$(TAGS)</p>
-	<p>For example:</p>
-	<p class="small">acme/myproduct/<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;mydevice:ANDROID_VERSION/LMYXX/3359:userdebug/test-keys</p>
-	<p>The fingerprint MUST NOT include whitespace characters. If other fields
-	included in the template above have whitespace characters, they MUST be
-	replaced in the build fingerprint with another character, such as the
-	underscore ("_") character. The value of this field MUST be encodable as
-	7-bit ASCII.</p></td>
+        &nbsp;&nbsp;&nbsp;&nbsp;$(DEVICE):$(VERSION.RELEASE)/$(ID)/$(VERSION.INCREMENTAL):$(TYPE)/$(TAGS)</p>
+    <p>For example:</p>
+<p class="small">acme/myproduct/<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;mydevice:ANDROID_VERSION/LMYXX/3359:userdebug/test-keys</p>
+      <p>The fingerprint MUST NOT include whitespace characters. If other fields
+      included in the template above have whitespace characters, they MUST be
+      replaced in the build fingerprint with another character, such as the
+      underscore ("_") character. The value of this field MUST be encodable as
+      7-bit ASCII.</p></td>
  </tr>
  <tr>
     <td>HARDWARE</td>
@@ -250,8 +248,7 @@ exposed to other applications, implicitly or explicitly, through the
 #### 3.2.3.2\. Intent Resolution
 
 As Android is an extensible platform, device implementations MUST allow each
-intent pattern referenced in [section
-3.2.3.1](#3_2_3_1_core_application_intents) to be overridden by third-party
+intent pattern referenced in [section 3.2.3.1](#3_2_3_1_core_application_intents) to be overridden by third-party
 applications. The upstream Android open source implementation allows this by
 default; device implementers MUST NOT attach special privileges to system
 applications' use of these intent patterns, or prevent third-party applications
@@ -270,15 +267,13 @@ specifying the data URI “http://www.android.com” is more specific than the
 browser's core intent pattern for “http://”.
 
 Android also includes a mechanism for third-party apps to declare an
-authoritative default [app linking
-behavior](https://developer.android.com/training/app-links) for certain types
-of web URI intents. When such authoritative declarations are defined in an
-app's intent filter patterns, device implementations:
+authoritative default [app linking behavior](https://developer.android.com/training/app-links)
+for certain types of web URI intents. When such authoritative declarations are
+defined in an app's intent filter patterns, device implementations:
 
 *   MUST attempt to validate any intent filters by performing the validation
-steps defined in the [Digital Asset Links
-specification](https://developers.google.com/digital-asset-links) as
-implemented by the Package Manager in the upstream Android Open Source
+steps defined in the [Digital Asset Links specification](https://developers.google.com/digital-asset-links)
+as implemented by the Package Manager in the upstream Android Open Source
 Project.
 *   MUST attempt validation of the intent filters during the installation of
 the application and set all successfully validated UIR intent filters as
@@ -309,10 +304,10 @@ string in the android.* or com.android.* namespace. Device implementers MUST
 NOT include any Android components that honor any new intent or broadcast
 intent patterns using an ACTION, CATEGORY, or other key string in a package
 space belonging to another organization. Device implementers MUST NOT alter or
-extend any of the intent patterns used by the core apps listed in [section
-3.2.3.1](#3_2_3_1_core_application_intents). Device implementations MAY include
-intent patterns using namespaces clearly and obviously associated with their
-own organization. This prohibition is analogous to that specified for Java
+extend any of the intent patterns used by the core apps listed in
+[section 3.2.3.1](#3_2_3_1_core_application_intents). Device implementations MAY
+include intent patterns using namespaces clearly and obviously associated with
+their own organization. This prohibition is analogous to that specified for Java
 language classes in [section 3.6](#3_6_api_namespaces).
 
 #### 3.2.3.4\. Broadcast Intents
@@ -345,7 +340,6 @@ device implementation reports android.hardware.telephony.
 [android.settings.NFC_PAYMENT_SETTINGS](http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFC_PAYMENT_SETTINGS)
 intent to show a default app settings menu for Tap and Pay, if the device
 implementation reports android.hardware.nfc.hce.
-*   MUST honor the [`android.telecom.action.CHANGE_DEFAULT_DIALER`]
-(https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER)
+*   MUST honor the [android.telecom.action.CHANGE_DEFAULT_DIALER](https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER)
 intent to show a dialog to allow the user to change the default Phone application, if the
 device implementation reports `android.hardware.telephony`.

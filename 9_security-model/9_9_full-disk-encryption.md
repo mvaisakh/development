@@ -25,10 +25,10 @@ via implementing [File Based Encryption](https://source.android.com/security/enc
 
 ### 9.9.1\. Direct Boot
 
-All devices MUST implement the [Direct Boot
-mode](http://developer.android.com/preview/features/direct-boot.html) APIs even
+All devices MUST implement the
+[Direct Boot mode](http://developer.android.com/preview/features/direct-boot.html) APIs even
 if they do not support Storage Encryption. In particular, the
-LOCKED_BOOT_COMPLETED(https://developer.android.com/reference/android/content/Intent.html#LOCKED_BOOT_COMPLETED)
+[LOCKED_BOOT_COMPLETED](https://developer.android.com/reference/android/content/Intent.html#LOCKED_BOOT_COMPLETED)
 and
 [ACTION_USER_UNLOCKED](https://developer.android.com/reference/android/content/Intent.html#ACTION_USER_UNLOCKED)
 Intents must still be broadcast to signal Direct Boot aware applications that
