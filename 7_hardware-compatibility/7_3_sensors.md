@@ -293,7 +293,7 @@ following sensor types meeting the quality requirements as below:
     *   MUST have a measurement range between at least -1000 and +1000 dps.
     *   MUST have a measurement resolution of at least 16 LSB/dps.
     *   MUST have a minimum measurement frequency of 12.5 Hz or lower.
-    *   MUST have a maximum measurement frequency of 200 Hz or higher.
+    *   MUST have a maximum measurement frequency of 400 Hz or higher.
     *   MUST have a measurement noise not above 0.014°/s/√Hz.
     *   SHOULD have a stationary bias stability of < 0.0002 °/s √Hz from 24-hour static dataset.
     *   SHOULD have a bias change vs. temperature of ≤ +/- 0.05 °/ s / °C.
