@@ -72,7 +72,7 @@ support for Wi-Fi Direct, then it:
 
 *   MUST report the hardware feature android.hardware.wifi.direct.
 *   MUST support regular Wi-Fi operation.
-*   SHOULD support concurrent Wi-Fi and Wi-Fi Direct operation.
+*   SHOULD support Wi-Fi and Wi-Fi Direct operations concurrently.
 
 #### 7.4.2.2\. Wi-Fi Tunneled Direct Link Setup
 
@@ -85,7 +85,21 @@ WiFiManager API, the device:
 
 *   SHOULD use TDLS only when it is possible AND beneficial.
 *   SHOULD have some heuristic and NOT use TDLS when its performance might be
-worse than going through the Wi-Fi access point.
+    worse than going through the Wi-Fi access point.
+
+#### 7.4.2.3\. Wi-Fi Aware
+
+Device implementations SHOULD include support for [Wi-Fi
+Aware](http://www.wi-fi.org/discover-wi-fi/wi-fi-aware).
+If a device implementation includes support for Wi-Fi Aware
+and exposes the functionality to third-party apps, then it:
+
+*   MUST implement the `WifiAwareManager` APIs as described in the [SDK
+    documentation](http://developer.android.com/reference/android/net/wifi/aware/WifiAwareManager.html).
+*   MUST report the PackageManager hardware feature `android.hardware.wifi.aware`.
+*   MUST support Wi-Fi and Wi-Fi Aware operations concurrently.
+*   MUST randomize the Wi-Fi Aware management interface address at intervals
+    no longer then 30 minutes and whenever Wi-Fi Aware is enabled.
 
 ### 7.4.3\. Bluetooth
 
