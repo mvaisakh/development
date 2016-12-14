@@ -132,6 +132,18 @@ shared by displaying a white light around the edges of the screen. To ensure
 clear visibility to the end user, the indication MUST meet or exceed the
 duration and brightness of the Android Open Source Project implementation.
 
+This indication MAY be disabled by default for preinstalled apps using the Assist and
+VoiceInteractionService API, if all following requirements are met:
+
+*   The preinstalled app MUST request the context to be shared only when the
+    user invoked the app by one of the following means, and the app is running in the
+    foreground:
+    *   hotword invocation
+    *   input of the ASSIST navigation key/button/gesture
+
+*   The device implementation MUST provide an affordance to the end user to
+    enable the indication.
+
 ### 3.8.5\. Toasts
 
 Applications can use the [“Toast” API](http://developer.android.com/reference/android/widget/Toast.html) to
