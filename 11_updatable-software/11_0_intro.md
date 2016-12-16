@@ -21,11 +21,14 @@ is, the update mechanism MUST preserve application private data and application
 shared data. Note that the upstream Android software includes an update
 mechanism that satisfies this requirement.
 
-For device implementations that are launching with Android ANDROID_VERSION and
+For device implementations that are launching with Android 6.0 and
 later, the update mechanism SHOULD support verifying that the system image is
 binary identical to expected result following an OTA. The block-based OTA
 implementation in the upstream Android Open Source Project, added since Android
 5.1, satisfies this requirement.
+
+Also, device implementations SHOULD support [A/B system updates](https://source.android.com/devices/tech/ota/ab_updates.html).
+The AOSP implements this feature using the boot control HAL.
 
 If an error is found in a device implementation after it has been released but
 within its reasonable product lifetime that is determined in consultation with
