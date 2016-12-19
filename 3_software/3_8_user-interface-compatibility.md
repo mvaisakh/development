@@ -217,7 +217,7 @@ including the recents function navigation key as detailed in
 following requirements:
 
 *   MUST support at least up to 20 displayed activities.
-*   MUST at least display the title of 4 activities at a time.
+*   SHOULD at least display the title of 4 activities at a time.
 *   MUST implement the [screen pinning behavior](http://developer.android.com/about/versions/android-5.0.html#ScreenPinning)
     and provide the user with a settings menu to toggle the feature.
 *   SHOULD display highlight color, icon, screen title in recents.
