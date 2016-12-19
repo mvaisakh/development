@@ -77,14 +77,14 @@ this feature based on the Linux kernel ext4 encryption feature.
   (FDE). MUST use AES with a key of 128-bits
   (or greater) and a mode designed for storage (for example, AES-XTS,
   AES-CBC-ESSIV). The encryption key MUST NOT be written to storage at any time
-  without being encrypted. Other than when in active use, the encryption key
-  SHOULD be AES encrypted with the lock screen credentials stretched using a slow
-  stretching algorithm (e.g. PBKDF2 or scrypt). If the user has not specified
-  a lock screen credentials or has disabled use of the passcode for encryption, the
-  system SHOULD use a default passcode to wrap the encryption key. If the
-  device provides a hardware-backed keystore, the password stretching algorithm
-  MUST be cryptographically bound to that keystore. The encryption key MUST NOT
-  be sent off the device (even when wrapped with the user passcode and/or
-  hardware bound key). The upstream Android Open Source project provides a
-  preferred implementation of this feature based on the Linux kernel feature
-  dm-crypt.
+  without being encrypted. The user MUST be provided with the possibility to AES
+  encrypt the encryption key, except when it is in active use, with the lock
+  screen credentials stretched using a slow stretching algorithm
+  (e.g. PBKDF2 or scrypt). If the user has not specified a lock screen
+  credentials or has disabled use of the passcode for encryption, the system
+  SHOULD use a default passcode to wrap the encryption key. If the device
+  provides a hardware-backed keystore, the password stretching algorithm MUST
+  be cryptographically bound to that keystore. The encryption key MUST NOT be
+  sent off the device (even when wrapped with the user passcode and/or hardware
+  bound key). The upstream Android Open Source project provides a preferred
+  implementation of this feature based on the Linux kernel feature dm-crypt.
