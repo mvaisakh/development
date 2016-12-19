@@ -89,6 +89,20 @@ are posted or updated. Device implementations MUST correctly and promptly send
 notifications in their entirety to all such installed and user-enabled listener
 services, including any and all metadata attached to the Notification object.
 
+Handheld device implementations MUST support the behaviors of updating,
+removing, replying to, and bundling notifications as described in this
+[section](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Managing).
+
+Also, handheld device implementations MUST provide:
+
+*   The ability to control notifications directly in the notification shade.
+*   The visual affordance to trigger the control panel in the notification shade.
+*   The ability to BLOCK, MUTE and RESET notification preference from a
+    package, both in the inline control panel as well as in the settings app.
+
+All 6 direct subclasses of the `Notification.Style class` MUST be supported as
+described in the [SDK documents](https://developer.android.com/reference/android/app/Notification.Style.html).
+
 Device implementations that support the DND (Do not Disturb) feature MUST meet
 the following requirements:
 
