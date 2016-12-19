@@ -92,7 +92,10 @@ the following requirements:
 *   MUST display [Automatic DND rules](https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29)
     created by applications alongside the user-created and pre-defined rules.
 *   MUST honor the [`suppressedVisualEffects`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects)
-    values passed along the [`NotificationManager.Policy`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int, int, int, int%29).
+    values passed along the [`NotificationManager.Policy`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int, int, int, int%29)
+    and if an app has set any of the SUPPRESSED_EFFECT_SCREEN_OFF or
+    SUPPRESSED_EFFECT_SCREEN_ON flags, it SHOULD indicate to the user that the
+    visual effects are suppressed in the DND settings menu.
 
 ### 3.8.4\. Search
 
