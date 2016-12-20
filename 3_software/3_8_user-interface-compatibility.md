@@ -155,8 +155,10 @@ VoiceInteractionService API, if all following requirements are met:
     *   hotword invocation
     *   input of the ASSIST navigation key/button/gesture
 
-*   The device implementation MUST provide an affordance to the end user to
-    enable the indication.
+*   The device implementation MUST provide an affordance to enable the
+    indication, less than two navigations away from
+    (the default voice input and assistant app settings menu)
+    [section 3.2.3.5](#3_2_3_5_default_app_settings).
 
 ### 3.8.5\. Toasts
 
