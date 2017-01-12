@@ -393,8 +393,8 @@ Trusted Execution Environment (TEE) as documented in the
 on the Android Open Source Project site.
 *   MUST prevent adding a fingerprint without first establishing a chain of
 trust by having the user confirm existing or add a new device credential
-(PIN/pattern/password) using the TEE as implemented in the Android Open Source
-project.
+(PIN/pattern/password) that's secured by TEE; the Android Open Source Project
+    implementation provides the mechanism in the framework to do so.
 *   MUST NOT enable 3rd-party applications to distinguish between individual
 fingerprints.
 *   MUST honor the DevicePolicyManager.KEYGUARD_DISABLE_FINGERPRINT flag.
