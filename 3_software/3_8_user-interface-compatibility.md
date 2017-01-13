@@ -89,6 +89,20 @@ are posted or updated. Device implementations MUST correctly and promptly send
 notifications in their entirety to all such installed and user-enabled listener
 services, including any and all metadata attached to the Notification object.
 
+Handheld device implementations MUST support the behaviors of updating,
+removing, replying to, and bundling notifications as described in this
+[section](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Managing).
+
+Also, handheld device implementations MUST provide:
+
+*   The ability to control notifications directly in the notification shade.
+*   The visual affordance to trigger the control panel in the notification shade.
+*   The ability to BLOCK, MUTE and RESET notification preference from a
+    package, both in the inline control panel as well as in the settings app.
+
+All 6 direct subclasses of the `Notification.Style class` MUST be supported as
+described in the [SDK documents](https://developer.android.com/reference/android/app/Notification.Style.html).
+
 Device implementations that support the DND (Do not Disturb) feature MUST meet
 the following requirements:
 
@@ -131,6 +145,20 @@ Assist action MUST indicate clearly to the end user when the context is
 shared by displaying a white light around the edges of the screen. To ensure
 clear visibility to the end user, the indication MUST meet or exceed the
 duration and brightness of the Android Open Source Project implementation.
+
+This indication MAY be disabled by default for preinstalled apps using the Assist and
+VoiceInteractionService API, if all following requirements are met:
+
+*   The preinstalled app MUST request the context to be shared only when the
+    user invoked the app by one of the following means, and the app is running in the
+    foreground:
+    *   hotword invocation
+    *   input of the ASSIST navigation key/button/gesture
+
+*   The device implementation MUST provide an affordance to enable the
+    indication, less than two navigations away from
+    (the default voice input and assistant app settings menu)
+    [section 3.2.3.5](#3_2_3_5_default_app_settings).
 
 ### 3.8.5\. Toasts
 
