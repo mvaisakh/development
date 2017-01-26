@@ -33,11 +33,6 @@ support for platform feature android.software.app_widgets.
     in the Android SDK documentation for details.
 *   Device implementations that include support for lock screen MAY support
     application widgets on the lock screen.
-*   SHOULD trigger the fast-switch action between the two most recently used apps,
-    when the recents function key is tapped twice.
-*   SHOULD trigger the split-screen multiwindow-mode, if supported, when the recents
-    functions key is long pressed.
-
 
 ### 3.8.3\. Notifications
 
@@ -229,6 +224,10 @@ following requirements:
 *   SHOULD display a closing affordance ("x") but MAY delay this until user interacts with screens.
 *   SHOULD implement a shortcut to switch easily to the previous activity
 *   MAY display affiliated recents as a group that moves together.
+*   SHOULD trigger the fast-switch action between the two most recently used
+    apps, when the recents function key is tapped twice.
+*   SHOULD trigger the split-screen multiwindow-mode, if supported, when the
+    recents functions key is long pressed.
 
 Device implementations are STRONGLY RECOMMENDED to use the upstream Android user
 interface (or a similar thumbnail-based interface) for the overview screen.
