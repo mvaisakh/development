@@ -111,7 +111,7 @@ Device implementations, if not including support of the Vulkan APIs:
 
 *   MUST report 0 `VkPhysicalDevices` through the `vkEnumeratePhysicalDevices`
     call.
-*   MUST NOT delare any of the Vulkan feature flags
+*   MUST NOT declare any of the Vulkan feature flags
     [`PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL)
     and [`PackageManager#FEATURE_VULKAN_HARDWARE_VERSION`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION).
 
