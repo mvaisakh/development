@@ -19,8 +19,7 @@ characteristics:
 
 ### 5.5.2\. Audio Effects
 
-Android provides an [API for audio
-effects](http://developer.android.com/reference/android/media/audiofx/AudioEffect.html)
+Android provides an [API for audio effects](http://developer.android.com/reference/android/media/audiofx/AudioEffect.html)
 for device implementations. Device implementations that declare the feature
 android.hardware.audio.output:
 

@@ -76,8 +76,7 @@ Device implementations that run Android are **STRONGLY RECOMMENDED** to have at
 least 4GB of non-volatile storage for application private data so they will be
 able to upgrade to the future platform releases.
 
-The Android APIs include a [Download
-Manager](http://developer.android.com/reference/android/app/DownloadManager.html)
+The Android APIs include a [Download Manager](http://developer.android.com/reference/android/app/DownloadManager.html)
 that applications MAY use to download data files. The device implementation of
 the Download Manager MUST be capable of downloading individual files of at
 least 100MB in size to the default “cache” location.
@@ -135,15 +134,15 @@ implementations MAY use USB mass storage, but SHOULD use Media Transfer
 Protocol to satisfy this requirement. If the device implementation supports
 Media Transfer Protocol, it:
 
-*   SHOULD be compatible with the reference Android MTP host, [Android File
-Transfer](http://www.android.com/filetransfer).
+*   SHOULD be compatible with the reference Android MTP host,
+[Android File Transfer](http://www.android.com/filetransfer).
 *   SHOULD report a USB device class of 0x00.
 *   SHOULD report a USB interface name of 'MTP'.
 
 ### 7.6.3\. Adoptable Storage
 
-Device implementations are STRONGLY RECOMMENDED to implement [adoptable
-storage](http://source.android.com/devices/storage/adoptable.html) if the
+Device implementations are STRONGLY RECOMMENDED to implement
+[adoptable storage](http://source.android.com/devices/storage/adoptable.html) if the
 removable storage device port is in a long-term stable location, such as within
 the battery compartment or other protective cover.
 

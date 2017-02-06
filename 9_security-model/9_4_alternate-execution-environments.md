@@ -7,8 +7,8 @@ compromise the Android security model or the security of installed Android
 applications, as described in this section.
 
 Alternate runtimes MUST themselves be Android applications, and abide by the
-standard Android security model, as described elsewhere in [section
-9](#9_security_model_compatibility).
+standard Android security model, as described elsewhere in
+[section 9](#9_security_model_compatibility).
 
 Alternate runtimes MUST NOT be granted access to resources protected by
 permissions not requested in the runtime’s AndroidManifest.xml file via the
