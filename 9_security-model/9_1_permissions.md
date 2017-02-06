@@ -1,7 +1,7 @@
 ## 9.1\. Permissions
 
-Device implementations MUST support the [Android permissions
-model](http://developer.android.com/guide/topics/security/permissions.html) as
+Device implementations MUST support the
+[Android permissions model](http://developer.android.com/guide/topics/security/permissions.html) as
 defined in the Android developer documentation. Specifically, implementations
 MUST enforce each permission defined as described in the SDK documentation; no
 permissions may be omitted, altered, or ignored. Implementations MAY add
