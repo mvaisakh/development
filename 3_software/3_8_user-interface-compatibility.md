@@ -108,10 +108,10 @@ the following requirements:
 
 *   MUST implement an activity where the user can grant or deny the app access
     to DND policy configurations in response to the intent [ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS](https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS).
-*   MUST display [Automatic DND rules](https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule(android.app.AutomaticZenRule))
+*   MUST display [Automatic DND rules](https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29)
     created by applications alongside the user-created and pre-defined rules.
 *   MUST honor the [`suppressedVisualEffects`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects)
-    values passed along the [`NotificationManager.Policy`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy(int, int, int, int)).
+    values passed along the [`NotificationManager.Policy`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int, int, int, int%29).
 
 ### 3.8.4\. Search
 
@@ -208,7 +208,8 @@ to black (for details, refer to
 ### 3.8.7\. Live Wallpapers
 
 Android defines a component type and corresponding API and lifecycle that allows
-applications to expose one or more [“Live Wallpapers”](http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html)
+applications to expose one or more
+[“Live Wallpapers”](http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html)
 to the end user. Live wallpapers are animations, patterns, or similar images
 with limited input capabilities that display as a wallpaper, behind other
 applications.
