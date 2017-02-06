@@ -144,15 +144,14 @@ Because not all device implementations can fully support all the features of
 the android.hardware.camera2 API, device implementations MUST report the proper
 level of support with the
 [android.info.supportedHardwareLevel](https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL)
-property as described in the Android SDK and report the appropriate [framework
-feature flags](http://source.android.com/devices/camera/versioning.html).
+property as described in the Android SDK and report the appropriate
+[framework feature flags](http://source.android.com/devices/camera/versioning.html).
 
 Device implementations MUST also declare its Individual camera capabilities of
 android.hardware.camera2 via the android.request.availableCapabilities property
-and declare the appropriate [feature
-flags](http://source.android.com/devices/camera/versioning.html); a device must
-define the feature flag if any of its attached camera devices supports the
-feature.
+and declare the appropriate [feature flags](http://source.android.com/devices/camera/versioning.html);
+a device must define the feature flag if any of its attached camera devices
+supports the feature.
 
 Device implementations MUST broadcast the Camera.ACTION_NEW_PICTURE intent
 whenever a new picture is taken by the camera and the entry of the picture has
