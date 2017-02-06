@@ -6,8 +6,7 @@ This feature is optional for all device types.
 
 </div>
 
-Android includes [support for multiple
-users](http://developer.android.com/reference/android/os/UserManager.html) and
+Android includes [support for multiple users](http://developer.android.com/reference/android/os/UserManager.html) and
 provides support for full user isolation. Device implementations MAY enable
 multiple users, but when enabled MUST meet the following requirements related
 to [multi-user support](http://source.android.com/devices/storage/traditional.html):
@@ -26,9 +25,8 @@ android.hardware.telephony feature flag MUST NOT support restricted profiles
 but MUST align with the AOSP implementation of controls to enable /disable
 other users from accessing the voice calls and SMS.
 *   Device implementations MUST, for each user, implement a security model
-consistent with the Android platform security model as defined in [Security and
-Permissions reference
-document](http://developer.android.com/guide/topics/security/permissions.html)
+consistent with the Android platform security model as defined in
+[Security and Permissions reference document](http://developer.android.com/guide/topics/security/permissions.html)
 in the APIs.
 *   Each user instance on an Android device MUST have separate and isolated
 external storage directories. Device implementations MAY store multiple users'
@@ -42,6 +40,6 @@ multiuser is enabled using a key stored only on non-removable media accessible
 only to the system. As this will make the media unreadable by a host PC, device
 implementations will be required to switch to MTP or a similar system to
 provide host PCs with access to the current user’s data. Accordingly, device
-implementations MAY but SHOULD NOT enable multi-user if they use [removable
-media](http://developer.android.com/reference/android/os/Environment.html) for
+implementations MAY but SHOULD NOT enable multi-user if they use
+[removable media](http://developer.android.com/reference/android/os/Environment.html) for
 primary external storage.

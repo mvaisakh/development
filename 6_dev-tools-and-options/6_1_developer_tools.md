@@ -16,7 +16,7 @@ known authenticated hosts. Device implementations MUST support secure adb.
 *   [**Dalvik Debug Monitor Service (ddms)**](http://developer.android.com/tools/debugging/ddms.html)
     *   Device implementations MUST support all ddms features as documented in the Android SDK.
     *   As ddms uses adb, support for ddms SHOULD be inactive by default, but MUST be supported whenever the user has activated the Android Debug Bridge, as above.
-*   [**Monkey**](http://developer.android.com/tools/help/monkey.html). Device
+*   [**Monkey**](http://developer.android.com/tools/help/monkey.html) Device
 implementations MUST include the Monkey framework, and make it available for
 applications to use.
 *   [**SysTrace**](http://developer.android.com/tools/help/systrace.html)

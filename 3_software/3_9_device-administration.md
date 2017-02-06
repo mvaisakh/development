@@ -55,7 +55,7 @@ has been disabled by the Device Policy Controller (DPC):
      info icon) to represent when a particular setting is restricted by a
      Device Admin.
 *    A short explanation message, as provided by the Device Admin via the
-     [`setShortSupportMessage`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage(android.content.ComponentName, java.lang.CharSequence).
+     [`setShortSupportMessage`](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage%28android.content.ComponentName, java.lang.CharSequence%29).
 *    The DPC application’s icon.
 
 ## 3.9.2 Managed Profile Support
@@ -117,5 +117,5 @@ Managed profile capable devices MUST:
     *   The DPC [password policies](https://developer.android.com/guide/topics/admin/device-admin.html#pwd)
         MUST apply to only the managed profile's lock screen credentials unless
         called upon the `DevicePolicyManager` instance returned by
-        <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance(android.content.ComponentName)">getParentProfileInstance</a>..
+        <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance%28android.content.ComponentName%29">getParentProfileInstance</a>.
 
