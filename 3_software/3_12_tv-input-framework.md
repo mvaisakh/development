@@ -81,7 +81,7 @@ time shifting for that program
 
 Android Television device implementations are STRONGLY RECOMMENDED to support
 TV recording. If the TV input supports recording, the EPG MAY provide a way to
-[record a program](https://developer.android.com/reference/android/media/tv/TvInputInfo.html#canRecord())
+[record a program](https://developer.android.com/reference/android/media/tv/TvInputInfo.html#canRecord%28%29)
 if the recording of such a program is not
 [prohibited](https://developer.android.com/reference/android/media/tv/TvContract.Programs.html#COLUMN_RECORDING_PROHIBITED).
 Device implementations SHOULD provide a user interface to play recorded programs.

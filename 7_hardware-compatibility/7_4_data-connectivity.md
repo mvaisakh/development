@@ -30,9 +30,9 @@ and the corresponding API as described in the SDK documentation.
 'BlockedNumberProvider' without any interaction with apps. The only exception
 is when number blocking is temporarily lifted as described in the SDK
 documentation.
-*   MUST NOT write to the [platform call log provider] (http://developer.android.com/reference/android/provider/CallLog.html)
+*   MUST NOT write to the [platform call log provider](http://developer.android.com/reference/android/provider/CallLog.html)
 for a blocked call.
-*   MUST NOT write to the [Telephony provider] (http://developer.android.com/reference/android/provider/Telephony.html)
+*   MUST NOT write to the [Telephony provider](http://developer.android.com/reference/android/provider/Telephony.html)
 for a blocked message.
 *   MUST implement a blocked numbers management UI, which is opened with the
 intent returned by TelecomManager.createManageBlockedNumbersIntent() method.
@@ -52,8 +52,7 @@ functionality to a third-party application, it MUST implement the corresponding
 Android API and:
 
 *   MUST report the hardware feature flag android.hardware.wifi.
-*   MUST implement the [multicast
-API](http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html)
+*   MUST implement the [multicast API](http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html)
 as described in the SDK documentation.
 *   MUST support multicast DNS (mDNS) and MUST NOT filter mDNS packets
 (224.0.0.251) at any time of operation including:
@@ -65,8 +64,8 @@ power states.
 
 Device implementations SHOULD include support for Wi-Fi Direct (Wi-Fi
 peer-to-peer). If a device implementation does include support for Wi-Fi
-Direct, it MUST implement the [corresponding Android
-API](http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html)
+Direct, it MUST implement the
+[corresponding Android API](http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html)
 as described in the SDK documentation. If a device implementation includes
 support for Wi-Fi Direct, then it:
 
@@ -77,8 +76,7 @@ support for Wi-Fi Direct, then it:
 #### 7.4.2.2\. Wi-Fi Tunneled Direct Link Setup
 
 Device implementations SHOULD include support for [Wi-Fi
-Tunneled Direct Link Setup
-(TDLS)](http://developer.android.com/reference/android/net/wifi/WifiManager.html)
+Tunneled Direct Link Setup (TDLS)](http://developer.android.com/reference/android/net/wifi/WifiManager.html)
 as described in the Android SDK Documentation. If a device
 implementation does include support for TDLS and TDLS is enabled by the
 WiFiManager API, the device:
@@ -114,13 +112,13 @@ implementations MUST support Bluetooth and SHOULD support Bluetooth LE.
 Device implementations that support `android.hardware.vr.high_performance` feature MUST
 support Bluetooth 4.2 and Bluetooth LE Data Length Extension.
 
-Android includes support for [Bluetooth and Bluetooth Low
-Energy](http://developer.android.com/reference/android/bluetooth/package-summary.html)
-. Device implementations that include support for Bluetooth and Bluetooth Low
+Android includes support for
+[Bluetooth and Bluetooth Low Energy](http://developer.android.com/reference/android/bluetooth/package-summary.html).
+Device implementations that include support for Bluetooth and Bluetooth Low
 Energy MUST declare the relevant platform features (android.hardware.bluetooth
-and android.hardware.bluetooth_le respectively) and implement the platform
-APIs. Device implementations SHOULD implement relevant Bluetooth profiles such
-as A2DP, AVCP, OBEX, etc. as appropriate for the device.
+and android.hardware.bluetooth_le respectively) and implement the platform APIs.
+Device implementations SHOULD implement relevant Bluetooth profiles such as
+A2DP, AVCP, OBEX, etc. as appropriate for the device.
 
 Android Automotive implementations SHOULD support Message Access Profile (MAP).
 Android Automotive implementations MUST support the following Bluetooth
@@ -141,8 +139,7 @@ described in the SDK documentation and
 timeout no longer than 15 minutes and rotate the address at timeout to protect
 user privacy.
 *   SHOULD support offloading of the filtering logic to the bluetooth chipset
-when implementing the [ScanFilter
-API](https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html),
+when implementing the [ScanFilter API](https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html),
 and MUST report the correct value of where the filtering logic is implemented
 whenever queried via the
 android.bluetooth.BluetoothAdapter.isOffloadedFilteringSupported() method.
@@ -160,8 +157,7 @@ Near-Field Communications (NFC). If a device implementation does include NFC
 hardware and plans to make it available to third-party apps, then it:
 
 *   MUST report the android.hardware.nfc feature from the
-[android.content.pm.PackageManager.hasSystemFeature()
-method](http://developer.android.com/reference/android/content/pm/PackageManager.html).
+[android.content.pm.PackageManager.hasSystemFeature() method](http://developer.android.com/reference/android/content/pm/PackageManager.html).
 *   MUST be capable of reading and writing NDEF messages via the following NFC
 standards:
     *   MUST be capable of acting as an NFC Forum reader/writer (as defined by
@@ -182,8 +178,7 @@ encouraged to meet these requirements now so they will be able to upgrade to
 the future platform releases.
         *   NfcV (ISO 15693)
     *   SHOULD be capable of reading the barcode and URL (if encoded) of
-[Thinfilm NFC
-Barcode](http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html)
+[Thinfilm NFC Barcode](http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html)
 products.
     *   MUST be capable of transmitting and receiving data via the following
 peer-to-peer standards and protocols:
@@ -193,35 +188,32 @@ peer-to-peer standards and protocols:
         *   [NDEF Push Protocol](http://static.googleusercontent.com/media/source.android.com/en/us/compatibility/ndef-push-protocol.pdf)
         *   SNEP 1.0 (defined by the NFC Forum)
     *   MUST include support for [Android Beam](http://developer.android.com/guide/topics/connectivity/nfc/nfc.html).
-	*   MUST implement the SNEP default server. Valid NDEF messages
+    *   MUST implement the SNEP default server. Valid NDEF messages
 received by the default SNEP server MUST be dispatched to applications using
 the android.nfc.ACTION_NDEF_DISCOVERED intent. Disabling Android Beam in
 settings MUST NOT disable dispatch of incoming NDEF message.
-	*   MUST honor the android.settings.NFCSHARING_SETTINGS intent to show
-[NFC sharing
-settings](http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS).
-	*   MUST implement the NPP server. Messages received by the NPP server
+    *   MUST honor the android.settings.NFCSHARING_SETTINGS intent to show
+[NFC sharing settings](http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS).
+    *   MUST implement the NPP server. Messages received by the NPP server
 MUST be processed the same way as the SNEP default server.
-	*   MUST implement a SNEP client and attempt to send outbound P2P NDEF
+    *   MUST implement a SNEP client and attempt to send outbound P2P NDEF
 to the default SNEP server when Android Beam is enabled. If no default SNEP
 server is found then the client MUST attempt to send to an NPP server.
-	*   MUST allow foreground activities to set the outbound P2P NDEF
+    *   MUST allow foreground activities to set the outbound P2P NDEF
 message using android.nfc.NfcAdapter.setNdefPushMessage, and
 android.nfc.NfcAdapter.setNdefPushMessageCallback, and
 android.nfc.NfcAdapter.enableForegroundNdefPush.
-	*   SHOULD use a gesture or on-screen confirmation, such as 'Touch to
+    *   SHOULD use a gesture or on-screen confirmation, such as 'Touch to
 Beam', before sending outbound P2P NDEF messages.
-	*   SHOULD enable Android Beam by default and MUST be able to send and
+    *   SHOULD enable Android Beam by default and MUST be able to send and
 receive using Android Beam, even when another proprietary NFC P2p mode is
 turned on.
-	*   MUST support NFC Connection handover to Bluetooth when the device
+    *   MUST support NFC Connection handover to Bluetooth when the device
 supports Bluetooth Object Push Profile. Device implementations MUST support
 connection handover to Bluetooth when using
-android.nfc.NfcAdapter.setBeamPushUris, by implementing the “[Connection
-Handover version
-1.2](http://members.nfc-forum.org/specs/spec_list/#conn_handover)” and
-“[Bluetooth Secure Simple Pairing Using NFC version
-1.0](http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf)”
+android.nfc.NfcAdapter.setBeamPushUris, by implementing the
+“[Connection Handover version 1.2](http://members.nfc-forum.org/specs/spec_list/#conn_handover)” and
+“[Bluetooth Secure Simple Pairing Using NFC version 1.0](http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf)”
 specs from the NFC Forum. Such an implementation MUST implement the handover
 LLCP service with service name “urn:nfc:sn:handover” for exchanging the
 handover request/select records over NFC, and it MUST use the Bluetooth Object
@@ -347,7 +339,7 @@ If a device implementation provides the data saver mode, it:
 Conversely if a device implementation does not provide the data saver mode, it:
 
 *   MUST return the value `RESTRICT_BACKGROUND_STATUS_DISABLED` for
-    [`ConnectivityManager.getRestrictBackgroundStatus()`](https://developer.android.com/reference/android/net/ConnectivityManager.html#getRestrictBackgroundStatus())
+    [`ConnectivityManager.getRestrictBackgroundStatus()`](https://developer.android.com/reference/android/net/ConnectivityManager.html#getRestrictBackgroundStatus%28%29)
 
 *   MUST not broadcast `ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED`
 
