@@ -48,12 +48,12 @@ declare android.hardware.audio.output.
 
 #### 7.8.2.1\. Analog Audio Ports
 
-In order to be compatible with the [headsets and other audio
-accessories](http://source.android.com/accessories/headset-spec.html) using the
-3.5mm audio plug across the Android ecosystem, if a device implementation
-includes one or more analog audio ports, at least one of the audio port(s)
-SHOULD be a 4 conductor 3.5mm audio jack. If a device implementation has a 4
-conductor 3.5mm audio jack, it:
+In order to be compatible with the
+[headsets and other audio accessories](http://source.android.com/accessories/headset-spec.html)
+using the 3.5mm audio plug across the Android ecosystem, if a device
+implementation includes one or more analog audio ports, at least one of the
+audio port(s) SHOULD be a 4 conductor 3.5mm audio jack. If a device
+implementation has a 4 conductor 3.5mm audio jack, it:
 
 *   MUST support audio playback to stereo headphones and stereo headsets with a
 microphone, and SHOULD support audio recording from stereo headsets with a
@@ -83,7 +83,7 @@ Ohm speaker impedance.
 
 Near-Ultrasound audio is the 18.5 kHz to 20 kHz band. Device implementations
 MUST correctly report the support of near-ultrasound audio capability via the
-[AudioManager.getProperty](http://developer.android.com/reference/android/media/AudioManager.html#getProperty(java.lang.String))
+[AudioManager.getProperty](http://developer.android.com/reference/android/media/AudioManager.html#getProperty%28java.lang.String%29)
 API as follows:
 
 *   If

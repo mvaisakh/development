@@ -28,7 +28,7 @@ Android device implementations with H.263 encoders MUST support Baseline Profile
 
 ### 5.2.2\. H-264
 
-Android device implementations with H.264 codec support&emdash;
+Android device implementations with H.264 codec support:
 
 *   MUST support Baseline Profile Level 3.<br>
     However, support for ASO (Arbitrary Slice Ordering), FMO (Flexible Macroblock
@@ -77,7 +77,7 @@ for Android Television devices.</p>
 
 ### 5.2.3\. VP8
 
-Android device implementations with VP8 codec support MUST support the SD video 
+Android device implementations with VP8 codec support MUST support the SD video
 encoding profiles and SHOULD support the following HD (High Definition) video encoding profiles.
 
 <table>

@@ -2,8 +2,7 @@
 
 Android includes facilities that automatically adjust application assets and UI
 layouts appropriately for the device to ensure that third-party applications
-run well on a [variety of hardware
-configurations](http://developer.android.com/guide/practices/screens_support.html).
+run well on a [variety of hardware configurations](http://developer.android.com/guide/practices/screens_support.html).
 Devices MUST properly implement these APIs and behaviors, as detailed in this
 section.
 
@@ -34,8 +33,7 @@ smaller screen sizes as described in this section.
 The Android UI framework supports a variety of different screen sizes, and
 allows applications to query the device screen size (aka “screen layout") via
 android.content.res.Configuration.screenLayout with the SCREENLAYOUT_SIZE_MASK.
-Device implementations MUST report the correct [screen
-size](http://developer.android.com/guide/practices/screens_support.html) as
+Device implementations MUST report the correct [screen size](http://developer.android.com/guide/practices/screens_support.html) as
 defined in the Android SDK documentation and determined by the upstream Android
 platform. Specifically, device implementations MUST report the correct screen
 size according to the following logical density-independent pixel (dp) screen
@@ -162,9 +160,8 @@ Devices MUST NOT change the reported screen size or density when changing orient
 Device implementations MUST support both OpenGL ES 1.0 and 2.0, as embodied and
 detailed in the Android SDK documentations. Device implementations SHOULD
 support OpenGL ES 3.0, 3.1, or 3.2 on devices capable of supporting it. Device
-implementations MUST also support [Android
-RenderScript](http://developer.android.com/guide/topics/renderscript/), as
-detailed in the Android SDK documentation.
+implementations MUST also support [Android RenderScript](http://developer.android.com/guide/topics/renderscript/),
+as detailed in the Android SDK documentation.
 
 Device implementations MUST also correctly identify themselves as supporting
 OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0, OpenGL 3.1, or OpenGL 3.2\. That is:

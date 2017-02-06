@@ -28,14 +28,12 @@ If a device implementation includes a USB port supporting peripheral mode:
     implementing the AOA specification:
     *   MUST declare support for the hardware feature
         [android.hardware.usb.accessory](http://developer.android.com/guide/topics/connectivity/usb/accessory.html).
-    *   MUST implement the [USB audio
-        class](http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO)as
-        documented in the Android SDK documentation.
+    *   MUST implement the [USB audio class](http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO)
+        as documented in the Android SDK documentation.
     *   The USB mass storage class MUST include the string "android" at the end
         of the interface description `iInterface` string of the USB mass storage
 *   It SHOULD implement support to draw 1.5 A current during HS chirp and
-    traffic as specified in the [USB Battery Charging specification, revision
-    1.2](http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip).
+    traffic as specified in the [USB Battery Charging specification, revision 1.2](http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip).
     Existing and new Android devices are **STRONGLY RECOMMENDED to meet these
     requirements** so they will be able to upgrade to the future platform
     releases.
@@ -63,8 +61,8 @@ If a device implementation includes a USB port supporting host mode, it:
 *   MAY use a non-standard port form factor, but if so MUST ship with a cable or
     cables adapting the port to a standard type-A or type-C USB port.
 *   MAY use a micro-AB USB port, but if so SHOULD ship with a cable or cables adapting the port to a standard type-A or type-C USB port.
-*   is **STRONGLY RECOMMENDED** to implement the [USB audio
-    class](http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO)
+*   is **STRONGLY RECOMMENDED** to implement the
+    [USB audio class](http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO)
     as documented in the Android SDK documentation.
 *   MUST implement the Android USB host API as documented in the Android SDK,
     and MUST declare support for the hardware feature

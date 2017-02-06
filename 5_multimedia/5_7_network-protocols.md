@@ -1,16 +1,14 @@
 ## 5.7\. Network Protocols
 
-Devices MUST support the [media network
-protocols](http://developer.android.com/guide/appendix/media-formats.html) for
-audio and video playback as specified in the Android SDK documentation.
+Devices MUST support the [media network protocols](http://developer.android.com/guide/appendix/media-formats.html)
+for audio and video playback as specified in the Android SDK documentation.
 Specifically, devices MUST support the following media network protocols:
 
 *   HTTP(S) progressive streaming <br>
     All required codecs and container formats in [section 5.1](#5_1_media_codecs) MUST
     be supported over HTTP(S)
 
-*   [HTTP Live Streaming draft protocol, Version 7
-    ](http://tools.ietf.org/html/draft-pantos-http-live-streaming-07)<br>
+*   [HTTP Live Streaming draft protocol, Version 7 ](http://tools.ietf.org/html/draft-pantos-http-live-streaming-07)<br>
     The following media segment formats MUST be supported:
 
 <table>
