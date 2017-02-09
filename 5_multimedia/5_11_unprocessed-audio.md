@@ -18,7 +18,7 @@ characteristics in the mid-frequency range: specifically &plusmn;10dB from
 specifically from &plusmn;20 dB from 5 Hz to 100 Hz compared to the mid-frequency range.
 
 * The device MUST exhibit amplitude levels in the high frequency range:
-specifically from &plusmn;30 dB from 4000 Hz to 22 KHz compared to the mid-frequency range.
+specifically from &plusmn;30 dB from 7000 Hz to 22 KHz compared to the mid-frequency range.
 
 * Audio input sensitivity MUST be set such that a 1000 Hz sinusoidal tone
 source played at 94 dB Sound Pressure Level (SPL)

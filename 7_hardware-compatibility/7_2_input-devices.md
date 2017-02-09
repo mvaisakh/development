@@ -156,8 +156,7 @@ system supports multiple pointers.
 corresponding to the type of the specific touchscreen on the device.
 
 Android includes support for a variety of touchscreens, touch pads, and fake
-touch input devices. [Touchscreen based device
-implementations](http://source.android.com/devices/tech/input/touch-devices.html)
+touch input devices. [Touchscreen-based device implementations](http://source.android.com/devices/tech/input/touch-devices.html)
 are associated with a display such that the user has the impression of directly
 manipulating items on screen. Since the user is directly touching the screen,
 the system does not require any additional affordances to indicate the objects
@@ -188,9 +187,8 @@ meet the fake touch requirements in [section 7.2.5](#7_2_5_fake_touch_input).
 
 Device implementations that declare support for android.hardware.faketouch:
 
-*   MUST report the [absolute X and Y screen
-positions](http://developer.android.com/reference/android/view/MotionEvent.html)of
-the pointer location and display a visual pointer on the screen.
+*   MUST report the [absolute X and Y screen positions](http://developer.android.com/reference/android/view/MotionEvent.html)
+of the pointer location and display a visual pointer on the screen.
 *   MUST report touch event with the action code that specifies the state change
 that occurs on the pointer [going down or up on the
 screen](http://developer.android.com/reference/android/view/MotionEvent.html).
@@ -198,9 +196,8 @@ screen](http://developer.android.com/reference/android/view/MotionEvent.html).
 users to emulate tap on an object on the screen.
 *   MUST support pointer down, pointer up, pointer down then pointer up in the
 same place on an object on the screen within a time threshold, which allows
-users to [emulate double
-tap](http://developer.android.com/reference/android/view/MotionEvent.html) on an
-object on the screen.
+users to [emulate double tap](http://developer.android.com/reference/android/view/MotionEvent.html)
+on an object on the screen.
 *   MUST support pointer down on an arbitrary point on the screen, pointer move
 to any other arbitrary point on the screen, followed by a pointer up, which
 allows users to emulate a touch drag.
@@ -360,6 +357,5 @@ or tablet. The remote control MUST meet the requirements defined below.
 
 *   **Search affordance**. Device implementations MUST fire KEYCODE_SEARCH when
 the user invokes voice search either on the physical or software-based remote.
-*   **Navigation**. All Android Television remotes MUST include [Back, Home, and
-Select buttons and support for D-pad
-events](http://developer.android.com/reference/android/view/KeyEvent.html).
+*   **Navigation**. All Android Television remotes MUST include
+[Back, Home, and Select buttons and support for D-pad events](http://developer.android.com/reference/android/view/KeyEvent.html).

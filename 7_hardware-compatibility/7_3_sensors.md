@@ -18,12 +18,10 @@ SensorManager.getSensorList() and similar methods.
 true or false as appropriate when applications attempt to register listeners,
 not calling sensor listeners when the corresponding sensors are not present;
 etc.).
-*   MUST [report all sensor
-measurements](http://developer.android.com/reference/android/hardware/SensorEvent.html)
+*   MUST [report all sensor measurements](http://developer.android.com/reference/android/hardware/SensorEvent.html)
 using the relevant International System of Units (metric) values for each
 sensor type as defined in the Android SDK documentation.
-*   SHOULD [report the event
-time](http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp)
+*   SHOULD [report the event time](http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp)
 in nanoseconds as defined in the Android SDK documentation, representing the
 time the event happened and synchronized with the
 SystemClock.elapsedRealtimeNano() clock. Existing and new Android devices are
@@ -47,14 +45,12 @@ Some sensor types are composite, meaning they can be derived from data provided
 by one or more other sensors. (Examples include the orientation sensor and the
 linear acceleration sensor.) Device implementations SHOULD implement these
 sensor types, when they include the prerequisite physical sensors as described
-in [sensor
-types](https://source.android.com/devices/sensors/sensor-types.html). If a
+in [sensor types](https://source.android.com/devices/sensors/sensor-types.html). If a
 device implementation includes a composite sensor it MUST implement the sensor
-as described in the Android Open Source documentation on [composite
-sensors](https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary).
+as described in the Android Open Source documentation on
+[composite sensors](https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary).
 
-Some Android sensors support a [“continuous” trigger
-mode](https://source.android.com/devices/sensors/report-modes.html#continuous),
+Some Android sensors support a [“continuous” trigger mode](https://source.android.com/devices/sensors/report-modes.html#continuous),
 which returns data continuously. For any API indicated by the Android SDK
 documentation to be a continuous sensor, device implementations MUST
 continuously provide periodic data samples that SHOULD have a jitter below 3%,
@@ -75,14 +71,13 @@ devices, Android Automotive implementations, and Android Watch devices are STRON
 RECOMMENDED to include this sensor. If a device implementation does include a
 3-axis accelerometer, it:
 
-*   MUST implement and report [TYPE_ACCELEROMETER
-sensor](http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER).
+*   MUST implement and report
+[TYPE_ACCELEROMETER sensor](http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER).
 *   MUST be able to report events up to a frequency of at least 50 Hz for
 Android Watch devices as such devices have a stricter power constraint and 100
 Hz for all other device types.
 *   SHOULD report events up to at least 200 Hz.
-*   MUST comply with the [Android sensor coordinate
-system](http://developer.android.com/reference/android/hardware/SensorEvent.html)
+*   MUST comply with the [Android sensor coordinate system](http://developer.android.com/reference/android/hardware/SensorEvent.html)
 as detailed in the Android APIs. Android Automotive implementations MUST comply
 with the Android [car sensor coordinate system](http://source.android.com/devices/sensors/sensor-types.html#auto_axes).
 *   MUST be capable of measuring from freefall up to four times the gravity
@@ -120,8 +115,7 @@ TYPE_MAGNETIC_FIELD_UNCALIBRATED sensor. Existing and new Android devices are
 STRONGLY RECOMMENDED to implement the TYPE_MAGNETIC_FIELD_UNCALIBRATED sensor.
 *   MUST be able to report events up to a frequency of at least 10 Hz and
 SHOULD report events up to at least 50 Hz.
-*   MUST comply with the [Android sensor coordinate
-system](http://developer.android.com/reference/android/hardware/SensorEvent.html)
+*   MUST comply with the [Android sensor coordinate system](http://developer.android.com/reference/android/hardware/SensorEvent.html)
 as detailed in the Android APIs.
 *   MUST be capable of measuring between -900 µT and +900 µT on each axis
 before saturating.
@@ -378,8 +372,8 @@ sensor. If a device implementation includes a fingerprint sensor and has a
 corresponding API for third-party developers, it:
 
 *   MUST declare support for the android.hardware.fingerprint feature.
-*   MUST fully implement the [corresponding
-API](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
+*   MUST fully implement the
+[corresponding API](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
 as described in the Android SDK documentation.
 *   MUST have a false acceptance rate not higher than 0.002%.
 *   Is STRONGLY RECOMMENDED to have a false rejection rate of less than 10%, as
@@ -394,8 +388,8 @@ fingerprint matching in a Trusted Execution Environment (TEE) or on a chip with
 a secure channel to the TEE.
 *   MUST have all identifiable fingerprint data encrypted and cryptographically
 authenticated such that they cannot be acquired, read or altered outside of the
-Trusted Execution Environment (TEE) as documented in the [implementation
-guidelines](https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html)
+Trusted Execution Environment (TEE) as documented in the
+[implementation guidelines](https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html)
 on the Android Open Source Project site.
 *   MUST prevent adding a fingerprint without first establishing a chain of
 trust by having the user confirm existing or add a new device credential
