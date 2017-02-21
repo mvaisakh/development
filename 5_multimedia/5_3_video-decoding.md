@@ -137,7 +137,7 @@ Android device implementations, when supporting H.265 codec as described in
     <td>600 Kbps </td>
     <td>1.6 Mbps</td>
     <td>4 Mbps</td>
-    <td>10 Mbps</td>
+    <td>5 Mbps</td>
     <td>20 Mbps</td>
  </tr>
 </table>
