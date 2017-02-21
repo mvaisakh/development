@@ -293,7 +293,7 @@ following sensor types meeting the quality requirements as below:
     *   SHOULD have a bias change vs. temperature of ≤ +/- 0.05 °/ s / °C.
     *   SHOULD have a sensitivity change vs. temperature of ≤ 0.02% / °C.
     *   SHOULD have a best-fit line non-linearity of ≤ 0.2%.
-    *   SHOULD have a noise density of ≤ 0.07 °/s/√Hz.
+    *   SHOULD have a noise density of ≤ 0.007 °/s/√Hz.
 
 *   SENSOR_TYPE_GYROSCOPE_UNCALIBRATED with the same quality requirements as
     SENSOR_TYPE_GYROSCOPE.
