@@ -56,7 +56,7 @@ The following native code APIs MUST be available to apps that include native cod
 *   libOpenSLES.so (OpenSL ES 1.0.1 audio support)
 *   libRS.so
 *   libstdc++ (Minimal support for C++)
-*   libvukan.so (Vulkan)
+*   libvulkan.so (Vulkan)
 *   libz (Zlib compression)
 *   JNI interface
 *   Support for OpenGL, as described below
