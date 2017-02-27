@@ -110,6 +110,7 @@ table; see relevant hardware sections for more detail.
     <td></td>
  </tr>
  <tr>
+    <td>USB</td>
     <td>USB peripheral/host mode</td>
     <td><a href="#7_7_usb">7.7. USB</a></td>
     <td>SHOULD</td>
