@@ -293,7 +293,7 @@ following sensor types meeting the quality requirements as below:
     *   SHOULD have a bias change vs. temperature of ≤ +/- 0.05 °/ s / °C.
     *   SHOULD have a sensitivity change vs. temperature of ≤ 0.02% / °C.
     *   SHOULD have a best-fit line non-linearity of ≤ 0.2%.
-    *   SHOULD have a noise density of ≤ 0.07 °/s/√Hz.
+    *   SHOULD have a noise density of ≤ 0.007 °/s/√Hz.
 
 *   SENSOR_TYPE_GYROSCOPE_UNCALIBRATED with the same quality requirements as
     SENSOR_TYPE_GYROSCOPE.
@@ -393,8 +393,8 @@ Trusted Execution Environment (TEE) as documented in the
 on the Android Open Source Project site.
 *   MUST prevent adding a fingerprint without first establishing a chain of
 trust by having the user confirm existing or add a new device credential
-(PIN/pattern/password) using the TEE as implemented in the Android Open Source
-project.
+(PIN/pattern/password) that's secured by TEE; the Android Open Source Project
+    implementation provides the mechanism in the framework to do so.
 *   MUST NOT enable 3rd-party applications to distinguish between individual
 fingerprints.
 *   MUST honor the DevicePolicyManager.KEYGUARD_DISABLE_FINGERPRINT flag.

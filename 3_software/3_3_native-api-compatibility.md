@@ -56,7 +56,7 @@ The following native code APIs MUST be available to apps that include native cod
 *   libOpenSLES.so (OpenSL ES 1.0.1 audio support)
 *   libRS.so
 *   libstdc++ (Minimal support for C++)
-*   libvukan.so (Vulkan)
+*   libvulkan.so (Vulkan)
 *   libz (Zlib compression)
 *   JNI interface
 *   Support for OpenGL, as described below
@@ -111,7 +111,7 @@ Device implementations, if not including support of the Vulkan APIs:
 
 *   MUST report 0 `VkPhysicalDevices` through the `vkEnumeratePhysicalDevices`
     call.
-*   MUST NOT delare any of the Vulkan feature flags
+*   MUST NOT declare any of the Vulkan feature flags
     [`PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL)
     and [`PackageManager#FEATURE_VULKAN_HARDWARE_VERSION`](https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION).
 
