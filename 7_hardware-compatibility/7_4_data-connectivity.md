@@ -61,12 +61,12 @@ as described in the SDK documentation.
 power states.
 *   SHOULD randomize the source MAC address and sequence number of probe
 request frames, once at the beginning of each scan, while STA is disconnected.
-    * Each group of probe request frames comprising one scan should have one
-    unique MAC address
+    * Each group of probe request frames comprising one scan should use one consistent MAC address
+    (SHOULD NOT randomize MAC address halfway through a scan).
     * Probe request sequence number should iterate as normal (sequentially)
     between the probe requests in a scan
     * Probe request sequence number should randomize between the last probe
-    * request of a scan and the first probe request of the next scan
+    request of a scan and the first probe request of the next scan
 *   SHOULD only allow the following information elements in probe request
 frames, while STA is disconnected:
     * SSID Parameter Set (0)
