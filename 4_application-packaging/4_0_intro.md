@@ -6,7 +6,8 @@ For this reason device implementations SHOULD use the reference implementation�
 package management system.
 
 The package manager MUST support verifying “.apk” files using the
-[APK Signature Scheme v2](https://source.android.com/security/apksigning/v2.html).
+[APK Signature Scheme v2](https://source.android.com/security/apksigning/v2.html)
+and [JAR signing](https://source.android.com/security/apksigning/v2.html#v1-verification).
 
 Devices implementations MUST NOT extend either the
 [.apk](http://developer.android.com/guide/components/fundamentals.html),
