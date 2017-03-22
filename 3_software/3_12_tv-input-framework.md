@@ -19,13 +19,13 @@ The TV App MUST provide facilities to install and use
 [TV Channels](http://developer.android.com/reference/android/media/tv/TvContract.Channels.html)
 and meet the following requirements:
 
-*   Device implementations MUST allow third-party TIF-based inputs
+*   Device implementations SHOULD allow third-party TIF-based inputs
     ([third-party inputs](https://source.android.com/devices/tv/index.html#third-party_input_example))
     to be installed and managed.
 *   Device implementations MAY provide visual separation between pre-installed
     [TIF-based inputs](https://source.android.com/devices/tv/index.html#tv_inputs)
     (installed inputs) and third-party inputs.
-*   Device implementations MUST NOT display the third-party inputs more than a
+*   Device implementations SHOULD NOT display the third-party inputs more than a
     single navigation action away from the TV App (i.e. expanding a list of
     third-party inputs from the TV App).
 
@@ -37,12 +37,12 @@ generated from the values in the
 [TvContract.Programs](https://developer.android.com/reference/android/media/tv/TvContract.Programs.html)
 fields. The EPG MUST meet the following requirements:
 
-*   The EPG MUST display information from all installed inputs and third-party
+*   The EPG SHOULD display information from all installed inputs and third-party
     inputs.
 *   The EPG MAY provide visual separation between the installed inputs and
     third-party inputs.
 *   The EPG is STRONGLY RECOMMENDED to display installed inputs and third-party
-    inputs with equal prominence. The EPG MUST NOT display the third-party
+    inputs with equal prominence. The EPG SHOULD NOT display the third-party
     inputs more than a single navigation action away from the installed inputs
     on the EPG.
 *   On channel change, device implementations MUST display EPG data for the
@@ -71,8 +71,8 @@ App MUST show TV input app linking when it is provided.
 
 #### 3.12.1.4\. Time shifting
 
-Android Television device implementations MUST support time shifting, which
-allows the user to pause and resume live content. Device implementations MUST
+Android Television device implementations are STRONGLY RECOMMENDED to support time shifting, which
+allows the user to pause and resume live content. Device implementations SHOULD
 provide the user a way to pause and resume the currently playing program, if
 time shifting for that program
 [is available](https://developer.android.com/reference/android/media/tv/TvInputManager.html#TIME_SHIFT_STATUS_AVAILABLE). 
