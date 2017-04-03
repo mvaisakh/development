@@ -56,7 +56,7 @@ Back, and Home keys on the Android Television device’s input device(s)
 
 *   Changing TV channels
 *   Opening EPG
-*   Configuring and tuning to third-party TIF-based inputs
+*   Configuring and tuning to third-party TIF-based inputs (if those inputs are supported)
 *   Opening Settings menu
 
 The TV App SHOULD pass key events to HDMI inputs through CEC.
