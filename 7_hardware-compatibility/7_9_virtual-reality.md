@@ -20,13 +20,11 @@ meet the following requirements.
 
 *   Device implementations MUST have at least 2 physical cores.
 *   Device implementations MUST declare android.software.vr.mode feature.
-*   Device implementations MAY provide an exclusive core to the foreground
-    application and MAY support the `Process.getExclusiveCores` API to return
-    the numbers of the CPU cores that are exclusive to the top foreground
-    application. If exclusive core is supported, then the core MUST not allow
-    any other userspace processes to run on it (except device drivers used
-    by the application), but MAY allow some kernel processes to run as
-    necessary.
+*   Device implementations MUST provide an exclusive core to the foreground application and MUST
+    support the Process.getExclusiveCores API to return the numbers of the cpu cores that are
+    exclusive to the top foreground application. This core MUST not allow any other userspace
+    processes to run on it (except device drivers used by the application), but MAY allow some
+    kernel processes to run as necessary.
 *   Device implementations MUST support sustained performance mode.
 *   Device implementations MUST support OpenGL ES 3.2.
 *   Device implementations MUST support Vulkan Hardware Level 0 and SHOULD support
