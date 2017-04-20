@@ -69,16 +69,22 @@ documentation.
 
 #### 7.1.1.2\. Screen Aspect Ratio
 
-<div class="note">
+While there is no restriction to the screen aspect ratio value of the physical
+screen display, the screen aspect ratio of the surface that third-party apps
+are rendered on and which can be derived from the values reported via the
+[DisplayMetrics](https://developer.android.com/reference/android/util/DisplayMetrics.html)
+MUST meet the following requirements:
 
-Android Watch devices MAY have an aspect ratio of 1.0 (1:1).
-
-</div>
-
-The screen aspect ratio MUST be a value from 1.3333 (4:3) to 1.86 (roughly
-16:9), but Android Watch devices MAY have an aspect ratio of 1.0 (1:1) because
-such a device implementation will use a UI_MODE_TYPE_WATCH as the
-android.content.res.Configuration.uiMode.
+*   If the [uiMode](https://developer.android.com/reference/android/content/res/Configuration.html#uiMode)
+is configured as UI_MODE_TYPE_WATCH, the aspect ratio value MAY be set as
+1.0 (1:1).
+*   If the third-party app indicates that it is resizeable via the
+[android:resizeableActivity](https://developer.android.com/guide/topics/ui/multi-window.html#configuring)
+attribute, there are no restrictions to the aspect ratio value.
+*   For all other cases, the aspect ratio MUST be a value between 1.3333 (4:3)
+and 1.86 (roughly 16:9) unless the app has indicated explicitly that it
+supports a higher screen aspect ratio through  the [maxAspectRatio](https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio)
+metadata value.
 
 #### 7.1.1.3\. Screen Density
 
