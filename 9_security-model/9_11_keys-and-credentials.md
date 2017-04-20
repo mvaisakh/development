@@ -24,9 +24,10 @@ All Android device implementations MUST meet the following requirements:
     (HAL)](http://source.android.com/devices/tech/security/authentication/gatekeeper.html)
     that can be used to satisfy this requirement.
 
-Note that if a device implementation is already launched on an earlier Android version, and does
-not have a fingerprint scanner, such a device is exempted from the requirement to have a
-hardware-backed keystore.
+Note that if a device implementation is already launched on an earlier Android
+version, such a device is exempted from the requirement to have a
+hardware-backed keystore, unless it declares the `android.hardware.fingerprint`
+feature which requires a hardware-backed keystore.
 
 ### 9.11.1\. Secure Lock Screen
 
