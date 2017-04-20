@@ -204,11 +204,12 @@ implementations MUST conform.
  <tr>
     <td>SECURITY_PATCH</td>
     <td>A value indicating the security patch level of a build. It MUST signify
-    that the build includes all security patches issued up through the
-    designated Android Public Security Bulletin. It MUST be in the format
-    [YYYY-MM-DD], matching one of the Android Security Patch Level strings of
-    the <a href="source.android.com/security/bulletin"> Public Security
-    Bulletins</a>, for example "2015-11-01".</td>
+    that the build is not in any way vulnerable to any of the issues described
+    up through the designated Android Public Security Bulletin. It MUST be in
+    the format [YYYY-MM-DD], matching a defined string documented in the
+    <a href="source.android.com/security/bulletin"> Android Public Security
+    Bulletin</a> or in the <a href="http://source.android.com/security/advisory">
+    Android Security Advisory</a>, for example "2015-11-01".</td>
  </tr>
  <tr>
     <td>BASE_OS</td>
