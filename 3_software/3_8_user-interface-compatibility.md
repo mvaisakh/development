@@ -33,11 +33,6 @@ support for platform feature android.software.app_widgets.
     in the Android SDK documentation for details.
 *   Device implementations that include support for lock screen MAY support
     application widgets on the lock screen.
-*   SHOULD trigger the fast-switch action between the two most recently used apps,
-    when the recents function key is tapped twice.
-*   SHOULD trigger the split-screen multiwindow-mode, if supported, when the recents
-    functions key is long pressed.
-
 
 ### 3.8.3\. Notifications
 
@@ -106,9 +101,14 @@ described in the [SDK documents](https://developer.android.com/reference/android
 Device implementations that support the DND (Do not Disturb) feature MUST meet
 the following requirements:
 
-*   MUST implement an activity where the user can grant or deny the app access
-    to DND policy configurations in response to the intent [ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS](https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS).
-*   MUST display [Automatic DND rules](https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29)
+*   MUST implement an activity that would respond to the intent
+    [ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS](https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS),
+    which for implementations with UI_MODE_TYPE_NORMAL it MUST be an activity
+    where the user can grant or deny the app access to DND policy
+    configurations.
+*   MUST, for when the device implementation has provided a means for the user
+    to grant or deny third-party apps to access the DND policy configuration,
+    display [Automatic DND rules](https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29)
     created by applications alongside the user-created and pre-defined rules.
 *   MUST honor the [`suppressedVisualEffects`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects)
     values passed along the [`NotificationManager.Policy`](https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int, int, int, int%29)
@@ -253,13 +253,17 @@ including the recents function navigation key as detailed in
 following requirements:
 
 *   MUST support at least up to 20 displayed activities.
-*   SHOULD display the titles of at least 4 activities at a time.
+*   SHOULD at least display the title of 4 activities at a time.
 *   MUST implement the [screen pinning behavior](http://developer.android.com/about/versions/android-5.0.html#ScreenPinning)
     and provide the user with a settings menu to toggle the feature.
 *   SHOULD display highlight color, icon, screen title in recents.
 *   SHOULD display a closing affordance ("x") but MAY delay this until user interacts with screens.
 *   SHOULD implement a shortcut to switch easily to the previous activity
 *   MAY display affiliated recents as a group that moves together.
+*   SHOULD trigger the fast-switch action between the two most recently used
+    apps, when the recents function key is tapped twice.
+*   SHOULD trigger the split-screen multiwindow-mode, if supported, when the
+    recents functions key is long pressed.
 
 Device implementations are STRONGLY RECOMMENDED to use the upstream Android user
 interface (or a similar thumbnail-based interface) for the overview screen.

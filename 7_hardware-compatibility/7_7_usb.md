@@ -67,8 +67,12 @@ If a device implementation includes a USB port supporting host mode, it:
 *   MUST implement the Android USB host API as documented in the Android SDK,
     and MUST declare support for the hardware feature
     [android.hardware.usb.host](http://developer.android.com/guide/topics/connectivity/usb/host.html).
-*   SHOULD support the Charging Downstream Port output current range of 1.5 A ~
-    5 A as specified in the [USB Battery Charging specifications, revision 1.2](http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip).
+*   SHOULD support device charging while in host mode; advertising a source
+    current of at least 1.5A as specified in the Termination Parameters section
+    of the [USB Type-C Cable and Connector Specification Revision 1.2] (http://www.usb.org/developers/docs/usb_31_021517.zip)
+    for USB Type-C connectors or using Charging Downstream Port(CDP) output
+    current range as specified in the [USB Battery Charging specifications, revision 1.2](http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip)
+    for Micro-AB connectors.
 *   USB Type-C devices are STRONGLY RECOMMENDED to support DisplayPort, SHOULD
     support USB SuperSpeed Data Rates, and are STRONGLY RECOMMENDED to support
     Power Delivery for data and power role swapping.
