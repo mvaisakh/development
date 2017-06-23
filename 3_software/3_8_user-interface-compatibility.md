@@ -3,9 +3,19 @@
 ### 3.8.1\. Launcher (Home Screen)
 
 Android includes a launcher application (home screen) and support for
-third-party applications to replace the device launcher (home screen). Device
+third-party applications to replace the device launcher (home screen).
+
+Device
 implementations that allow third-party applications to replace the device home
-screen MUST declare the platform feature android.software.home_screen.
+screen:
+
+*   MUST declare the platform feature `android.software.home_screen`.
+*   MUST return the [`AdaptiveIconDrawable`](
+    https://developer.android.com/reference/android/graphics/drawable/AdaptiveIconDrawable.html)
+    object when the third party application use `<adaptive-icon>` tag to provide
+    their icon, and the [`PackageManager`](
+    https://developer.android.com/reference/android/content/pm/PackageManager.html)
+    methods to retrieve icons are called.
 
 ### 3.8.2\. Widgets
 
