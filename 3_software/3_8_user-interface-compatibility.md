@@ -310,7 +310,7 @@ MUST be displayed in the Location menu within Settings.
 ### 3.8.13\. Unicode and Font
 
 Android includes support for the emoji characters defined in
-[Unicode 9.0](http://www.unicode.org/versions/Unicode9.0.0/). All device
+[Unicode 10.0](http://www.unicode.org/versions/Unicode10.0.0/). All device
 implementations MUST be capable of rendering these emoji characters
 in color glyph and when Android device implementations include an IME,
 it SHOULD provide an input method to the user for these emoji characters. 
