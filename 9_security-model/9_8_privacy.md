@@ -28,7 +28,7 @@ MUST present a user interface asking for the user's consent before allowing
 access to the contents of the shared storage over the USB port.
 
 Android stores the history of the user's choices and manages such history by
-[UsageStatsManager](https://developer.android.com/reference/android/app/usage/UsageStatsManager.html),
-device implementations MUST keep a reasonable retention length of such user
-history. It is STRONGLY RECOMMENDED to keep the 14 days retention length as
+[UsageStatsManager](https://developer.android.com/reference/android/app/usage/UsageStatsManager.html)
+. Device implementations MUST keep a reasonable retention period of such user
+history. It is STRONGLY RECOMMENDED to keep the 14 days retention period as
 configured by default in the AOSP implementation.
