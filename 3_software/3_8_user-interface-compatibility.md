@@ -58,6 +58,13 @@ for notifications than that provided by the reference Android Open Source
 implementation; however, such alternative notification systems MUST support
 existing notification resources, as above.
 
+Device implementations MUST provide the full behavior of the [NotificationChannel](
+https://developer.android.com/reference/android/app/NotificationChannel.html) API documented in
+the SDK. Device implementions MUST provide a user affordance to block a certain
+third-party app's notification channels and modify the importance level of a certain third-party app's
+notification channels. Device implementations MUST also provide a user affordance to display deleted
+notification channels.
+
 <div class="note">
 
 Android Automotive implementations MAY manage the visibility and timing of
