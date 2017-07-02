@@ -19,9 +19,15 @@ Device implementations MUST ship with an empty user-added Certificate Authority
 CA store as [provided](https://source.android.com/security/overview/app-security.html#certificate-authorities)
 in the upstream Android Open Source Project.
 
-When devices are routed through a VPN, or a user root CA is installed, the
-implementation MUST display a warning indicating the network traffic may be
-monitored to the user.
+When device traffic is routed through a VPN, the implementation MUST display a
+warning to the user indicating either:
+
+   * That network traffic may be monitored.
+   * That network traffic is being routed through the specific VPN application
+     providing the VPN.
+
+When a user root CA is installed the implementation MUST display a warning
+indicating the network traffic may be monitored to the user.
 
 If a device implementation has a USB port with USB peripheral mode support, it
 MUST present a user interface asking for the user's consent before allowing
