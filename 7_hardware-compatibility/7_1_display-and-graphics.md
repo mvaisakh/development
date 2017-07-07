@@ -78,12 +78,16 @@ MUST meet the following requirements:
 *   If the [uiMode](https://developer.android.com/reference/android/content/res/Configuration.html#uiMode)
 is configured as UI_MODE_TYPE_WATCH, the aspect ratio value MAY be set as
 1.0 (1:1).
-*   If the third-party app indicates that it is resizeable via the
+*   For third-party apps indicating that it is resizeable via the
+ that it is resizeable via the
 [android:resizeableActivity](https://developer.android.com/guide/topics/ui/multi-window.html#configuring)
 attribute, there are no restrictions to the aspect ratio value.
+*   For third-party apps targeting API level 26 or higher there is no
+restriction to the aspect ratio except for when it explicitly declares
+[android:MaxAspectRatio](https://developer.android.com/reference/android/R.attr.html#maxAspectRatio).
 *   For all other cases, the aspect ratio MUST be a value between 1.3333 (4:3)
 and 1.86 (roughly 16:9) unless the app has indicated explicitly that it
-supports a higher screen aspect ratio through  the [maxAspectRatio](https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio)
+supports a larger screen aspect ratio through  the [maxAspectRatio](https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio)
 metadata value.
 
 #### 7.1.1.3\. Screen Density
@@ -195,6 +199,11 @@ ES 3.2 and MAY support it otherwise. If the extension pack is supported in its
 entirety, the device MUST identify the support through the
 `android.hardware.opengles.aep` feature flag.
 
+Android device implementations MUST support the EGL_KHR_image, EGL_KHR_image_base,
+EGL_ANDROID_image_native_buffer, EGL_ANDROID_get_native_client_buffer, and
+EGL_KHR_wait_sync extensions. Device implementations are STRONGLY RECOMMENDED
+to support EGL_KHR_partial_update.
+
 Also, device implementations MAY implement any desired OpenGL ES extensions.
 However, device implementations MUST report via the OpenGL ES managed and
 native APIs all extension strings that they do support, and conversely MUST NOT
@@ -232,6 +241,12 @@ that indicates whether the EGLConfig supports rendering to an ANativeWindow
 that records images to a video. Device implementations MUST support
 [EGL_ANDROID_RECORDABLE](https://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt)
 extension.
+
+Android includes support for EGL_KHR_get_all_proc_addresses,
+EGL_ANDROID_presentation_time, EGL_KHR_swap_buffers_with_damage. Device
+implementations MUST support these extensions. Additionally, implementations
+which expose support for EGL_KHR_mutable_render_buffer MUST also support
+EGL_ANDROID_front_buffer_auto_refresh.
 
 ### 7.1.5\. Legacy Application Compatibility Mode
 
