@@ -251,7 +251,8 @@ method to switch between activities on Android Automotive implementations.
 </div>
 
 The upstream Android source code includes the
-[overview screen](http://developer.android.com/guide/components/recents.html), a
+[overview
+screen](https://developer.android.com/guide/components/activities/recents.html), a
 system-level user interface for task switching and displaying recently accessed
 activities and tasks using a thumbnail image of the application’s graphical
 state at the moment the user last left the application. Device implementations
