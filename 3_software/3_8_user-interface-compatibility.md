@@ -7,6 +7,18 @@ third-party applications to replace the device launcher (home screen). Device
 implementations that allow third-party applications to replace the device home
 screen MUST declare the platform feature android.software.home_screen.
 
+Device launchers are STRONGLY RECOMMENDED to implement a default launcher that
+supports in-app pinning of the shortcuts and the widgets, if it does, it:
+
+*   MUST report the capability through the
+    [`ShortcutManager#isRequestPinShortcutSupported()`](
+    https://developer.android.com/reference/android/content/pm/ShortcutManager.html#isRequestPinShortcutSupported%28%29)
+    API.
+*   MUST have user affordance asking the user before adding a shortcut requested
+    by apps via the [`ShortcutManager#requestPinAddWidget()`](
+    https://developer.android.com/reference/android/appwidget/AppWidgetManager.html#requestPinAppWidget%28android.content.ComponentName,android.os.Bundle, android.app.PendingIntent%29)
+    API method.
+
 ### 3.8.2\. Widgets
 
 <div class="note">
