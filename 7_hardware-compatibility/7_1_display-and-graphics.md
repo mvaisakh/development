@@ -271,6 +271,29 @@ hardware-accelerated OpenGL ES textures as rendering targets in a UI hierarchy.
 Device implementations MUST support the TextureView API, and MUST exhibit
 consistent behavior with the upstream Android implementation.
 
+#### 7.1.4.5 Wide-gamut Displays
+
+If a device implementation claims support for wide-gamut displays through
+[`Display.isWideColorGamut()`
+](https://developer.android.com/reference/android/view/Display.html#isWideColorGamut%28%29)
+, it:
+
+*   MUST have a color-calibrated display.
+*   MUST have a display whose gamut covers the sRGB color gamut entirely in
+    CIE 1931 xyY space.
+*   MUST have a display whose gamut has an area of at least 90% of NTSC 1953 in
+    CIE 1931 xyY space.
+*   MUST support OpenGL ES 3.0, 3.1, or 3.2 and report it properly.
+*   MUST advertise support for the `EGL_KHR_no_config_context`,
+    `EGL_EXT_pixel_format_float`,`EGL_KHR_gl_colorspace`,
+    `EGL_EXT_colorspace_scrgb_linear`, and `EGL_GL_colorspace_display_p3`
+    extensions.
+*   is STRONGLY RECOMMENDED to support `GL_EXT_sRGB`.
+
+Conversely, if a device implementation does not support wide-gamut displays, then
+the screen color gamut is undefined but SHOULD cover 100% or more of sRGB in CIE
+1931 xyY space.
+
 ### 7.1.5\. Legacy Application Compatibility Mode
 
 Android specifies a “compatibility mode” in which the framework operates in a
