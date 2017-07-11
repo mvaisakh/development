@@ -111,6 +111,24 @@ and exposes the functionality to third-party apps, then it:
 *   MUST randomize the Wi-Fi Aware management interface address at intervals
     no longer then 30 minutes and whenever Wi-Fi Aware is enabled.
 
+#### 7.4.2.4\. Wi-Fi Passpoint
+
+Device implementations SHOULD include support for [Wi-Fi
+Passpoint](http://www.wi-fi.org/discover-wi-fi/wi-fi-certified-passpoint).
+
+If a device implementation includes support for Wi-Fi Passpoint,
+then it:
+
+*  MUST implement the Passpoint related `WifiManager` APIs as described in
+   the [SDK documentation](http://developer.android.com/reference/android/net/wifi/WifiManager.html).
+*  MUST support IEEE 802.11u standard, specifically related
+   to Network Discovery and Selection, such as Generic Advertisement
+   Service (GAS) and Access Network Query Protocol (ANQP).
+
+Conversely if a device implementation does not include support for Wi-Fi
+Passpoint, the implementation of the Passpoint related `WifiManager` APIs
+MUST throw an `UnsupportedOperationException`.
+
 ### 7.4.3\. Bluetooth
 
 <div class="note">
