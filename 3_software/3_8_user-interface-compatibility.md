@@ -17,8 +17,8 @@ screen:
     https://developer.android.com/reference/android/content/pm/PackageManager.html)
     methods to retrieve icons are called.
 
-Device launchers are STRONGLY RECOMMENDED to implement a default launcher that
-supports in-app pinning of the shortcuts and the widgets, if it does, it:
+Device implementations are STRONGLY RECOMMENDED to implement a default launcher
+that supports in-app pinning of the shortcuts and the widgets, if it does, it:
 
 *   MUST report the capability through the
     [`ShortcutManager#isRequestPinShortcutSupported()`](
@@ -28,6 +28,33 @@ supports in-app pinning of the shortcuts and the widgets, if it does, it:
     by apps via the [`ShortcutManager#requestPinAddWidget()`](
     https://developer.android.com/reference/android/appwidget/AppWidgetManager.html#requestPinAppWidget%28android.content.ComponentName,android.os.Bundle, android.app.PendingIntent%29)
     API method.
+
+If device implementations are a handheld, they:
+
+*   are STRONGLY RECOMMENDED to implement a default launcher that respects the
+    [`NotificationChannel.setShowBadge()`
+    ](https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge%28boolean%29)
+    API method. In other words, show a visual affordance associated with the app
+    icon if the value is set as `true`, and do not show any app icon badging
+    scheme when all of the app's notification channels have set the value as
+    `false`.
+*   SHOULD use the resources and values provided through the notification badges
+    APIs described in [the SDK](https://developer.android.com/preview/features/notification-badges.html)
+    , such as the [`Notification.Builder.setNumber()`
+    ](https://developer.android.com/reference/android/app/Notification.Builder.html#setNumber%28int%29)
+    and the [`Notification.Builder.setBadgeIconType()`
+    ](https://developer.android.com/reference/android/app/Notification.Builder.html#setBadgeIconType%28int%29)
+    API.
+
+If device implementations preloads a default launcher that support their own
+proprietary badging scheme for any apps, they:
+
+*   MAY override the app icon badges with their proprietary badging scheme when
+    third-party applications indicate support of the proprietary badging scheme
+    through the use of proprietary APIs, but MUST respect the value set through
+    the [`NotificationChannel.setShowBadge()`
+    ](https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge%28boolean%29)
+    API method if it is `false`.
 
 ### 3.8.2\. Widgets
 
