@@ -314,6 +314,13 @@ MUST provide a user-accessible mechanism to add and configure third-party input
 methods. Device implementations MUST display the settings interface in response
 to the android.settings.INPUT_METHOD_SETTINGS intent.
 
+If device implementations declare the support of [Autofill API](
+https://developer.android.com/reference/android/service/autofill/AutofillService.html)
+via the feature flag [`PackageManager#FEATURE_AUTOFILL`](
+https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_AUTOFILL),
+they MUST provide the user affordance to enable and disable autofill and change the default autofill
+service.
+
 ### 3.8.10\. Lock Screen Media Control
 
 The Remote Control Client API is deprecated from Android 5.0 in favor of the
