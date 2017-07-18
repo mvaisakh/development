@@ -151,7 +151,8 @@ implementations MUST conform.
     <td>MANUFACTURER</td>
     <td>The trade name of the Original Equipment Manufacturer (OEM) of the
     product. There are no requirements on the specific format of this field,
-    except that it MUST NOT be null or the empty string ("").</td>
+    except that it MUST NOT be null or the empty string (""). This field
+    MUST NOT change during the lifetime of the product.</td>
  </tr>
  <tr>
     <td>MODEL</td>
@@ -159,7 +160,8 @@ implementations MUST conform.
     device as known to the end user. This SHOULD be the same name under which
     the device is marketed and sold to end users. There are no requirements on
     the specific format of this field, except that it MUST NOT be null or the
-    empty string ("").</td>
+    empty string (""). This field MUST NOT change during the
+    lifetime of the product.</td>
  </tr>
  <tr>
     <td>PRODUCT</td>
@@ -217,6 +219,22 @@ implementations MUST conform.
     otherwise identical to this build except for the patches provided in the
     Android Public Security Bulletin. It MUST report the correct value and if
     such a build does not exist, report an empty string ("").</td>
+ </tr>
+ <tr>
+    <td><a href="https://developer.android.com/reference/android/os/Build.html#BOOTLOADER">BOOTLOADER</a></td>
+    <td> A value chosen by the device implementer identifying the specific
+    internal bootloader version used in the device, in human-readable format.
+    The value of this field MUST be encodable as 7-bit ASCII and match the
+    regular expression &ldquo;^[a-zA-Z0-9._-]+$&rdquo;.</td>
+ </tr>
+ <tr>
+    <td><a href="https://developer.android.com/reference/android/os/Build.html#getRadioVersion()">getRadioVersion()</a></td>
+    <td> MUST (be or return) a value chosen by the device implementer
+    identifying the specific internal radio/modem version used in the device,
+    in human-readable format. If a device does not have any internal
+    radio/modem it MUST return NULL. The value of this field MUST be
+    encodable as 7-bit ASCII and match the regular expression
+    &ldquo;^[a-zA-Z0-9._-,]+$&rdquo;.</td>
  </tr>
 </table>
 

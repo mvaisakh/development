@@ -3,9 +3,58 @@
 ### 3.8.1\. Launcher (Home Screen)
 
 Android includes a launcher application (home screen) and support for
-third-party applications to replace the device launcher (home screen). Device
+third-party applications to replace the device launcher (home screen).
+
+Device
 implementations that allow third-party applications to replace the device home
-screen MUST declare the platform feature android.software.home_screen.
+screen:
+
+*   MUST declare the platform feature `android.software.home_screen`.
+*   MUST return the [`AdaptiveIconDrawable`](
+    https://developer.android.com/reference/android/graphics/drawable/AdaptiveIconDrawable.html)
+    object when the third party application use `<adaptive-icon>` tag to provide
+    their icon, and the [`PackageManager`](
+    https://developer.android.com/reference/android/content/pm/PackageManager.html)
+    methods to retrieve icons are called.
+
+Device implementations are STRONGLY RECOMMENDED to implement a default launcher
+that supports in-app pinning of the shortcuts and the widgets, if it does, it:
+
+*   MUST report the capability through the
+    [`ShortcutManager#isRequestPinShortcutSupported()`](
+    https://developer.android.com/reference/android/content/pm/ShortcutManager.html#isRequestPinShortcutSupported%28%29)
+    API.
+*   MUST have user affordance asking the user before adding a shortcut requested
+    by apps via the [`ShortcutManager#requestPinAddWidget()`](
+    https://developer.android.com/reference/android/appwidget/AppWidgetManager.html#requestPinAppWidget%28android.content.ComponentName,android.os.Bundle, android.app.PendingIntent%29)
+    API method.
+
+If device implementations are a handheld, they:
+
+*   are STRONGLY RECOMMENDED to implement a default launcher that respects the
+    [`NotificationChannel.setShowBadge()`
+    ](https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge%28boolean%29)
+    API method. In other words, show a visual affordance associated with the app
+    icon if the value is set as `true`, and do not show any app icon badging
+    scheme when all of the app's notification channels have set the value as
+    `false`.
+*   SHOULD use the resources and values provided through the notification badges
+    APIs described in [the SDK](https://developer.android.com/preview/features/notification-badges.html)
+    , such as the [`Notification.Builder.setNumber()`
+    ](https://developer.android.com/reference/android/app/Notification.Builder.html#setNumber%28int%29)
+    and the [`Notification.Builder.setBadgeIconType()`
+    ](https://developer.android.com/reference/android/app/Notification.Builder.html#setBadgeIconType%28int%29)
+    API.
+
+If device implementations preloads a default launcher that support their own
+proprietary badging scheme for any apps, they:
+
+*   MAY override the app icon badges with their proprietary badging scheme when
+    third-party applications indicate support of the proprietary badging scheme
+    through the use of proprietary APIs, but MUST respect the value set through
+    the [`NotificationChannel.setShowBadge()`
+    ](https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge%28boolean%29)
+    API method if it is `false`.
 
 ### 3.8.2\. Widgets
 
@@ -57,6 +106,13 @@ notifications. Device implementers MAY provide an alternative user experience
 for notifications than that provided by the reference Android Open Source
 implementation; however, such alternative notification systems MUST support
 existing notification resources, as above.
+
+Device implementations MUST provide the full behavior of the [NotificationChannel](
+https://developer.android.com/reference/android/app/NotificationChannel.html) API documented in
+the SDK. Device implementions MUST provide a user affordance to block a certain
+third-party app's notification channels and modify the importance level of a certain third-party app's
+notification channels. Device implementations MUST also provide a user affordance to display deleted
+notification channels.
 
 <div class="note">
 
@@ -163,12 +219,24 @@ VoiceInteractionService API, if all following requirements are met:
     (the default voice input and assistant app settings menu)
     [section 3.2.3.5](#3_2_3_5_default_app_settings).
 
-### 3.8.5\. Toasts
+### 3.8.5\. Alerts and Toasts
 
-Applications can use the [“Toast” API](http://developer.android.com/reference/android/widget/Toast.html) to
-display short non-modal strings to the end user that disappear after a brief
-period of time. Device implementations MUST display Toasts from applications to
-end users in some high-visibility manner.
+Applications can use the [`Toast`](
+http://developer.android.com/reference/android/widget/Toast.html)
+API to display short non-modal strings to the end user that disappear after a
+brief period of time, and use the [`TYPE_APPLICATION_OVERLAY`](
+http://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#TYPE_APPLICATION_OVERLAY)
+window type API to display alert windows as an overlay over other apps.
+
+If a device includes a screen or video output, it:
+
+[C-1-1] MUST provide a user affordance to block an app from displaying alert
+windows that use the [`TYPE_APPLICATION_OVERLAY`](
+http://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#TYPE_APPLICATION_OVERLAY)
+. The AOSP implementation meets this requirement by having controls in the notification shade.
+
+[C-1-2] MUST honor the Toast API and display Toasts from applications to end users in some highly
+visible manner.
 
 ### 3.8.6\. Themes
 
@@ -244,7 +312,8 @@ method to switch between activities on Android Automotive implementations.
 </div>
 
 The upstream Android source code includes the
-[overview screen](http://developer.android.com/guide/components/recents.html), a
+[overview
+screen](https://developer.android.com/guide/components/activities/recents.html), a
 system-level user interface for task switching and displaying recently accessed
 activities and tasks using a thumbnail image of the application’s graphical
 state at the moment the user last left the application. Device implementations
@@ -270,7 +339,7 @@ interface (or a similar thumbnail-based interface) for the overview screen.
 
 ### 3.8.9\. Input Management
 
-Android includes support for 
+Android includes support for
 [Input Management](http://developer.android.com/guide/topics/text/creating-input-method.html)
 and support for third-party input method editors. Device implementations that
 allow users to use third-party input methods on the device MUST declare the
@@ -281,6 +350,13 @@ Device implementations that declare the android.software.input_methods feature
 MUST provide a user-accessible mechanism to add and configure third-party input
 methods. Device implementations MUST display the settings interface in response
 to the android.settings.INPUT_METHOD_SETTINGS intent.
+
+If device implementations declare the support of [Autofill API](
+https://developer.android.com/reference/android/service/autofill/AutofillService.html)
+via the feature flag [`PackageManager#FEATURE_AUTOFILL`](
+https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_AUTOFILL),
+they MUST provide the user affordance to enable and disable autofill and change the default autofill
+service.
 
 ### 3.8.10\. Lock Screen Media Control
 
@@ -310,7 +386,7 @@ MUST be displayed in the Location menu within Settings.
 ### 3.8.13\. Unicode and Font
 
 Android includes support for the emoji characters defined in
-[Unicode 9.0](http://www.unicode.org/versions/Unicode9.0.0/). All device
+[Unicode 10.0](http://www.unicode.org/versions/Unicode10.0.0/). All device
 implementations MUST be capable of rendering these emoji characters
 in color glyph and when Android device implementations include an IME,
 it SHOULD provide an input method to the user for these emoji characters. 

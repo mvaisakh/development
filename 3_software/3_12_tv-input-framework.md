@@ -56,18 +56,18 @@ Back, and Home keys on the Android Television device’s input device(s)
 
 *   Changing TV channels
 *   Opening EPG
-*   Configuring and tuning to third-party TIF-based inputs
+*   Configuring and tuning to third-party TIF-based inputs (if those inputs are supported)
 *   Opening Settings menu
 
 The TV App SHOULD pass key events to HDMI inputs through CEC.
 
 #### 3.12.1.3\. TV input app linking
 
-Android Television device implementations MUST support
+Android Television device implementations SHOULD support
 [TV input app linking](http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI),
 which allows all inputs to provide activity links from the current activity to
 another activity (i.e. a link from live programming to related content). The TV
-App MUST show TV input app linking when it is provided.
+App SHOULD show TV input app linking when it is provided.
 
 #### 3.12.1.4\. Time shifting
 

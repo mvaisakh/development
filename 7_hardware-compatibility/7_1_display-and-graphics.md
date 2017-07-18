@@ -78,12 +78,16 @@ MUST meet the following requirements:
 *   If the [uiMode](https://developer.android.com/reference/android/content/res/Configuration.html#uiMode)
 is configured as UI_MODE_TYPE_WATCH, the aspect ratio value MAY be set as
 1.0 (1:1).
-*   If the third-party app indicates that it is resizeable via the
+*   For third-party apps indicating that it is resizeable via the
+ that it is resizeable via the
 [android:resizeableActivity](https://developer.android.com/guide/topics/ui/multi-window.html#configuring)
 attribute, there are no restrictions to the aspect ratio value.
+*   For third-party apps targeting API level 26 or higher there is no
+restriction to the aspect ratio except for when it explicitly declares
+[android:MaxAspectRatio](https://developer.android.com/reference/android/R.attr.html#maxAspectRatio).
 *   For all other cases, the aspect ratio MUST be a value between 1.3333 (4:3)
 and 1.86 (roughly 16:9) unless the app has indicated explicitly that it
-supports a higher screen aspect ratio through  the [maxAspectRatio](https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio)
+supports a larger screen aspect ratio through  the [maxAspectRatio](https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio)
 metadata value.
 
 #### 7.1.1.3\. Screen Density
@@ -167,17 +171,18 @@ Devices MUST NOT change the reported screen size or density when changing orient
 
 ### 7.1.4\. 2D and 3D Graphics Acceleration
 
+#### 7.1.4.1 OpenGL ES
+
 Device implementations MUST support both OpenGL ES 1.0 and 2.0, as embodied and
-detailed in the Android SDK documentations. Device implementations SHOULD
-support OpenGL ES 3.0, 3.1, or 3.2 on devices capable of supporting it. Device
-implementations MUST also support [Android RenderScript](http://developer.android.com/guide/topics/renderscript/),
-as detailed in the Android SDK documentation.
+detailed in the [Android SDK documentation](https://developer.android.com/guide/topics/graphics/opengl.html).
+Support for OpenGL ES 3.0 is STRONGLY RECOMMENDED. Device implementations SHOULD
+support OpenGL ES 3.1 or 3.2 on devices capable of supporting it.
 
 Device implementations MUST also correctly identify themselves as supporting
-OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0, OpenGL 3.1, or OpenGL 3.2\. That is:
+OpenGL ES 1.1, OpenGL ES 2.0, OpenGL ES 3.0, OpenGL ES 3.1, or OpenGL ES 3.2. That is:
 
 *   The managed APIs (such as via the GLES10.getString() method) MUST report
-support for OpenGL ES 1.0 and OpenGL ES 2.0.
+support for OpenGL ES 1.1 and OpenGL ES 2.0.
 *   The native C/C++ OpenGL APIs (APIs available to apps via libGLES_v1CM.so,
 libGLES_v2.so, or libEGL.so) MUST report support for OpenGL ES 1.0 and OpenGL
 ES 2.0.
@@ -195,6 +200,11 @@ ES 3.2 and MAY support it otherwise. If the extension pack is supported in its
 entirety, the device MUST identify the support through the
 `android.hardware.opengles.aep` feature flag.
 
+Android device implementations MUST support the EGL_KHR_image, EGL_KHR_image_base,
+EGL_ANDROID_image_native_buffer, EGL_ANDROID_get_native_client_buffer, and
+EGL_KHR_wait_sync extensions. Device implementations are STRONGLY RECOMMENDED
+to support EGL_KHR_partial_update.
+
 Also, device implementations MAY implement any desired OpenGL ES extensions.
 However, device implementations MUST report via the OpenGL ES managed and
 native APIs all extension strings that they do support, and conversely MUST NOT
@@ -206,6 +216,40 @@ typically vendor-specific. Device implementations are not required by Android
 to implement any specific texture compression format. However, they SHOULD
 accurately report any texture compression formats that they do support, via the
 getString() method in the OpenGL API.
+
+Android includes support for EGL_ANDROID_RECORDABLE, an EGLConfig attribute
+that indicates whether the EGLConfig supports rendering to an `ANativeWindow`
+that records images to a video. Device implementations MUST support
+[EGL_ANDROID_RECORDABLE](https://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt)
+extension.
+
+Android includes support for EGL_KHR_get_all_proc_addresses,
+EGL_ANDROID_presentation_time, EGL_KHR_swap_buffers_with_damage. Device
+implementations MUST support these extensions. Additionally, implementations
+which expose support for EGL_KHR_mutable_render_buffer MUST also support
+EGL_ANDROID_front_buffer_auto_refresh.
+
+#### 7.1.4.2 Vulkan
+
+Device implementations SHOULD support Vulkan 1.0 on devices capable of supporting it.
+Device implementations that support OpenGL ES 3.0 or 3.1 are STRONGLY RECOMMENDED
+to support Vulkan 1.0.
+
+Device implementations that declare support for Vulkan 1.0 MUST include support for
+native C/C++ Vulkan APIs.
+
+Also, device implementations MAY implement any desired Vulkan extensions. However,
+device implementations MUST report via the Vulkan native APIs all extension strings
+that they do support, and conversely MUST NOT report extension strings that they do
+not support.
+
+#### 7.1.4.3 RenderScript
+
+Device implementations MUST support
+[Android RenderScript](http://developer.android.com/guide/topics/renderscript/),
+as detailed in the Android SDK documentation.
+
+#### 7.1.4.4 2D Graphics Acceleration
 
 Android includes a mechanism for applications to declare that they want to
 enable hardware acceleration for 2D graphics at the Application, Activity,
@@ -227,11 +271,28 @@ hardware-accelerated OpenGL ES textures as rendering targets in a UI hierarchy.
 Device implementations MUST support the TextureView API, and MUST exhibit
 consistent behavior with the upstream Android implementation.
 
-Android includes support for EGL_ANDROID_RECORDABLE, an EGLConfig attribute
-that indicates whether the EGLConfig supports rendering to an ANativeWindow
-that records images to a video. Device implementations MUST support
-[EGL_ANDROID_RECORDABLE](https://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt)
-extension.
+#### 7.1.4.5 Wide-gamut Displays
+
+If a device implementation claims support for wide-gamut displays through
+[`Display.isWideColorGamut()`
+](https://developer.android.com/reference/android/view/Display.html#isWideColorGamut%28%29)
+, it:
+
+*   MUST have a color-calibrated display.
+*   MUST have a display whose gamut covers the sRGB color gamut entirely in
+    CIE 1931 xyY space.
+*   MUST have a display whose gamut has an area of at least 90% of NTSC 1953 in
+    CIE 1931 xyY space.
+*   MUST support OpenGL ES 3.0, 3.1, or 3.2 and report it properly.
+*   MUST advertise support for the `EGL_KHR_no_config_context`,
+    `EGL_EXT_pixel_format_float`,`EGL_KHR_gl_colorspace`,
+    `EGL_EXT_colorspace_scrgb_linear`, and `EGL_GL_colorspace_display_p3`
+    extensions.
+*   is STRONGLY RECOMMENDED to support `GL_EXT_sRGB`.
+
+Conversely, if a device implementation does not support wide-gamut displays, then
+the screen color gamut is undefined but SHOULD cover 100% or more of sRGB in CIE
+1931 xyY space.
 
 ### 7.1.5\. Legacy Application Compatibility Mode
 
